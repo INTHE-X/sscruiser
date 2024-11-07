@@ -1,0 +1,217 @@
+
+header{
+
+    background-color: transparent;
+    position: fixed;
+    left:0;
+    top:0;
+    z-index:99999998;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #6A6A6A4D;
+
+    .locationBoxs{
+
+        height:100%;
+        padding-left:98px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        transition: 800ms;
+
+         &.display{ display: flex; }
+         &.active{
+            padding-left:279px;
+            transition: 800ms;
+         }
+        p{
+            color:#858585;
+            font-weight: 500;
+            font-size: $fontSize-16;
+            padding-right:18px;
+            position: relative;
+
+            &::after{
+
+                content: "";
+                width: 16px;
+                height: 16px;
+                position: absolute;
+                right:0px;
+                top:1px;
+                background-image: url(/src/assets/media/header/toArrow.svg);
+                -webkit-background-image: url(/src/assets/media/header/toArrow.svg);
+                background-repeat: no-repeat;
+                background-position: right center;
+                background-size: 16px 16px;
+                
+            }
+        }
+
+        span{
+
+            color:$fontColor-f;
+            font-size: $fontSize-16;
+        }
+    }
+
+    .userInfo{
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        right:0;
+
+        /* 로그인전 박스*/
+        .beforeLoginBoxs{
+
+            height:100%;
+
+            ul{ width:calc(100% - 40px);
+
+                li{
+                    a{
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-image: url(/src/assets/media/header/login.svg);
+                        -webkit-background-image: url(/src/assets/media/header/login.svg);
+                        background-repeat: no-repeat;
+                        background-size: 22px 22px;
+                        background-position: center center;
+                        width:40px;
+                        height:49px;
+                        cursor: pointer;
+
+        
+                    }
+                }
+             }  
+
+        }
+        /* 로그인후 박스*/
+        .afterLoginBoxs{
+
+            display:none;
+
+            .afterLoginWrap{
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+            ul {
+
+             li{
+
+              .alarmBtns{
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                background-image: url(/src/assets/media/header/alarm.svg);
+                -webkit-background-image: url(/src/assets/media/header/alarm.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center center;
+
+                &::after{
+
+                    content: "0";
+                    position: absolute;
+                    top:8px;
+                    right:0px;
+                    width:19px;
+                    height:19px;
+                    border-radius: 50px;
+                    background: rgb(7,99,150);
+                    background-image: linear-gradient(90deg, rgba(7,99,150,1) 100%, rgba(12,166,252,1) 100%);
+                    -webkit-background-image: linear-gradient(90deg, rgba(7,99,150,1) 100%, rgba(12,166,252,1) 100%);
+                    font-style: normal;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color:$fontColor-f;
+                    font-weight: $fontWeight-400;
+                    font-size: 10px;
+
+                }
+               }
+
+               .logOutBtns{
+
+                        background-image: url(/src/assets/media/header/logout.svg);
+                        -webkit-background-image: url(/src/assets/media/header/logout.svg);
+                        background-repeat: no-repeat;
+                        background-size: 37px 37px;
+                        background-position: center center;
+               }
+              }
+            }
+          }
+        }
+ 
+        /* 공통사항 */
+
+            ul{
+
+              border-left: 1px solid #6A6A6A4D;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding:0px 20px 0px;
+
+              &.userName{
+
+                font-weight: $fontWeight-500;
+                color:$fontColor-f;
+                font-size: $fontSize-14;
+                display: flex;
+                gap:17px;
+            }
+
+            li{
+
+                height:100%; 
+
+                &.loginImg{
+
+                    background-image: url(/src/assets/media/header/userImg.svg);
+                    -webkit-background-image: url(/src/assets/media/header/userImg.svg);
+                    background-position: right center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    width:29px;
+                    height:29px;
+                }
+
+                p {
+                    color: #D0D0D0;
+                    font-size: $fontSize-14;
+                    font-weight: $fontWeight-400;
+                    letter-spacing: $letterSpace-2;
+                    padding:17px 0px 16px;
+
+                }
+
+                button{
+
+                     width:40px;
+                     height:49px;
+                     cursor: pointer;
+                }
+
+                
+            }
+            
+         }
+         
+}
+
+}

@@ -1,0 +1,33 @@
+* { margin:0; padding:0;}
+a { text-decoration: none; font-family: Pretendard;}
+ul li { list-style: none; }
+button { background-color: transparent; border: none; font-family: Pretendard; cursor: pointer;}
+div,h1,h2,h3,h4,h5,p,span{ margin:0; font-family: Pretendard;} 
+
+
+html, body { 
+    width: 100vw;
+    height: 100vh;
+    background-color: #111111; 
+    font-family: Pretendard;
+  
+ 
+    &::-webkit-scrollbar{ display: none;}
+
+}
+
+
+//scss 통합하는곳
+@import './abstracts/variables';
+@import 'header';
+@import 'navigation';
+@import 'main';
+@import './components/login';
+@import './components/popUp/popup';
+@import './components/circleLoading';
+@import './components/dashboard/switchDetails';
+@import './components/popUp/switchPop';
+@import './components/dashboard/issuesState';
+@import './components/dashboard/tools';
+@import './components/dashboard/copyState';
+@import './components/manage/userManage';
