@@ -1,14 +1,5 @@
 $backgroundGradient : linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%, rgba(57, 57, 57,0.2) 100%);
 
-input[type="number"]:focus { outline: none;}
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-
-   -webkit-appearance: auto; 
-   background-color: transparent;
-   opacity: 1;
-   
-}
 
 #toolsWrappers{
 
@@ -409,6 +400,7 @@ input[type="number"]::-webkit-inner-spin-button {
          border-bottom: 0px;
          border:1px solid #48484880;
          background-image: $backgroundGradient;
+         -webkit-background-image: $backgroundGradient;
          }
          &.active::after{
          opacity: 1;
@@ -501,6 +493,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
             &.toolGroups,  &.typefaceSelectsTitleBtn{
                background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
+               -webkit-background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
                background-size: 18px;
                background-position: 94% center;
                background-repeat: no-repeat;
@@ -509,6 +502,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
             &.filterBtn{
                background-image: url(/src/assets/media/toolsImg/toolFilters.svg);
+               -webkit-background-image: url(/src/assets/media/toolsImg/toolFilters.svg);
                background-size: 16px;
                background-position: 11px center;
                background-repeat: no-repeat;
@@ -608,9 +602,9 @@ input[type="number"]::-webkit-inner-spin-button {
                li {
                   label{
 
-                     width: calc(100% - 32px);
-                     padding:0px 16px;
-                     height: 100%;
+                  width: calc(100% - 32px);
+                  padding:0px 16px;
+                  height: 100%;
                   display: flex;
                   align-items: center;
                   justify-content: flex-start;
@@ -635,6 +629,7 @@ input[type="number"]::-webkit-inner-spin-button {
                   input[type="checkbox"]:checked + label span{
                   background-color: #0BA7FE;
                   background-image: url(/src/assets/media/toolsImg/checkFill.svg);
+                  -webkit-background-image: url(/src/assets/media/toolsImg/checkFill.svg);
                   background-repeat: no-repeat;
                   background-size: 10px;
                   background-position: center center;
@@ -696,6 +691,7 @@ input[type="number"]::-webkit-inner-spin-button {
          font-size: $fontSize-13;
          letter-spacing: $letterSpace-2;
          background-image: url(/src/assets/media/toolsImg/search.svg);
+         -webkit-background-image: url(/src/assets/media/toolsImg/search.svg);
          background-size: 15px;
          background-position: 12px center;
          background-repeat: no-repeat;
@@ -768,8 +764,14 @@ input[type="number"]::-webkit-inner-spin-button {
 
               }
 
-            &.hg-01{ background-image: url(/src/assets/media/toolsImg/switchBtns/hg-01.svg);}
-            &.switch-01{ background-image: url(/src/assets/media/toolsImg/switchBtns/switch-01.svg);}
+            &.hg-01{ 
+               background-image: url(/src/assets/media/toolsImg/switchBtns/hg-01.svg);
+               -webkit-background-image: url(/src/assets/media/toolsImg/switchBtns/hg-01.svg);
+            }
+            &.switch-01{ 
+               background-image: url(/src/assets/media/toolsImg/switchBtns/switch-01.svg);
+               -webkit-background-image: url(/src/assets/media/toolsImg/switchBtns/switch-01.svg);
+            }
             }
 
          }
@@ -869,6 +871,7 @@ input[type="number"]::-webkit-inner-spin-button {
                          background-repeat: no-repeat;
                          background-size: 31px 31px;
                          background-image: url(/src/assets/media/toolsImg/software.svg);
+                         -webkit-background-image: url(/src/assets/media/toolsImg/software.svg);
                          
                       }
                    }
@@ -958,7 +961,7 @@ input[type="number"]::-webkit-inner-spin-button {
                      justify-content: center;
                      gap:7px;
 
-                   input, button{
+                   .number-input, .colors{
 
                      border: 1px solid #686868;
                      border-radius: 8px;
@@ -967,28 +970,6 @@ input[type="number"]::-webkit-inner-spin-button {
                      background-color: #161616CC;
                      position: relative;
 
-                     &[type="number"]{
-                        width: calc(91px - 24px);
-                        padding:0px 12px;
-                        color:#8E8E8E;
-                        font-size:$fontSize-13;
-                        font-weight: $fontWeight-400;
-                        letter-spacing: $letterSpace-2;
-                        -webkit-appearance: auto; 
-                     }
-
-                     &[type="number"]::-webkit-outer-spin-button,
-                     &[type="number"]::-webkit-inner-spin-button {
-
-                        -webkit-appearance: auto; 
-                        background-color: transparent;
-                     }
-
-                     &[type="number"]::-webkit-outer-spin-button::after,
-                     &[type="number"]::-webkit-inner-spin-button::after{
-                        color: white!important;
-                     }
-
                      &.outlinesBtn{
 
                          background-color: #0084FF;
@@ -996,7 +977,60 @@ input[type="number"]::-webkit-inner-spin-button {
 
                  }
 
-                 button{
+                 .number-input{
+
+                    display: flex;
+                    overflow: hidden;
+
+                    input[type="text"]{
+                     width: calc(80% - 24px);
+                     padding:0px 12px;
+                     height: 100%;
+                     background-color: transparent;
+                     border: none;
+                     color:$fontColor-8e;
+                     font-size: $fontSize-13;
+                     font-weight: $fontWeight-400;
+                     letter-spacing: $letterSpace-2;
+
+
+                    }
+                    input[type="text"]:focus{ outline: none;}
+
+                    .numBtnBoxs{
+
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                      justify-content: center;
+                      width: 20%;
+                      height: 100%;
+                      gap:3px;
+
+
+                    button{
+
+                      width: 12px;
+                      height: 12px;
+                      background-size: 12px 12px;
+                      background-repeat: no-repeat;
+                      background-position: center center;
+
+                      &:nth-child(1){
+                        background-image: url(/src/assets/media/toolsImg/increase.svg);
+                        -webkit-background-image: url(/src/assets/media/toolsImg/increase.svg);
+                      }
+
+                      &:nth-child(2){
+                        background-image: url(/src/assets/media/toolsImg/decrease.svg);
+                        -webkit-background-image: url(/src/assets/media/toolsImg/decrease.svg);
+                      }
+                      
+                    }
+                  }
+                 }
+
+                 .colors{
 
                     overflow: hidden;
                     background-color: #25282D;
@@ -1011,6 +1045,7 @@ input[type="number"]::-webkit-inner-spin-button {
                         height:36px;
                         background-color: #1c1c1c;
                         background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
+                        -webkit-background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
                         background-size: 18px 18px;
                         background-repeat: no-repeat;
                         background-position: center center;
@@ -1078,18 +1113,23 @@ input[type="number"]::-webkit-inner-spin-button {
 
              .typeTxtIcon01::before{
                 background-image: url(/src/assets/media/toolsImg/typeface/horizontal.svg);
+                -webkit-background-image: url(/src/assets/media/toolsImg/typeface/horizontal.svg);
              }
              .typeTxtIcon02::before{
                 background-image: url(/src/assets/media/toolsImg/typeface/underline.svg);
+                -webkit-background-image: url(/src/assets/media/toolsImg/typeface/underline.svg);
              }
              .typeTxtIcon03::before{
                 background-image: url(/src/assets/media/toolsImg/typeface/bold.svg);
+                -webkit-background-image: url(/src/assets/media/toolsImg/typeface/bold.svg);
              }
              .typeTxtIcon04::before{
                 background-image: url(/src/assets/media/toolsImg/typeface/italic.svg);
+                -webkit-background-image: url(/src/assets/media/toolsImg/typeface/italic.svg);
              }
              .typeTxtIcon05::before{
                 background-image: url(/src/assets/media/toolsImg/typeface/strike.svg);
+                -webkit-background-image: url(/src/assets/media/toolsImg/typeface/strike.svg);
              }
          }
 
@@ -1097,15 +1137,19 @@ input[type="number"]::-webkit-inner-spin-button {
 
             .typeRadioIcon01::before{
                background-image: url(/src/assets/media/toolsImg/typeface/align-left.svg);
+               -webkit-background-image: url(/src/assets/media/toolsImg/typeface/align-left.svg);
             }
             .typeRadioIcon02::before{
                background-image: url(/src/assets/media/toolsImg/typeface/align-center.svg);
+               -webkit-background-image: url(/src/assets/media/toolsImg/typeface/align-center.svg);
             }
             .typeRadioIcon03::before{
                background-image: url(/src/assets/media/toolsImg/typeface/align-justify.svg);
+               -webkit-background-image: url(/src/assets/media/toolsImg/typeface/align-justify.svg);
             }
             .typeRadioIcon04::before{
                background-image: url(/src/assets/media/toolsImg/typeface/align-right.svg);
+               -webkit-background-image: url(/src/assets/media/toolsImg/typeface/align-right.svg);
             }
         }
 
@@ -1141,6 +1185,7 @@ input[type="number"]::-webkit-inner-spin-button {
          top:0;
          left:0;
          background-image: url(/src/assets/media/dottedBack.svg);
+         -webkit-background-image: url(/src/assets/media/dottedBack.svg);
          background-position: center center;
          background-repeat: no-repeat;
          background-size: cover;
@@ -1178,6 +1223,7 @@ input[type="number"]::-webkit-inner-spin-button {
              border: 1px solid #68686833;
              border-radius: 8px;
              background-image: linear-gradient(#7C737366 0%, #39393966 100%);
+             -webkit-background-image: linear-gradient(#7C737366 0%, #39393966 100%);
              position: relative;
 
               &::after{
@@ -1195,9 +1241,11 @@ input[type="number"]::-webkit-inner-spin-button {
 
               &:nth-child(1)::after{
                background-image: url(/src/assets/media/toolsImg/plus.svg);
+               -webkit-background-image: url(/src/assets/media/toolsImg/plus.svg);
               }
               &:nth-child(2)::after{
                background-image: url(/src/assets/media/toolsImg/minus.svg);
+               -webkit-background-image: url(/src/assets/media/toolsImg/minus.svg);
               }
 
            }

@@ -202,21 +202,9 @@ const toolsSelectBoxEvet = () => {
 
         const thisTarget = e.target; //현재 클릭한 요소
         const targetBtns = thisTarget.parentElement.parentElement.parentElement.previousElementSibling;
-      //   const thisSelectBoxs = thisTarget.parentElement.parentElement.parentElement.parentElement.previousElementSibling;//현재 셀렉박스
 
           if(thisTarget.nodeName == "P"){
 
-            // for(let i = 0; i <= thisSelectBoxs.children.length - 1; i++){
-                
-            //     const answerBoxs = thisTarget.textContent;
-
-            //     if(thisSelectBoxs.children[i].value == answerBoxs){ //클릭한 리스트의 값과 옵션의 값이 같다면
-            //         thisSelectBoxs.children[i].selected = "true"; //셀렉박스에 값 담기
-            //         console.log(`현재셀렉박스값 ${thisSelectBoxs.id}, 셀렉박스값 ${thisSelectBoxs.value}`);
-            //     }
-                 
-            //    }
-   
                targetBtns.textContent = thisTarget.textContent;
                toolSelectList.forEach((allList) => allList.classList.remove("active"));
                toolSelectTitleBtns.forEach((allBtns) => allBtns.classList.remove("active"));
@@ -232,7 +220,29 @@ const toolsSelectBoxEvet = () => {
 
 toolsSelectBoxEvet();
 
+/* 넘버 버튼 클릭시 숫자 증가하기  */
 
+const numberControllEvet = () => {
+
+ const increaseBtn = document.querySelectorAll(".increase");
+ const decreaseBtn = document.querySelectorAll(".decrease");
+
+ increaseBtn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+       const inputNum =  btn.parentElement.previousElementSibling;
+       inputNum.value =  Math.max(0, parseInt(inputNum.value) + 1); 
+    })
+ });
+
+ decreaseBtn.forEach((btn) => {
+   btn.addEventListener("click", () => {
+      const inputNum =  btn.parentElement.previousElementSibling;
+      inputNum.value =  Math.max(0, parseInt(inputNum.value) - 1); 
+   })
+});
+
+}
+numberControllEvet();
 
 /* 구성저장 팝업 불러오기 */
 

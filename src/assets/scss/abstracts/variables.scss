@@ -23,7 +23,7 @@ $letterSpace-2 : 0.2px;
 
 //백그라운드
 $backgroundColor-2325 : #232325;
-$dottedBackGradient : linear-gradient(#3833394d 0%, #12121380 100%);
+$dottedBackGradient : linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
 
 //보더 그라데이션
 $border-linear:linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
@@ -32,6 +32,7 @@ $border-linear-4041:linear-gradient(90deg,#404041 0%, #B7B7B7 52%, #404041 100%)
 
 //버튼컬러
 $buttonGradient-blue : linear-gradient(to left,#0F98E6 0%, #085580 100%);
+$buttonGradient-black : linear-gradient(to left,#4D4B50 0%, #2F2E31 100%);
 
 
 /* 복제구성도 컬러별 */

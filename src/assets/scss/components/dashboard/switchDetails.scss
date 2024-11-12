@@ -5,5 +5,12 @@
     margin:0 auto;
     background-color:$backgroundColor-2325;
 
+    &::-webkit-scrollbar{ display: none;}
+
+    .switchDetailsContentWrap{
+
+        padding:58px 0px 0px 70px;
+        height: calc(100% - 58px);
+    }
 
 }

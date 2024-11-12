@@ -48,34 +48,37 @@
     padding-top: 12px;
  }
  
-      
-   .loadingLines{
+   
+}
 
-      width: 100%;
-      height: 3px;
-      position: absolute;
-      left:0;
-      top:0;
-      background-image: linear-gradient(to right, #2A3D9C 0%,  #0BA7FE 100%);
-      // animation: LoadingUpdates 10s linear infinite;
+.loadingPercentCont{
 
-       em{
+   position: relative;
+   left:0;
+   top:0;
+   width: 0px;
+   height: 3px;
+   background-image: linear-gradient(90deg, #2A3D9C 0%, #0BA7FE 100%);
+   -webkit-background-image: linear-gradient(90deg, #2A3D9C 0%, #0BA7FE 100%);
 
-          position: absolute;
-          left:calc(100%);
-          bottom:-19px;
-          width:13px;
-          height:13px;
-          color:#0BA7FE;
-          font-size: $fontSize-13;
-          letter-spacing: $letterSpace-2;
-          font-weight:$fontWeight-400;
-          display: block;
-         //  animation: LoadingUpdates 10s linear infinite;
+   &.active{
 
-       }
+    width: 100%;
+    transition: 3s;
+
    }
 
+ .loadingNum{
 
+      font-style: normal;
+      position: absolute;
+      top:5px;
+      right:0;
+      font-size: 11px;
+      color:#0BA7FE;
+  }
 }
+
+
+
 }

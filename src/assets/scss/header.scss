@@ -70,6 +70,7 @@ header{
         .beforeLoginBoxs{
 
             height:100%;
+            display: block;
 
             ul{ width:calc(100% - 40px);
 
@@ -213,5 +214,300 @@ header{
          }
          
 }
+}
 
+/* 알림팝업 */
+
+#alaramWrappers{
+
+    position: fixed;
+    top:57px;
+    right:215px;
+    z-index:99999999;
+    display:none;
+
+    &.active{ display:block; }
+
+    .alaramPopBoxs{
+
+        width:599px;
+        height:412px;
+        border:1px solid #686868;
+        border-radius: 10px;
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        background-image: linear-gradient(#38333952 0%, #11121366 40%);
+        -webkit-background-image: linear-gradient(#38333952 0%, #11121366 40%);
+        box-shadow: 0px 0px 30px 0px #000000B2;
+        overflow: hidden;
+        transition: height 800ms;
+
+        &.active{
+
+           height:calc(412px * 2);
+           transition: height 800ms;
+           
+        }
+        .alaramPopTitles{
+
+            width: calc(100% - 31px);
+            height: 46px;
+            padding:0px 13px 0px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(15, 152, 230,0.3);
+
+            h3{
+                font-weight: $fontWeight-400;
+                color:$fontColor-f;
+                font-size: $fontSize-16;
+                letter-spacing: $letterSpace-2;
+                display: flex;
+
+                span{
+
+                    background-image: url(/src/assets/media/header/bell.svg);
+                    -webkit-background-image: url(/src/assets/media/header/bell.svg);
+                    background-repeat: no-repeat;
+                    background-size: 11px 12px;
+                    background-position: center center;
+                    display:inline-block;
+                    width: 20px;
+                    height: 20px;
+                    margin-right:9px;
+
+                }
+            }
+            button{
+
+                background-image: url(/src/assets/media/header/close.svg);
+                -webkit-background-image: url(/src/assets/media/header/close.svg);
+                background-repeat: no-repeat;
+                background-size: 22px 22px;
+                background-position: center center;
+                width: 22px;
+                height: 22px;
+
+            }
+        }
+
+        .alaramPopContents{
+
+            width: 100%;
+            height:calc(100% - 46px);
+            margin:0 auto;
+
+            .alaramPopBtnBoxs{
+
+                padding:16px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap:10px;
+                border-bottom: 1px solid #6A6A6A;
+
+                button{
+
+                    width: 73px;
+                    height: 24px;
+                    border: 1px solid #4646461A;
+                    border-radius: 4px;
+                    background-color: #FFFFFF0D;
+                    display: flex;
+                    align-items: center;
+                    font-weight: $fontWeight-400;
+                    color:$fontColor-f;
+                    font-size: $fontSize-12;
+                    letter-spacing: $letterSpace-2;
+
+                    span{
+
+                        display:inline-block;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        width: 20px;
+                        height: 20px;
+                    }
+
+                  &:nth-child(1){
+                      span{
+                        background-image: url(/src/assets/media/header/check.svg);
+                        -webkit-background-image: url(/src/assets/media/header/check.svg);
+                        background-size: 9px 6.28px;
+                      }
+                  }
+
+                  &:nth-child(2){
+                      span{
+                        background-image: url(/src/assets/media/header/delete.svg);
+                        -webkit-background-image: url(/src/assets/media/header/delete.svg);
+                        background-size: 12px;
+                      }
+                  }
+                }
+            }
+
+            .alaramPopDataBoxs{
+
+                width: 100%;
+                height:calc(100% - 57px);
+
+                &.active{
+
+                    overflow-y: scroll;
+
+
+                    &::-webkit-scrollbar{ width: 2px;
+                        background-color: transparent!important;}
+                    &::-webkit-scrollbar-thumb{
+                        height: 10px!important;
+                        border-radius: 10px;
+                        background-color: #D9D9D9;
+                    }
+                    &::-webkit-scrollbar-button:vertical:start:decrement{
+                        display: block;
+                        height: 25px;
+                    }
+                    &::-webkit-scrollbar-button:vertical:start:increment{
+                        display: block;
+                        height: 25px;
+                    }
+                    &::-webkit-scrollbar-button:vertical:end:decrement {
+                        display: block;
+                        height: 20px;
+                    }
+                }
+                
+                ul{
+
+                    padding:20px 15px 10.5px;
+                    margin:0 auto;
+                    border-bottom: 1px solid #6A6A6A;
+
+                    h3{
+                        font-weight: $fontWeight-400;
+                        color:$fontColor-d1;
+                        font-size: $fontSize-13;
+                        letter-spacing: $letterSpace-2;
+                        padding-bottom: 10.5px;
+                    }
+
+                    li{
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
+                        padding:8.5px 0px;
+
+                        input[type="checkbox"]{ display: none;}
+                        input[type="checkbox"]:checked + label{ 
+                            span{
+
+                                background-color: #0978B6;
+                                &::before{
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                        
+                        label{
+
+                            display: inline-block;
+                            font-weight: $fontWeight-400;
+                            color:$fontColor-f;
+                            font-size: $fontSize-16;
+                            letter-spacing: $letterSpace-2;
+                            display: flex;
+                            
+
+                            span{
+
+                                width: 20px;
+                                height: 20px;
+                                border-radius: 100%;
+                                border: 1px solid #0978B6;
+                                margin-right:12px;
+                                position: relative;
+
+                                &::before{
+
+                                    width: 20px;
+                                    height: 20px;
+                                    content: "";
+                                    position: absolute;
+                                    left:0;
+                                    top:0;
+                                    background-image: url(/src/assets/media/header/check.svg);
+                                    -webkit-background-image: url(/src/assets/media/header/check.svg);
+                                    background-repeat: no-repeat;
+                                    background-size: 16px 10px;
+                                    background-position: center center;
+                                    opacity: 0;
+                                }
+
+
+
+                        }
+                    }
+
+                    button{
+
+                        width: 22px;
+                        height: 22px;
+                        background-image: url(/src/assets/media/header/delete.svg);
+                        -webkit-background-image: url(/src/assets/media/header/delete.svg);
+                        background-repeat: no-repeat;
+                        background-size: 22px 22px;
+                        background-position: center center;
+
+                    }
+                }
+
+                }
+
+            }
+        }
+        
+        .moreDatasBtn{
+
+            position: absolute;
+            bottom:0px;
+            font-weight: $fontWeight-400;
+            color:$fontColor-f;
+            font-size: $fontSize-16;
+            letter-spacing: $letterSpace-2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 42px;
+            background-image: $dottedBackGradient;
+            -webkit-background-image: $dottedBackGradient;
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.6980392157);
+
+            span{
+
+                width: 18px;
+                height: 18px;
+                background-image: url(/src/assets/media/header/moreBtn.svg);
+                -webkit-background-image: url(/src/assets/media/header/moreBtn.svg);
+                background-repeat: no-repeat;
+                background-size: 18px 18px;
+                background-position: center center;
+                display: inline-block;
+                margin-left: 5px;
+            }
+
+            &.active{
+                span{  
+                    transform: rotate(180deg);
+                    -webkit-transform: rotate(180deg);
+                }
+            }
+        }
+    }
 }

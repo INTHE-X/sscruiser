@@ -237,14 +237,28 @@
                               <ul>
                                  <li><span>Box</span>
                                     <div class="inputColorBoxs">
-                                       <button></button>
-                                       <input type="number" placeholder="50" min="0">
+                                       <button class="colors"></button>
+                                       <!-- <input type="number" placeholder="50" min="0"> -->
+                                       <div class="number-input">
+                                          <input type="text" value="0" />
+                                          <div class="numBtnBoxs">
+                                          <button type="button" class="increase"></button>
+                                          <button type="button" class="decrease"></button>
+                                        </div>
+                                        </div>
                                     </div>
                                  </li>
                                  <li><span>Outline</span>
                                     <div class="inputColorBoxs">
-                                       <button class="outlinesBtn"></button>
-                                       <input type="number" placeholder="2" min="0">
+                                       <button class="outlinesBtn colors"></button>
+                                       <!-- <input type="number" placeholder="2" min="0"> -->
+                                       <div class="number-input">
+                                          <input type="text" value="0" />
+                                          <div class="numBtnBoxs">
+                                             <button type="button" class="increase"></button>
+                                             <button type="button" class="decrease"></button>
+                                           </div>
+                                        </div>
                                     </div>
                                  </li>
                               </ul>
@@ -270,6 +284,7 @@
       </div>
    </div>
    <div id="toolsSavePopWrappers"></div>
+   <div class="bottomMenuWrappers"></div>
    <script type="module" src="/index.js"></script>
    <script src="/src/js/tools.js"></script>
 </body>

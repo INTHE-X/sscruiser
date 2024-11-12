@@ -100,6 +100,7 @@ header .userInfo {
 }
 header .userInfo .beforeLoginBoxs {
   height: 100%;
+  display: block;
 }
 header .userInfo .beforeLoginBoxs ul {
   width: calc(100% - 40px);
@@ -199,6 +200,242 @@ header .userInfo ul li button {
   width: 40px;
   height: 49px;
   cursor: pointer;
+}
+
+/* 알림팝업 */
+#alaramWrappers {
+  position: fixed;
+  top: 57px;
+  right: 215px;
+  z-index: 99999999;
+  display: none;
+}
+#alaramWrappers.active {
+  display: block;
+}
+#alaramWrappers .alaramPopBoxs {
+  width: 599px;
+  height: 412px;
+  border: 1px solid #686868;
+  border-radius: 10px;
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  background-image: linear-gradient(rgba(56, 51, 57, 0.3215686275) 0%, rgba(17, 18, 19, 0.4) 40%);
+  -webkit-background-image: linear-gradient(rgba(56, 51, 57, 0.3215686275) 0%, rgba(17, 18, 19, 0.4) 40%);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.6980392157);
+  overflow: hidden;
+  transition: height 800ms;
+}
+#alaramWrappers .alaramPopBoxs.active {
+  height: 824px;
+  transition: height 800ms;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopTitles {
+  width: calc(100% - 31px);
+  height: 46px;
+  padding: 0px 13px 0px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(15, 152, 230, 0.3);
+}
+#alaramWrappers .alaramPopBoxs .alaramPopTitles h3 {
+  font-weight: 400;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  display: flex;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopTitles h3 span {
+  background-image: url(/src/assets/media/header/bell.svg);
+  -webkit-background-image: url(/src/assets/media/header/bell.svg);
+  background-repeat: no-repeat;
+  background-size: 11px 12px;
+  background-position: center center;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 9px;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopTitles button {
+  background-image: url(/src/assets/media/header/close.svg);
+  -webkit-background-image: url(/src/assets/media/header/close.svg);
+  background-repeat: no-repeat;
+  background-size: 22px 22px;
+  background-position: center center;
+  width: 22px;
+  height: 22px;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents {
+  width: 100%;
+  height: calc(100% - 46px);
+  margin: 0 auto;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopBtnBoxs {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  border-bottom: 1px solid #6A6A6A;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopBtnBoxs button {
+  width: 73px;
+  height: 24px;
+  border: 1px solid rgba(70, 70, 70, 0.1019607843);
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.0509803922);
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.2px;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopBtnBoxs button span {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 20px;
+  height: 20px;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopBtnBoxs button:nth-child(1) span {
+  background-image: url(/src/assets/media/header/check.svg);
+  -webkit-background-image: url(/src/assets/media/header/check.svg);
+  background-size: 9px 6.28px;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopBtnBoxs button:nth-child(2) span {
+  background-image: url(/src/assets/media/header/delete.svg);
+  -webkit-background-image: url(/src/assets/media/header/delete.svg);
+  background-size: 12px;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs {
+  width: 100%;
+  height: calc(100% - 57px);
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs.active {
+  overflow-y: scroll;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs.active::-webkit-scrollbar {
+  width: 2px;
+  background-color: transparent !important;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs.active::-webkit-scrollbar-thumb {
+  height: 10px !important;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs.active::-webkit-scrollbar-button:vertical:start:decrement {
+  display: block;
+  height: 25px;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs.active::-webkit-scrollbar-button:vertical:start:increment {
+  display: block;
+  height: 25px;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs.active::-webkit-scrollbar-button:vertical:end:decrement {
+  display: block;
+  height: 20px;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs ul {
+  padding: 20px 15px 10.5px;
+  margin: 0 auto;
+  border-bottom: 1px solid #6A6A6A;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs ul h3 {
+  font-weight: 400;
+  color: #D1D1D1;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+  padding-bottom: 10.5px;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8.5px 0px;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs ul li input[type=checkbox] {
+  display: none;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs ul li input[type=checkbox]:checked + label span {
+  background-color: #0978B6;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs ul li input[type=checkbox]:checked + label span::before {
+  opacity: 1;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs ul li label {
+  display: inline-block;
+  font-weight: 400;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  display: flex;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs ul li label span {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  border: 1px solid #0978B6;
+  margin-right: 12px;
+  position: relative;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs ul li label span::before {
+  width: 20px;
+  height: 20px;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url(/src/assets/media/header/check.svg);
+  -webkit-background-image: url(/src/assets/media/header/check.svg);
+  background-repeat: no-repeat;
+  background-size: 16px 10px;
+  background-position: center center;
+  opacity: 0;
+}
+#alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs ul li button {
+  width: 22px;
+  height: 22px;
+  background-image: url(/src/assets/media/header/delete.svg);
+  -webkit-background-image: url(/src/assets/media/header/delete.svg);
+  background-repeat: no-repeat;
+  background-size: 22px 22px;
+  background-position: center center;
+}
+#alaramWrappers .alaramPopBoxs .moreDatasBtn {
+  position: absolute;
+  bottom: 0px;
+  font-weight: 400;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 42px;
+  background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
+  -webkit-background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.6980392157);
+}
+#alaramWrappers .alaramPopBoxs .moreDatasBtn span {
+  width: 18px;
+  height: 18px;
+  background-image: url(/src/assets/media/header/moreBtn.svg);
+  -webkit-background-image: url(/src/assets/media/header/moreBtn.svg);
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: center center;
+  display: inline-block;
+  margin-left: 5px;
+}
+#alaramWrappers .alaramPopBoxs .moreDatasBtn.active span {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
 }
 
 .navFixed {
@@ -471,6 +708,7 @@ header .userInfo ul li button {
   font-size: 15px;
   letter-spacing: 0.2px;
   background-image: transparent;
+  -webkit-background-image: transparent;
   position: relative;
   border: 1px solid transparent;
 }
@@ -789,6 +1027,124 @@ header .userInfo ul li button {
   background-size: 20px 20px;
 }
 
+.bottomMenuWrap {
+  position: fixed;
+  bottom: -3px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background-image: url(/src/assets/media/bottomMenu/bottomMenuBack.svg);
+  background-position: 35% -3px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.bottomMenuWrap .bottomMenuBoxs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 6px;
+}
+.bottomMenuWrap .bottomMenuBoxs .bottonMenuList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bottomMenuWrap .bottomMenuBoxs .bottonMenuList li {
+  padding: 0px 11px;
+  width: 113px;
+  height: 30px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid #5D5D5D;
+  border-bottom: none;
+  background-color: rgba(40, 40, 40, 0.3490196078);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bottomMenuWrap .bottomMenuBoxs .bottonMenuList li.active {
+  border: 1px solid rgba(174, 174, 174, 0.8980392157);
+  background-color: rgba(63, 65, 62, 0.8);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+}
+.bottomMenuWrap .bottomMenuBoxs .bottonMenuList li span {
+  color: #A5A5A5;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+.bottomMenuWrap .bottomMenuBoxs .bottonMenuList li button {
+  width: 11px;
+  height: 11px;
+  background-image: url(/src/assets/media/bottomMenu/closeBox.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 11px 11px;
+}
+.bottomMenuWrap .bottomMenuBoxs .hiddenBottomWrap {
+  position: relative;
+  bottom: -1px;
+}
+.bottomMenuWrap .bottomMenuBoxs .hiddenBottomWrap .moreBtn {
+  width: 32px;
+  height: 30px;
+  background-color: rgba(40, 40, 40, 0.3490196078);
+  border: 1px solid #5D5D5D;
+  border-bottom: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  background-image: url(/src/assets/media/bottomMenu/moreCircle.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  opacity: 90%;
+}
+.bottomMenuWrap .bottomMenuBoxs .hiddenBottomWrap .hiddenBottomMenu {
+  position: absolute;
+  width: 225px;
+  left: 0px;
+  bottom: 36px;
+  border: 1px solid rgba(104, 104, 104, 0.4);
+  border-radius: 8px;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  display: none;
+}
+.bottomMenuWrap .bottomMenuBoxs .hiddenBottomWrap .hiddenBottomMenu.active {
+  display: block;
+}
+.bottomMenuWrap .bottomMenuBoxs .hiddenBottomWrap .hiddenBottomMenu ul li {
+  padding: 10px 16px;
+  width: calc(100% - 32px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bottomMenuWrap .bottomMenuBoxs .hiddenBottomWrap .hiddenBottomMenu ul li span {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+.bottomMenuWrap .bottomMenuBoxs .hiddenBottomWrap .hiddenBottomMenu ul li button {
+  width: 20px;
+  height: 10px;
+  background-image: url(/src/assets/media/bottomMenu/closeBox.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 11px 11px;
+  filter: brightness(100);
+  -webkit-filter: brightness(100);
+}
+
 .loginPopWrappers {
   width: 100%;
   height: 100vh;
@@ -991,8 +1347,8 @@ header .userInfo ul li button {
 }
 .popCommonWrap .popCommonFlexBox .popCommonBoxs.saveCommonBoxs {
   width: 236px;
-  height: 176px;
-  padding: 20px 16px;
+  height: 162px;
+  padding: 34px 16px 20px;
   border: 1px solid #686868;
   background-image: linear-gradient(#383339 0%, #121213 100%);
   -webkit-background-image: linear-gradient(rgba(56, 51, 57, 0.3215686275) 0%, rgba(18, 18, 19, 0.4) 100%);
@@ -1009,7 +1365,7 @@ header .userInfo ul li button {
   -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
 }
 .popCommonWrap .popCommonFlexBox .popCommonBoxs ul {
-  padding-bottom: 37px;
+  padding-bottom: 29px;
 }
 .popCommonWrap .popCommonFlexBox .popCommonBoxs ul .popCommonImgBoxs {
   width: 54px;
@@ -1043,6 +1399,44 @@ header .userInfo ul li button {
   background-position: center center;
   background-repeat: no-repeat;
 }
+.popCommonWrap .popCommonFlexBox .popCommonBoxs ul .popCommonImgBoxs.passwordCommonImg {
+  position: relative;
+  background-image: linear-gradient(rgba(42, 42, 42, 0.3019607843) 0%, rgba(26, 83, 118, 0.3019607843) 100%);
+  -webkit-background-image: linear-gradient(rgba(42, 42, 42, 0.3019607843) 0%, rgba(26, 83, 118, 0.3019607843) 100%);
+  background-size: cover;
+}
+.popCommonWrap .popCommonFlexBox .popCommonBoxs ul .popCommonImgBoxs.passwordCommonImg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/src/assets/media/popUp/passwordImg.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/passwordImg.svg);
+  background-size: 18px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.popCommonWrap .popCommonFlexBox .popCommonBoxs ul .popCommonImgBoxs.addUserCommonImg {
+  position: relative;
+  background-image: linear-gradient(rgba(42, 42, 42, 0.3019607843) 0%, rgba(26, 83, 118, 0.3019607843) 100%);
+  -webkit-background-image: linear-gradient(rgba(42, 42, 42, 0.3019607843) 0%, rgba(26, 83, 118, 0.3019607843) 100%);
+  background-size: cover;
+}
+.popCommonWrap .popCommonFlexBox .popCommonBoxs ul .popCommonImgBoxs.addUserCommonImg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/src/assets/media/popUp/addUserImg.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/addUserImg.svg);
+  background-size: 18px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 .popCommonWrap .popCommonFlexBox .popCommonBoxs ul h5 {
   font-size: 14px;
   font-weight: 500;
@@ -1052,7 +1446,8 @@ header .userInfo ul li button {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 22px;
+  margin-top: 20px;
+  line-height: 21px;
 }
 .popCommonWrap .popCommonFlexBox .popCommonBoxs button {
   width: 100%;
@@ -1123,25 +1518,26 @@ header .userInfo ul li button {
   letter-spacing: 0.2px;
   padding-top: 12px;
 }
-.dataLodingPages .dataLodingWrapper .loadingLines {
-  width: 100%;
-  height: 3px;
-  position: absolute;
+.dataLodingPages .loadingPercentCont {
+  position: relative;
   left: 0;
   top: 0;
-  background-image: linear-gradient(to right, #2A3D9C 0%, #0BA7FE 100%);
+  width: 0px;
+  height: 3px;
+  background-image: linear-gradient(90deg, #2A3D9C 0%, #0BA7FE 100%);
+  -webkit-background-image: linear-gradient(90deg, #2A3D9C 0%, #0BA7FE 100%);
 }
-.dataLodingPages .dataLodingWrapper .loadingLines em {
+.dataLodingPages .loadingPercentCont.active {
+  width: 100%;
+  transition: 3s;
+}
+.dataLodingPages .loadingPercentCont .loadingNum {
+  font-style: normal;
   position: absolute;
-  left: 100%;
-  bottom: -19px;
-  width: 13px;
-  height: 13px;
+  top: 5px;
+  right: 0;
+  font-size: 11px;
   color: #0BA7FE;
-  font-size: 13px;
-  letter-spacing: 0.2px;
-  font-weight: 400;
-  display: block;
 }
 
 #switchDetailsWrappers {
@@ -1149,6 +1545,13 @@ header .userInfo ul li button {
   height: 100vh;
   margin: 0 auto;
   background-color: #232325;
+}
+#switchDetailsWrappers::-webkit-scrollbar {
+  display: none;
+}
+#switchDetailsWrappers .switchDetailsContentWrap {
+  padding: 58px 0px 0px 70px;
+  height: calc(100% - 58px);
 }
 
 .switchPopWrap {
@@ -1214,6 +1617,7 @@ header .userInfo ul li button {
   background-repeat: no-repeat;
   background-size: 22px 22px;
   background-image: url(/src/assets/media/popUp/close.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/close.svg);
   width: 30px;
   height: 30px;
 }
@@ -1294,6 +1698,7 @@ header .userInfo ul li button {
   height: 16px;
   background-size: contain;
   background-image: url(/src/assets/media/popUp/pdf.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/pdf.svg);
 }
 .switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .btnWrappers button.downBtn {
   padding: 0px 14px;
@@ -1309,6 +1714,7 @@ header .userInfo ul li button {
   height: 12.5px;
   background-size: contain;
   background-image: url(/src/assets/media/popUp/download.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/download.svg);
 }
 .switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent {
   width: calc(100% - 60px);
@@ -1437,6 +1843,14 @@ header .userInfo ul li button {
   border-radius: 40px;
 }
 
+@keyframes stateLoadingRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 #issuesStateWrappers {
   width: 100vw;
   height: 100vh;
@@ -1543,6 +1957,39 @@ header .userInfo ul li button {
   background-image: url(/src/assets/media/issuesState/issueBtn02.svg);
   -webkit-background-image: url(/src/assets/media/issuesState/issueBtn02.svg);
 }
+#issuesStateWrappers .issuesStateContentWrap .issuesStateContBoxs .issuesStateCont .issuesStateDataWrap {
+  width: 100%;
+  height: calc(100% - 29px);
+}
+#issuesStateWrappers .issuesStateContentWrap .issuesStateContBoxs .issuesStateCont .issuesStateDataWrap .issuesStateDataBoxs {
+  width: 100%;
+  height: 100%;
+}
+#issuesStateWrappers .issuesStateContentWrap .issuesStateContBoxs .issuesStateCont .issuesStateDataWrap .issuesStateDataBoxs .issuesStateDataLoading {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#issuesStateWrappers .issuesStateContentWrap .issuesStateContBoxs .issuesStateCont .issuesStateDataWrap .issuesStateDataBoxs .issuesStateDataLoading .loadingSpinner {
+  width: 35px;
+  height: 35px;
+  border: 3px solid rgb(20, 136, 207);
+  border-top: 3px solid transparent;
+  border-radius: 100%;
+  animation: stateLoadingRotate 1s linear infinite;
+}
+#issuesStateWrappers .issuesStateContentWrap .issuesStateContBoxs .issuesStateCont .issuesStateDataWrap .issuesStateDataBoxs .issuesStateDataLoading p {
+  color: #1879B5;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  padding-top: 12px;
+  text-align: center;
+}
 
 .alarmPageWrapper {
   position: absolute;
@@ -1627,17 +2074,6 @@ header .userInfo ul li button {
   background-size: contain;
   background-image: url(/src/assets/media/issuesState/closeBtn.svg);
   -webkit-background-image: url(/src/assets/media/issuesState/closeBtn.svg);
-}
-
-input[type=number]:focus {
-  outline: none;
-}
-
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: auto;
-  background-color: transparent;
-  opacity: 1;
 }
 
 #toolsWrappers {
@@ -1957,6 +2393,7 @@ input[type=number]::-webkit-inner-spin-button {
   border-bottom: 0px;
   border: 1px solid rgba(72, 72, 72, 0.5019607843);
   background-image: linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%, rgba(57, 57, 57, 0.2) 100%);
+  -webkit-background-image: linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%, rgba(57, 57, 57, 0.2) 100%);
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .toggleBoxies ul button.active::after {
   opacity: 1;
@@ -2039,12 +2476,14 @@ input[type=number]::-webkit-inner-spin-button {
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace .listTitlesBoxs .toolselectBoxsWrappers .toolListSelectWrap .toolListSelectBoxs .toolListSelects .toolListSelectsTitleBtn.toolGroups, #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace .listTitlesBoxs .toolselectBoxsWrappers .toolListSelectWrap .toolListSelectBoxs .toolListSelects .toolListSelectsTitleBtn.typefaceSelectsTitleBtn {
   background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
   background-size: 18px;
   background-position: 94% center;
   background-repeat: no-repeat;
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace .listTitlesBoxs .toolselectBoxsWrappers .toolListSelectWrap .toolListSelectBoxs .toolListSelects .toolListSelectsTitleBtn.filterBtn {
   background-image: url(/src/assets/media/toolsImg/toolFilters.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/toolFilters.svg);
   background-size: 16px;
   background-position: 11px center;
   background-repeat: no-repeat;
@@ -2153,6 +2592,7 @@ input[type=number]::-webkit-inner-spin-button {
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace .listTitlesBoxs .toolselectBoxsWrappers .toolListSelectWrap .toolListSelectBoxs .toolListSelects .toolListSelectList .toolListSelectListMember.checkBoxsContent li input[type=checkbox]:checked + label span {
   background-color: #0BA7FE;
   background-image: url(/src/assets/media/toolsImg/checkFill.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/checkFill.svg);
   background-repeat: no-repeat;
   background-size: 10px;
   background-position: center center;
@@ -2191,6 +2631,7 @@ input[type=number]::-webkit-inner-spin-button {
   font-size: 13px;
   letter-spacing: 0.2px;
   background-image: url(/src/assets/media/toolsImg/search.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/search.svg);
   background-size: 15px;
   background-position: 12px center;
   background-repeat: no-repeat;
@@ -2253,9 +2694,11 @@ input[type=number]::-webkit-inner-spin-button {
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace .listSetup ul li button.hg-01 {
   background-image: url(/src/assets/media/toolsImg/switchBtns/hg-01.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/switchBtns/hg-01.svg);
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace .listSetup ul li button.switch-01 {
   background-image: url(/src/assets/media/toolsImg/switchBtns/switch-01.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/switchBtns/switch-01.svg);
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .positionBoxs {
   display: flex;
@@ -2332,6 +2775,7 @@ input[type=number]::-webkit-inner-spin-button {
   background-repeat: no-repeat;
   background-size: 31px 31px;
   background-image: url(/src/assets/media/toolsImg/software.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/software.svg);
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .iconArrayBoxs ul li em {
   font-size: 11px;
@@ -2394,7 +2838,7 @@ input[type=number]::-webkit-inner-spin-button {
   justify-content: center;
   gap: 7px;
 }
-#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs input, #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs button {
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .number-input, #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .colors {
   border: 1px solid #686868;
   border-radius: 8px;
   width: 91px;
@@ -2402,30 +2846,56 @@ input[type=number]::-webkit-inner-spin-button {
   background-color: rgba(22, 22, 22, 0.8);
   position: relative;
 }
-#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs input[type=number], #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs button[type=number] {
-  width: 67px;
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .number-input.outlinesBtn, #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .colors.outlinesBtn {
+  background-color: #0084FF;
+}
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .number-input {
+  display: flex;
+  overflow: hidden;
+}
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .number-input input[type=text] {
+  width: calc(80% - 24px);
   padding: 0px 12px;
+  height: 100%;
+  background-color: transparent;
+  border: none;
   color: #8E8E8E;
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.2px;
-  -webkit-appearance: auto;
 }
-#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs input[type=number]::-webkit-outer-spin-button, #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs input[type=number]::-webkit-inner-spin-button, #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs button[type=number]::-webkit-outer-spin-button, #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs button[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: auto;
-  background-color: transparent;
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .number-input input[type=text]:focus {
+  outline: none;
 }
-#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs input[type=number]::-webkit-outer-spin-button::after, #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs input[type=number]::-webkit-inner-spin-button::after, #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs button[type=number]::-webkit-outer-spin-button::after, #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs button[type=number]::-webkit-inner-spin-button::after {
-  color: white !important;
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .number-input .numBtnBoxs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  height: 100%;
+  gap: 3px;
 }
-#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs input.outlinesBtn, #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs button.outlinesBtn {
-  background-color: #0084FF;
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .number-input .numBtnBoxs button {
+  width: 12px;
+  height: 12px;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
-#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs button {
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .number-input .numBtnBoxs button:nth-child(1) {
+  background-image: url(/src/assets/media/toolsImg/increase.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/increase.svg);
+}
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .number-input .numBtnBoxs button:nth-child(2) {
+  background-image: url(/src/assets/media/toolsImg/decrease.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/decrease.svg);
+}
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .colors {
   overflow: hidden;
   background-color: #25282D;
 }
-#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs button::after {
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .colors::after {
   content: "";
   position: absolute;
   border-left: 1px solid #686868;
@@ -2435,6 +2905,7 @@ input[type=number]::-webkit-inner-spin-button {
   height: 36px;
   background-color: #1c1c1c;
   background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
   background-size: 18px 18px;
   background-repeat: no-repeat;
   background-position: center center;
@@ -2482,30 +2953,39 @@ input[type=number]::-webkit-inner-spin-button {
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .typeFaceInputBoxs.typeFaceInputCheckBoxs .typeTxtIcon01::before {
   background-image: url(/src/assets/media/toolsImg/typeface/horizontal.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/typeface/horizontal.svg);
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .typeFaceInputBoxs.typeFaceInputCheckBoxs .typeTxtIcon02::before {
   background-image: url(/src/assets/media/toolsImg/typeface/underline.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/typeface/underline.svg);
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .typeFaceInputBoxs.typeFaceInputCheckBoxs .typeTxtIcon03::before {
   background-image: url(/src/assets/media/toolsImg/typeface/bold.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/typeface/bold.svg);
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .typeFaceInputBoxs.typeFaceInputCheckBoxs .typeTxtIcon04::before {
   background-image: url(/src/assets/media/toolsImg/typeface/italic.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/typeface/italic.svg);
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .typeFaceInputBoxs.typeFaceInputCheckBoxs .typeTxtIcon05::before {
   background-image: url(/src/assets/media/toolsImg/typeface/strike.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/typeface/strike.svg);
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .typeFaceInputBoxs.typeFaceInputRadioBoxs .typeRadioIcon01::before {
   background-image: url(/src/assets/media/toolsImg/typeface/align-left.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/typeface/align-left.svg);
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .typeFaceInputBoxs.typeFaceInputRadioBoxs .typeRadioIcon02::before {
   background-image: url(/src/assets/media/toolsImg/typeface/align-center.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/typeface/align-center.svg);
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .typeFaceInputBoxs.typeFaceInputRadioBoxs .typeRadioIcon03::before {
   background-image: url(/src/assets/media/toolsImg/typeface/align-justify.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/typeface/align-justify.svg);
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .typeFaceInputBoxs.typeFaceInputRadioBoxs .typeRadioIcon04::before {
   background-image: url(/src/assets/media/toolsImg/typeface/align-right.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/typeface/align-right.svg);
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsScreenSection {
   width: 100%;
@@ -2520,8 +3000,8 @@ input[type=number]::-webkit-inner-spin-button {
   width: 100%;
   height: 100%;
   position: relative;
-  background-image: linear-gradient(rgba(56, 51, 57, 0.3019607843) 0%, rgba(18, 18, 19, 0.5019607843) 100%);
-  -webkit-background-image: linear-gradient(rgba(56, 51, 57, 0.3019607843) 0%, rgba(18, 18, 19, 0.5019607843) 100%);
+  background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
+  -webkit-background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsScreenSection .toolScreenBoxs::before {
   content: "";
@@ -2531,6 +3011,7 @@ input[type=number]::-webkit-inner-spin-button {
   top: 0;
   left: 0;
   background-image: url(/src/assets/media/dottedBack.svg);
+  -webkit-background-image: url(/src/assets/media/dottedBack.svg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2562,6 +3043,7 @@ input[type=number]::-webkit-inner-spin-button {
   border: 1px solid rgba(104, 104, 104, 0.2);
   border-radius: 8px;
   background-image: linear-gradient(rgba(124, 115, 115, 0.4) 0%, rgba(57, 57, 57, 0.4) 100%);
+  -webkit-background-image: linear-gradient(rgba(124, 115, 115, 0.4) 0%, rgba(57, 57, 57, 0.4) 100%);
   position: relative;
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsScreenSection .toolScreenBoxs .plusBtnBoxs button::after {
@@ -2577,9 +3059,11 @@ input[type=number]::-webkit-inner-spin-button {
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsScreenSection .toolScreenBoxs .plusBtnBoxs button:nth-child(1)::after {
   background-image: url(/src/assets/media/toolsImg/plus.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/plus.svg);
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsScreenSection .toolScreenBoxs .plusBtnBoxs button:nth-child(2)::after {
   background-image: url(/src/assets/media/toolsImg/minus.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/minus.svg);
 }
 
 body #copyStateWrappers {
@@ -2588,6 +3072,9 @@ body #copyStateWrappers {
   height: 100%;
   margin: 0 auto;
   background-color: #232325;
+}
+body #copyStateWrappers::-webkit-scrollbar {
+  display: none;
 }
 body #copyStateWrappers .copyStateContentWrap {
   padding: 58px 0px 0px 70px;
@@ -2599,8 +3086,8 @@ body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs {
   display: flex;
   align-items: center;
   border-radius: 10px;
-  background-image: linear-gradient(rgba(56, 51, 57, 0.3019607843) 0%, rgba(18, 18, 19, 0.5019607843) 100%);
-  -webkit-background-image: linear-gradient(rgba(56, 51, 57, 0.3019607843) 0%, rgba(18, 18, 19, 0.5019607843) 100%);
+  background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
+  -webkit-background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
   position: relative;
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs::before {
@@ -2611,6 +3098,7 @@ body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs::before {
   top: 0;
   left: 0;
   background-image: url(/src/assets/media/dottedBack.svg);
+  -webkit-background-image: url(/src/assets/media/dottedBack.svg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2661,7 +3149,8 @@ body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs .stor
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs .storageBoxWrappers .storageBox {
   max-width: 236px;
   border-radius: 10px;
-  background-image: linear-gradient(rgba(56, 51, 57, 0.3019607843) 0%, rgba(18, 18, 19, 0.5019607843) 100%);
+  background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
+  -webkit-background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
   border: 1px solid transparent;
   margin: 0 auto;
   overflow: hidden;
@@ -2709,9 +3198,11 @@ body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs .stor
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs .storageBoxWrappers .storageBox .storageBoxTitles h3.stor-blue::before {
   background-image: url(/src/assets/media/copyState/stor-blue.svg);
+  -webkit-background-image: url(/src/assets/media/copyState/stor-blue.svg);
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs .storageBoxWrappers .storageBox .storageBoxTitles h3.stor-green::before {
   background-image: url(/src/assets/media/copyState/stor-green.svg);
+  -webkit-background-image: url(/src/assets/media/copyState/stor-green.svg);
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs .storageBoxWrappers .storageBox .storageBoxDatas {
   width: calc(100% - 20px);
@@ -2744,36 +3235,47 @@ body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs .stor
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs .storageBoxWrappers .storageBox .storageBoxDatas ul li.data-blue {
   background-image: linear-gradient(#0F98E6 0%, #0C6CA2 100%);
+  -webkit-background-image: linear-gradient(#0F98E6 0%, #0C6CA2 100%);
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs .storageBoxWrappers .storageBox .storageBoxDatas ul li.data-yellow {
   background-image: linear-gradient(#F0A23D 0%, #C97911 100%);
+  -webkit-background-image: linear-gradient(#F0A23D 0%, #C97911 100%);
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs .storageBoxWrappers .storageBox .storageBoxDatas ul li.data-purple {
   background-image: linear-gradient(#B56DD4 0%, #994CBB 100%);
+  -webkit-background-image: linear-gradient(#B56DD4 0%, #994CBB 100%);
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs .storageBoxWrappers .storageBox .storageBoxDatas ul li.data-green {
   background-image: linear-gradient(#32D5C9 0%, #1A857D 100%);
+  -webkit-background-image: linear-gradient(#32D5C9 0%, #1A857D 100%);
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs .storageBoxWrappers .storageBox .storageBoxDatas ul li.data-orange {
   background-image: linear-gradient(#E16F65 0%, #AF352B 100%);
+  -webkit-background-image: linear-gradient(#E16F65 0%, #AF352B 100%);
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs .storageBoxWrappers .storageBox .storageBoxDatas ul li.data-lightYellow {
   background-image: linear-gradient(#FDE652 0%, #C8B53A 100%);
+  -webkit-background-image: linear-gradient(#FDE652 0%, #C8B53A 100%);
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs .storageBoxWrappers .storageBox .storageBoxDatas ul li.data-lightPurple {
   background-image: linear-gradient(#9A8FFF 0%, #6C5EED 100%);
+  -webkit-background-image: linear-gradient(#9A8FFF 0%, #6C5EED 100%);
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs .storageBoxWrappers .storageBox .storageBoxDatas ul li.data-lightGreen {
   background-image: linear-gradient(#96F33F 0%, #61A621 100%);
+  -webkit-background-image: linear-gradient(#96F33F 0%, #61A621 100%);
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs .storageBoxWrappers .storageBox .storageBoxDatas ul li.data-deepBlue {
   background-image: linear-gradient(#494CDA 0%, #2D2F9B 100%);
+  -webkit-background-image: linear-gradient(#494CDA 0%, #2D2F9B 100%);
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs .storageBoxWrappers .storageBox .storageBoxDatas ul li.data-deepPurple {
   background-image: linear-gradient(#991BD3 0%, #7917A6 100%);
+  -webkit-background-image: linear-gradient(#991BD3 0%, #7917A6 100%);
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs .storageBoxWrappers .storageBox .storageBoxDatas ul li.data-deepGreen {
   background-image: linear-gradient(#1D4D57 0%, #062B34 100%);
+  -webkit-background-image: linear-gradient(#1D4D57 0%, #062B34 100%);
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs .storageBoxWrappers .storageBox .storageBoxDatas ul li p {
   color: #fff;
@@ -2873,6 +3375,7 @@ body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .plusBtnBoxs bu
   border: 1px solid rgba(104, 104, 104, 0.2);
   border-radius: 8px;
   background-image: linear-gradient(rgba(124, 115, 115, 0.4) 0%, rgba(57, 57, 57, 0.4) 100%);
+  -webkit-background-image: linear-gradient(rgba(124, 115, 115, 0.4) 0%, rgba(57, 57, 57, 0.4) 100%);
   position: relative;
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .plusBtnBoxs button::after {
@@ -2888,9 +3391,11 @@ body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .plusBtnBoxs bu
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .plusBtnBoxs button:nth-child(1)::after {
   background-image: url(/src/assets/media/toolsImg/plus.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/plus.svg);
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .plusBtnBoxs button:nth-child(2)::after {
   background-image: url(/src/assets/media/toolsImg/minus.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/minus.svg);
 }
 body #copyStateWrappers .copyStateContentWrap .copyAddMenus {
   position: fixed;
@@ -2910,6 +3415,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyAddBtns button 
   border: 1px solid rgba(104, 104, 104, 0.2);
   border-radius: 8px;
   background-image: linear-gradient(rgba(124, 115, 115, 0.4) 0%, rgba(57, 57, 57, 0.4) 100%);
+  -webkit-background-image: linear-gradient(rgba(124, 115, 115, 0.4) 0%, rgba(57, 57, 57, 0.4) 100%);
   position: relative;
 }
 body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyAddBtns button::after {
@@ -2923,9 +3429,11 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyAddBtns button:
   background-repeat: no-repeat;
   background-size: 12px 12px;
   background-image: url(/src/assets/media/copyState/openMenu.svg);
+  -webkit-background-image: url(/src/assets/media/copyState/openMenu.svg);
 }
 body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyAddBtns button.active::after {
   background-image: url(/src/assets/media/copyState/closeMenu.svg);
+  -webkit-background-image: url(/src/assets/media/copyState/closeMenu.svg);
 }
 body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus {
   position: relative;
@@ -2952,8 +3460,8 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   border-bottom-left-radius: 10px;
   border: 1px solid #686868;
   border-right: 0px;
-  background-image: linear-gradient(rgba(56, 51, 57, 0.3019607843) 0%, rgba(18, 18, 19, 0.5019607843) 100%);
-  -webkit-background-image: linear-gradient(rgba(56, 51, 57, 0.3019607843) 0%, rgba(18, 18, 19, 0.5019607843) 100%);
+  background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
+  -webkit-background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
   transform: translateX(100%);
@@ -3024,8 +3532,8 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   padding: 0px 25px;
   height: 50px;
   display: block;
-  background-image: linear-gradient(rgba(56, 51, 57, 0.3019607843) 0%, rgba(18, 18, 19, 0.5019607843) 100%);
-  -webkit-background-image: linear-gradient(rgba(56, 51, 57, 0.3019607843) 0%, rgba(18, 18, 19, 0.5019607843) 100%);
+  background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
+  -webkit-background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
   border-radius: 8px;
@@ -3103,6 +3611,17 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   background-color: #313032;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
+  position: relative;
+}
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageSectionCont::after {
+  content: "";
+  width: 35.7142857143%;
+  height: 0.5px;
+  position: absolute;
+  top: 0px;
+  left: 33.3333333333%;
+  background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
+  -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
 }
 #userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageSectionCont .userManageSectionContDevide {
   margin: 0 auto;
@@ -3153,6 +3672,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   color: #8E8E8E;
   cursor: pointer;
   background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
   background-size: 18px;
   background-position: 94% center;
   background-repeat: no-repeat;
@@ -3269,6 +3789,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   top: 13px;
   left: 12px;
   background-image: url(/src/assets/media/userManage/date.svg);
+  -webkit-background-image: url(/src/assets/media/userManage/date.svg);
   background-position: 0px center;
   background-size: 18px 18px;
   background-repeat: no-repeat;
@@ -3281,6 +3802,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   top: 13px;
   right: 12px;
   background-image: url(/src/assets/media/userManage/arrowDown.svg);
+  -webkit-background-image: url(/src/assets/media/userManage/arrowDown.svg);
   background-position: 0px center;
   background-size: 18px 18px;
   background-repeat: no-repeat;
@@ -3309,6 +3831,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   top: 14px;
   left: 14px;
   background-image: url(/src/assets/media/userManage/searchLine.svg);
+  -webkit-background-image: url(/src/assets/media/userManage/searchLine.svg);
   background-position: left center;
   background-size: 15px 15px;
   background-repeat: no-repeat;
@@ -3369,6 +3892,30 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   background-repeat: no-repeat;
   display: block;
 }
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataBtnBoxs .userManageDataBtnList li button.userHiddenBtn {
+  position: relative;
+}
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataBtnBoxs .userManageDataBtnList li button.userHiddenBtn.active {
+  background-image: linear-gradient(150deg, rgba(124, 115, 115, 0.4) 0%, rgba(57, 57, 57, 0.4) 100%);
+  -webkit-background-image: linear-gradient(rgba(124, 115, 115, 0.4) 0%, rgba(57, 57, 57, 0.4) 100%);
+}
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataBtnBoxs .userManageDataBtnList li button.userHiddenBtn.isChecked {
+  border: 1px solid #0BA7FE;
+}
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataBtnBoxs .userManageDataBtnList li button.userHiddenBtn.isChecked::before {
+  opacity: 1;
+}
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataBtnBoxs .userManageDataBtnList li button.userHiddenBtn::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 100%;
+  background-color: #0BA7FE;
+  position: absolute;
+  right: 7px;
+  top: 7px;
+  opacity: 0;
+}
 #userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataBtnBoxs .userManageDataBtnList li button.userDataBtn03 {
   width: 130px;
   flex-direction: row;
@@ -3377,20 +3924,25 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
 }
 #userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataBtnBoxs .userManageDataBtnList li button.userDataBtn01 span {
   background-image: url(/src/assets/media/userManage/pdf.svg);
+  -webkit-background-image: url(/src/assets/media/userManage/pdf.svg);
 }
 #userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataBtnBoxs .userManageDataBtnList li button.userDataBtn02 span {
   background-image: url(/src/assets/media/userManage/csv.svg);
+  -webkit-background-image: url(/src/assets/media/userManage/csv.svg);
 }
 #userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataBtnBoxs .userManageDataBtnList li button.userDataBtn03 span {
   background-image: url(/src/assets/media/userManage/addBtn.svg);
+  -webkit-background-image: url(/src/assets/media/userManage/addBtn.svg);
 }
 #userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataBtnBoxs .userManageDataBtnList li button.userDataBtn04 span {
   background-image: url(/src/assets/media/userManage/manage.svg);
+  -webkit-background-image: url(/src/assets/media/userManage/manage.svg);
 }
 #userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataBtnBoxs .userManageHiddenBoxs {
   position: absolute;
   right: -3px;
   top: 44px;
+  z-index: 999;
   padding: 13px 16px;
   width: 177px;
   margin: 0 auto;
@@ -3431,6 +3983,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
 #userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataBtnBoxs .userManageHiddenBoxs ul li input[type=checkbox]:checked + label span {
   background-color: #0BA7FE;
   background-image: url(/src/assets/media/toolsImg/checkFill.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/checkFill.svg);
   background-repeat: no-repeat;
   background-size: 14px;
   background-position: center center;
@@ -3452,8 +4005,8 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   height: 637px;
   border: 1px solid #686868;
   border-radius: 10px;
-  background-image: linear-gradient(rgba(56, 51, 57, 0.3019607843) 0%, rgba(18, 18, 19, 0.5019607843) 100%);
-  -webkit-background-image: linear-gradient(rgba(56, 51, 57, 0.3019607843) 0%, rgba(18, 18, 19, 0.5019607843) 100%);
+  background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
+  -webkit-background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
   overflow: hidden;
 }
 #userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap table {
@@ -3491,6 +4044,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   width: 12px;
   height: 10px;
   background-image: url(/src/assets/media/userManage/groupBtn.svg);
+  -webkit-background-image: url(/src/assets/media/userManage/groupBtn.svg);
   background-repeat: no-repeat;
   background-size: 12px 12px;
   background-position: center center;
@@ -3535,12 +4089,14 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
 #userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap table tr td input[type=checkbox]:checked + label::before {
   background-color: #0BA7FE;
   background-image: url(/src/assets/media/toolsImg/checkFill.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/checkFill.svg);
   background-repeat: no-repeat;
   background-size: 14px;
   background-position: center center;
 }
 #userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap table tr td.imgBoxs {
   background-image: url(/src/assets/media/userManage/dataImg.svg);
+  -webkit-background-image: url(/src/assets/media/userManage/dataImg.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
@@ -3571,10 +4127,12 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
 }
 #userManageWrappers .userManageWrap .userManageBoxs .pageNationWrappers .pageNationBoxs button.pagePrev {
   background-image: url(/src/assets/media/userManage/prev.svg);
+  -webkit-background-image: url(/src/assets/media/userManage/prev.svg);
   margin-right: 8px;
 }
 #userManageWrappers .userManageWrap .userManageBoxs .pageNationWrappers .pageNationBoxs button.pageNext {
   background-image: url(/src/assets/media/userManage/next.svg);
+  -webkit-background-image: url(/src/assets/media/userManage/next.svg);
   margin-left: 8px;
 }
 #userManageWrappers .userManageWrap .userManageBoxs .pageNationWrappers .pageNationBoxs .pageNatioNumbers {
@@ -3596,6 +4154,1822 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
 }
 #userManageWrappers .userManageWrap .userManageBoxs .pageNationWrappers .pageNationBoxs .pageNatioNumbers span:hover, #userManageWrappers .userManageWrap .userManageBoxs .pageNationWrappers .pageNationBoxs .pageNatioNumbers span.active {
   background-color: #0F98E6;
+}
+
+#editWrappers {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #232325;
+  overflow-y: auto;
+}
+#editWrappers::-webkit-scrollbar {
+  display: none;
+}
+#editWrappers .editWrap {
+  padding: 58px 0px 0px 70px;
+  height: calc(100% - 58px);
+}
+#editWrappers .editWrap .editTitlesBox {
+  width: 100%;
+  padding: 35px 0px 0px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #6A6A6A;
+}
+#editWrappers .editWrap .editTitlesBox a {
+  padding: 0px 49px 19px;
+  color: #858585;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  position: relative;
+}
+#editWrappers .editWrap .editTitlesBox a::before {
+  position: absolute;
+  content: "";
+  width: 0px;
+  height: 1px;
+  bottom: 0px;
+  left: 0px;
+  background-color: #fff;
+  transition: 800ms;
+}
+#editWrappers .editWrap .editTitlesBox a.active {
+  color: #fff;
+}
+#editWrappers .editWrap .editTitlesBox a.active::before {
+  width: 100%;
+  transition: 800ms;
+}
+#editWrappers .editWrap .editContBoxs {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: calc(100% - 74px);
+}
+#editWrappers .editWrap .editContBoxs .editContMain {
+  padding: 30px 10px 55px;
+  width: calc(100% - 57px - 20px);
+  height: calc(100% - 85px);
+  border-right: 1px solid rgba(106, 106, 106, 0.3019607843);
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainTitles {
+  width: calc(100% - 30px - 0px);
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainTitles h3 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  display: inline-block;
+  padding-right: 20px;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainTitles .editSelects {
+  width: 400px;
+  max-width: 400px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid #686868;
+  background-color: rgba(22, 22, 22, 0.4);
+  position: relative;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainTitles .editSelects .editSelectsTitleBtn {
+  width: 100%;
+  padding: 0px 13px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  display: block;
+  background-color: #373639;
+  font-size: 13px;
+  text-align: left;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  border-radius: 6px;
+  color: #8E8E8E;
+  cursor: pointer;
+  background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
+  background-size: 18px;
+  background-position: 97% center;
+  background-repeat: no-repeat;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainTitles .editSelects .editSelectsTitleBtn.active {
+  background-color: transparent;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainTitles .editSelects .editSelectsTitleBtn span {
+  width: 17px;
+  height: 17px;
+  background-color: #0F98E6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.2px;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainTitles .editSelects .editSelectList {
+  position: absolute;
+  z-index: 9999;
+  top: 43px;
+  left: 0;
+  width: 100%;
+  height: 0px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(22, 22, 22, 0.4);
+  opacity: 1;
+  transition: 300ms;
+  overflow: hidden;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainTitles .editSelects .editSelectList.active {
+  opacity: 1;
+  height: 144px;
+  z-index: 9999;
+  border: 1px solid rgba(104, 104, 104, 0.4);
+  transition: height 500ms;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainTitles .editSelects .editSelectList .editSelectListMember {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: calc(100% - 2px);
+  height: 100%;
+  margin: 0 auto;
+  background-color: transparent;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 9999;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainTitles .editSelects .editSelectList .editSelectListMember::-webkit-scrollbar {
+  display: none;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainTitles .editSelects .editSelectList .editSelectListMember li {
+  width: 100%;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainTitles .editSelects .editSelectList .editSelectListMember li:hover {
+  background-image: linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%, rgba(57, 57, 57, 0.2) 100%);
+  -webkit-background-image: linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%, rgba(57, 57, 57, 0.2) 100%);
+  opacity: 100%;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainTitles .editSelects .editSelectList .editSelectListMember li p {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  width: calc(100% - 32px);
+  padding: 0px 16px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainSaveBtnBoxs {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainSaveBtnBoxs button {
+  height: 36px;
+  width: 144px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-image: linear-gradient(to left, #0F98E6 0%, #085580 100%);
+  -webkit-background-image: linear-gradient(to left, #0F98E6 0%, #085580 100%);
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen {
+  width: 100%;
+  height: calc(100% - 38px - 46px);
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid #686868;
+  background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
+  -webkit-background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
+  position: relative;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(/src/assets/media/dottedBack.svg);
+  -webkit-background-image: url(/src/assets/media/dottedBack.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 50%;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs {
+  padding: 20px;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs {
+  height: 224px;
+  min-width: 418px;
+  max-width: 418px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #686868;
+  background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
+  -webkit-background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  overflow: hidden;
+  position: relative;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs::after {
+  content: "";
+  width: 35.7142857143%;
+  height: 0.5px;
+  position: absolute;
+  top: 0px;
+  left: 33.3333333333%;
+  background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
+  -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs .editBoxsTitles {
+  padding: 0px 0px 0px 16px;
+  height: 40px;
+  width: calc(100% - 16px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #323133;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs .editBoxsTitles .editBoxsTitleSpace {
+  display: flex;
+  gap: 10px;
+  /* 셀렉박스 영역*/
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs .editBoxsTitles .editBoxsTitleSpace h5 {
+  color: #D1D1D1;
+  font-size: 12px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs .editBoxsTitles .editBoxsTitleSpace .editSelects {
+  width: 143px;
+  max-width: 143px;
+  height: 23px;
+  border-radius: 5px;
+  border: 1px solid #686868;
+  background-color: rgba(22, 22, 22, 0.4);
+  position: relative;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs .editBoxsTitles .editBoxsTitleSpace .editSelects .editSelectsTitleBtn {
+  width: 100%;
+  padding: 0px 8px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  display: block;
+  background-color: #373639;
+  font-size: 10px;
+  text-align: left;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
+  background-size: 18px;
+  background-position: 97% center;
+  background-repeat: no-repeat;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs .editBoxsTitles .editBoxsTitleSpace .editSelects .editSelectsTitleBtn.active {
+  background-color: transparent;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs .editBoxsTitles .editBoxsTitleSpace .editSelects .editSelectsTitleBtn span {
+  width: 17px;
+  height: 17px;
+  background-color: #0F98E6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.2px;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs .editBoxsTitles .editBoxsTitleSpace .editSelects .editSelectList {
+  position: absolute;
+  z-index: 9999999;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  height: 0px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(22, 22, 22, 0.4);
+  opacity: 1;
+  transition: 300ms;
+  overflow: hidden;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs .editBoxsTitles .editBoxsTitleSpace .editSelects .editSelectList.active {
+  opacity: 1;
+  height: 92px;
+  z-index: 9999;
+  border: 1px solid rgba(104, 104, 104, 0.4);
+  transition: height 500ms;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs .editBoxsTitles .editBoxsTitleSpace .editSelects .editSelectList .editSelectListMember {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: calc(100% - 2px);
+  height: 100%;
+  margin: 0 auto;
+  background-color: transparent;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 9999;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs .editBoxsTitles .editBoxsTitleSpace .editSelects .editSelectList .editSelectListMember::-webkit-scrollbar {
+  display: none;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs .editBoxsTitles .editBoxsTitleSpace .editSelects .editSelectList .editSelectListMember li {
+  width: 100%;
+  height: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs .editBoxsTitles .editBoxsTitleSpace .editSelects .editSelectList .editSelectListMember li:hover {
+  background-image: linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%, rgba(57, 57, 57, 0.2) 100%);
+  -webkit-background-image: linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%, rgba(57, 57, 57, 0.2) 100%);
+  opacity: 100%;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs .editBoxsTitles .editBoxsTitleSpace .editSelects .editSelectList .editSelectListMember li p {
+  color: #fff;
+  font-size: 10px;
+  font-weight: 400;
+  width: calc(100% - 32px);
+  padding: 0px 16px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs .editBoxsTitles .editBoxsTitleSpace .editBoxCloseBtn {
+  width: 30px;
+  height: 40px;
+  background-image: url(/src/assets/media/edit/closeBtn.svg);
+  -webkit-background-image: url(/src/assets/media/edit/closeBtn.svg);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs .editBoxDatas {
+  width: 100%;
+  height: calc(100% - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs .editBoxDatas .nonData {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs .editSizeBtn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 8px;
+  background-color: rgba(157, 157, 157, 0.1019607843);
+  width: 30px;
+  height: 30px;
+  z-index: 99;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs .editSizeBtn::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 0;
+  top: 0;
+  background-image: url(/src/assets/media/edit/resize.svg);
+  -webkit-background-image: url(/src/assets/media/edit/resize.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+}
+#editWrappers .editWrap .editContBoxs .editHiddenMenu {
+  height: 100%;
+  width: 57px;
+  overflow: hidden;
+}
+#editWrappers .editWrap .editContBoxs .editHiddenMenu.active {
+  width: 20%;
+  transition: width 800ms;
+}
+#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuBtnBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 56px;
+  border-bottom: 1px solid #6A6A6A;
+}
+#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuBtnBox span {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  border-right: 1px solid #474748;
+  width: 0px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  opacity: 0;
+}
+#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuBtnBox span.active {
+  width: calc(100% - 27px);
+  padding: 0px 7px 0px 20px;
+  opacity: 1;
+  transition: opacity 3.5s;
+}
+#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuBtnBox button {
+  width: 57px;
+  height: 100%;
+  background-image: url(/src/assets/media/edit/hiddenOpen.svg);
+  -webkit-background-image: url(/src/assets/media/edit/hiddenOpen.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 31px 31px;
+}
+#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuBtnBox button.active {
+  background-image: url(/src/assets/media/edit/hiddenClose.svg);
+  -webkit-background-image: url(/src/assets/media/edit/hiddenClose.svg);
+}
+#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList {
+  width: 0px;
+  height: calc(100% - 0px - 94px);
+  overflow: hidden;
+  opacity: 0;
+  overflow-y: scroll;
+}
+#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList.active {
+  width: calc(100% - 40px);
+  padding: 19px 20px;
+  opacity: 1;
+  transition: opacity 3s;
+}
+#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList::-webkit-scrollbar {
+  width: 2px;
+}
+#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList::-webkit-scrollbar-thumb {
+  height: 10px !important;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+}
+#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList ul li {
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList ul li button {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  background-image: url(/src/assets/media/edit/info.svg);
+  -webkit-background-image: url(/src/assets/media/edit/info.svg);
+  background-position: 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  text-align: left;
+  padding: 0px 0px 0px 42px;
+  border-radius: 10px;
+  border: 1px solid #686868;
+  position: relative;
+}
+#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList ul li button::after {
+  content: "";
+  width: 35.7142857143%;
+  height: 0.5px;
+  position: absolute;
+  top: 0px;
+  left: 33.3333333333%;
+  background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
+  -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
+}
+#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList ul li button.active {
+  border: 1px solid #0BA7FE;
+}
+
+#customWrappers {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #232325;
+  overflow-y: auto;
+}
+#customWrappers::-webkit-scrollbar {
+  display: none;
+}
+#customWrappers .customWrap {
+  padding: 58px 0px 0px 70px;
+}
+#customWrappers .customWrap .customTitlesBox {
+  width: 100%;
+  padding: 35px 0px 0px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #6A6A6A;
+}
+#customWrappers .customWrap .customTitlesBox a {
+  padding: 0px 49px 19px;
+  color: #858585;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  position: relative;
+}
+#customWrappers .customWrap .customTitlesBox a::before {
+  position: absolute;
+  content: "";
+  width: 0px;
+  height: 1px;
+  bottom: 0px;
+  left: 0px;
+  background-color: #fff;
+  transition: 800ms;
+}
+#customWrappers .customWrap .customTitlesBox a.active {
+  color: #fff;
+}
+#customWrappers .customWrap .customTitlesBox a.active::before {
+  width: 100%;
+  transition: 800ms;
+}
+#customWrappers .customWrap .customContBoxs {
+  width: 100%;
+  height: calc(100% - 74px);
+  padding-bottom: 135px;
+}
+#customWrappers .customWrap .customContBoxs .customSpace {
+  height: calc(50% - 40px);
+  padding: 40px 50px 65px;
+  border-bottom: 1px solid #6A6A6A;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .titleBoxs {
+  width: 25%;
+  height: 100%;
+  max-width: 432px;
+  float: left;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .titleBoxs h3 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  padding-bottom: 20px;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .titleBoxs p {
+  color: #7B808F;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.2px;
+  line-height: 20px;
+  word-break: keep-all;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  gap: 35px;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController input[type=radio] {
+  display: none;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided {
+  gap: 35px;
+  flex: 1;
+  max-width: 554px;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided input[type=radio]:checked + .labelBoxs {
+  border: 1px solid #0BA7FE;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided input[type=radio]:checked + .labelBoxs .boxsTop p {
+  border: 1px solid #0BA7FE;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided input[type=radio]:checked + .labelBoxs .boxsTop p i {
+  opacity: 1;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided .labelBoxs {
+  display: block;
+  width: calc(100% - 40px - 2px);
+  padding: 20px;
+  height: 318px;
+  border: 1px solid #686868;
+  border-radius: 10px;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided .labelBoxs .boxsTop {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided .labelBoxs .boxsTop h3 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  display: flex;
+  justify-content: flex-start;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided .labelBoxs .boxsTop h3 span {
+  background-size: 20px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 5px;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided .labelBoxs .boxsTop h3 span.whitetheme {
+  background-image: url(/src/assets/media/customizing/white.svg);
+  -webkit-background-image: url(/src/assets/media/customizing/white.svg);
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided .labelBoxs .boxsTop h3 span.blacktheme {
+  background-image: url(/src/assets/media/customizing/black.svg);
+  -webkit-background-image: url(/src/assets/media/customizing/black.svg);
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided .labelBoxs .boxsTop p {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  border: 1px solid #3F3F3F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided .labelBoxs .boxsTop p i {
+  width: 9px;
+  height: 9px;
+  display: block;
+  border-radius: 100%;
+  background-color: #0BA7FE;
+  opacity: 0;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided .labelBoxs .boxsBottom {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  height: calc(100% - 20px - 17px);
+  margin-top: 17px;
+  border: 1px solid #686868;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided .labelBoxs .boxsBottom.blackTheme {
+  background-image: url(/src/assets/media/customizing/blackBack.svg);
+  -webkit-background-image: url(/src/assets/media/customizing/blackBack.svg);
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided .labelBoxs .boxsBottom.whiteTheme {
+  background-image: url(/src/assets/media/customizing/whiteBack.svg);
+  -webkit-background-image: url(/src/assets/media/customizing/whiteBack.svg);
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup {
+  width: calc(100% - 2px);
+  height: 430px;
+  border: 1px solid #686868;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup.active {
+  height: 30px;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup::after {
+  content: "";
+  width: 25%;
+  height: 0.5px;
+  position: absolute;
+  top: 0px;
+  left: 37.037037037%;
+  background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
+  -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmSetupTitles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 20px);
+  padding: 10px;
+  height: 10px;
+  background-color: #373639;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmSetupTitles h5 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmSetupTitles button {
+  width: 20px;
+  height: 20px;
+  background-size: 18px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(/src/assets/media/customizing/arrowDown.svg);
+  -webkit-background-image: url(/src/assets/media/customizing/arrowDown.svg);
+  position: relative;
+  z-index: 9999;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmSetupTitles button.active {
+  background-image: url(/src/assets/media/customizing/arrowUp.svg);
+  -webkit-background-image: url(/src/assets/media/customizing/arrowUp.svg);
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs {
+  width: 100%;
+  height: calc(100% - 30px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs.active {
+  display: none;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul {
+  padding: 14px 20px;
+  width: calc(100% - 40px);
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul li {
+  width: 100%;
+  padding: 3px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul li h3 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul li .datas {
+  float: left;
+  width: 93%;
+  height: 3px;
+  border-radius: 26px;
+  background-color: #404A55;
+  margin-right: 6px;
+  position: relative;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul li .datas::before {
+  width: 14px;
+  height: 14px;
+  content: "";
+  border-radius: 100%;
+  position: absolute;
+  top: -6px;
+  left: 80%;
+  box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.1803921569);
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul li .datas em {
+  position: absolute;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  display: block;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul li .datas.datas01::before {
+  left: 50%;
+  background-color: #25ABF8;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul li .datas.datas01 em {
+  width: 50%;
+  background-image: linear-gradient(to right, #3064A9 0%, #0BA7FE 100%);
+  -webkit-background-image: linear-gradient(to right, #3064A9 0%, #0BA7FE 100%);
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul li .datas.datas02::before {
+  background-color: #4AF0E4;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul li .datas.datas02 em {
+  background-image: linear-gradient(to right, #33837D 0%, #31D8CC 100%);
+  -webkit-background-image: linear-gradient(to right, #33837D 0%, #31D8CC 100%);
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul li .datas.datas03::before {
+  background-color: #9AD65C;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul li .datas.datas03 em {
+  background-image: linear-gradient(to right, #63794B 0%, #8FCF4B 100%);
+  -webkit-background-image: linear-gradient(to right, #63794B 0%, #8FCF4B 100%);
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul li .datas.datas04::before {
+  background-color: #4D70F7;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul li .datas.datas04 em {
+  background-image: linear-gradient(to right, #32489D 0%, #3F63F3 100%);
+  -webkit-background-image: linear-gradient(to right, #32489D 0%, #3F63F3 100%);
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul li span {
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul li p {
+  font-weight: 400;
+  font-size: 10px;
+  color: #7B808F;
+  position: relative;
+  padding: 0px 0px 0px 9px;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul li p::before {
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  left: 0px;
+  top: 5px;
+  border-radius: 100%;
+  background-color: #7B808F;
+  content: "";
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul li .radioWrapper {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul li .radioWrapper input[type=radio]:checked + label span::before {
+  opacity: 1;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul li .radioWrapper label {
+  color: #fff;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul li .radioWrapper label span {
+  width: 12px;
+  height: 12px;
+  border: 1px solid #fff;
+  border-radius: 100%;
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul li .radioWrapper label span::before {
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+  border-radius: 100%;
+  opacity: 0;
+}
+#customWrappers .customWrap .customContBoxs .customsSaveBtnsBoxs {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 30px 270px 0px 0px;
+}
+#customWrappers .customWrap .customContBoxs .customsSaveBtnsBoxs button {
+  width: 87px;
+  height: 43px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  background-image: linear-gradient(to left, #4D4B50 0%, #2F2E31 100%);
+  -webkit-background-image: linear-gradient(to left, #4D4B50 0%, #2F2E31 100%);
+}
+#customWrappers .customWrap .customContBoxs .customsSaveBtnsBoxs button.customSaveBtn {
+  background-image: linear-gradient(to left, #0F98E6 0%, #085580 100%);
+  -webkit-background-image: linear-gradient(to left, #0F98E6 0%, #085580 100%);
+}
+
+.userGroupPopWrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(35, 35, 37, 0.5411764706);
+  z-index: 999999999;
+  display: none;
+}
+.userGroupPopWrapper.active {
+  display: block;
+}
+.userGroupPopWrapper .userGroupPopFlex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont {
+  width: 868px;
+  height: 780px;
+  border-radius: 10px;
+  border: 1px solid #686868;
+  background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
+  -webkit-background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  overflow: hidden;
+  position: relative;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContTitles {
+  padding: 0px 12px 0px 20px;
+  height: 47px;
+  width: calc(100% - 32px);
+  background-color: rgba(15, 152, 230, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #686868;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContTitles h3 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  display: flex;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContTitles h3 span {
+  width: 12px;
+  height: 20px;
+  background-size: 12px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(/src/assets/media/popUp/add.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/add.svg);
+  margin-right: 8px;
+  display: inline-block;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContTitles button {
+  width: 22px;
+  height: 22px;
+  background-size: 22px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(/src/assets/media/popUp/close.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/close.svg);
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents {
+  width: 100%;
+  padding: 20px 0px;
+  height: calc(100% - 87px);
+  margin: 0 auto;
+  overflow-y: scroll;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents::-webkit-scrollbar {
+  width: 2px;
+  background-color: transparent !important;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents::-webkit-scrollbar-thumb {
+  height: 10px !important;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents::-webkit-scrollbar-button:vertical:start:decrement {
+  display: block;
+  height: 25px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents::-webkit-scrollbar-button:vertical:start:increment {
+  display: block;
+  height: 25px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents::-webkit-scrollbar-button:vertical:end:decrement {
+  display: block;
+  height: 20px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section {
+  width: calc(100% - 40px);
+  padding: 0px 20px;
+  border-bottom: 1px solid #4B4B4B;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section:last-child {
+  border-bottom: none;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section .useGroupListBtnWrap01 {
+  width: 100%;
+  padding: 15px 0px 108px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section .useGroupListBtnWrap01 button {
+  width: 62px;
+  height: 36px;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  background-image: linear-gradient(to left, #4D4B50 0%, #2F2E31 100%);
+  -webkit-background-image: linear-gradient(to left, #4D4B50 0%, #2F2E31 100%);
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section .useGroupListBtnWrap01 button:nth-child(2) {
+  background-image: linear-gradient(to left, #0F98E6 0%, #085580 100%);
+  -webkit-background-image: linear-gradient(to left, #0F98E6 0%, #085580 100%);
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article {
+  display: flex;
+  width: 100%;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle01 {
+  gap: 24px;
+  padding-bottom: 20px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article input:focus, .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article textarea:focus {
+  outline: none;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article label {
+  color: #FF6156;
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.2px;
+  padding: 10px 0px 0px 10px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupPopInfo {
+  flex: 1;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupPopInfo:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupPopInfo ul:last-child {
+  margin-right: 0px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupPopInfo ul li {
+  /* 셀렉박스 */
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupPopInfo ul li h5 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  padding-bottom: 14px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupPopInfo ul li input[type=text], .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupPopInfo ul li textarea {
+  background-color: #373639;
+  border: 1px solid #686868;
+  border-radius: 8px;
+  color: #8E8E8E;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupPopInfo ul li input[type=text] {
+  width: calc(100% - 30px);
+  height: 36px;
+  padding: 0px 15px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupPopInfo ul li textarea {
+  width: calc(100% - 30px);
+  height: 163px;
+  padding: 15px;
+  resize: none;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupPopInfo ul li .userGroupSelects {
+  width: 100%;
+  max-width: 402px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid #686868;
+  background-color: #373639;
+  position: relative;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupPopInfo ul li .userGroupSelects .userGroupSelectsTitleBtn {
+  width: 100%;
+  padding: 0px 13px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  display: block;
+  background-color: transparent;
+  font-size: 13px;
+  text-align: left;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  border-radius: 6px;
+  color: #8E8E8E;
+  cursor: pointer;
+  background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
+  background-size: 18px;
+  background-position: 98% center;
+  background-repeat: no-repeat;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupPopInfo ul li .userGroupSelects .userGroupSelectList {
+  position: absolute;
+  z-index: 9999;
+  top: 42px;
+  left: 0;
+  width: 100%;
+  height: 0px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(55, 54, 57, 0.8);
+  opacity: 1;
+  transition: 300ms;
+  overflow: hidden;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupPopInfo ul li .userGroupSelects .userGroupSelectList.active {
+  opacity: 1;
+  height: 144px;
+  z-index: 9999;
+  border: 1px solid rgba(104, 104, 104, 0.4);
+  transition: height 500ms;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupPopInfo ul li .userGroupSelects .userGroupSelectList .userGroupSelectListMember {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: calc(100% - 2px);
+  height: 100%;
+  margin: 0 auto;
+  background-color: transparent;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 9999;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupPopInfo ul li .userGroupSelects .userGroupSelectList .userGroupSelectListMember::-webkit-scrollbar {
+  display: none;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupPopInfo ul li .userGroupSelects .userGroupSelectList .userGroupSelectListMember li {
+  width: 100%;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupPopInfo ul li .userGroupSelects .userGroupSelectList .userGroupSelectListMember li:hover {
+  background-image: linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%, rgba(57, 57, 57, 0.2) 100%);
+  -webkit-background-image: linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%, rgba(57, 57, 57, 0.2) 100%);
+  opacity: 100%;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupPopInfo ul li .userGroupSelects .userGroupSelectList .userGroupSelectListMember li p {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  width: calc(100% - 32px);
+  padding: 0px 16px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupHiddenInfo {
+  width: 100%;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupHiddenInfo .userGroupHiddenBtnBoxs {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupHiddenInfo .userGroupHiddenBtnBoxs button {
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  display: flex;
+  text-decoration: underline;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupHiddenInfo .userGroupHiddenBtnBoxs button i {
+  width: 18px;
+  height: 18px;
+  background-image: url(/src/assets/media/popUp/arrowDown.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/arrowDown.svg);
+  background-size: 18px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupHiddenInfo .userGroupHiddenBtnBoxs button.active i {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupHiddenInfo .userGroupHiddenBtnBoxs button span {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  background-image: url(/src/assets/media/popUp/hidden.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/hidden.svg);
+  background-size: 15px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-right: 6px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupHiddenInfo .hiddenPasswordCont {
+  padding: 20px;
+  width: calc(100% - 40px);
+  height: 205px;
+  background-color: #373639;
+  border: 1px solid #686868;
+  border-radius: 8px;
+  display: none;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupHiddenInfo .hiddenPasswordCont.active {
+  display: flex;
+  justify-content: space-between;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupHiddenInfo .hiddenPasswordCont ul {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupHiddenInfo .hiddenPasswordCont ul:first-child {
+  width: 70%;
+  display: flex;
+  align-items: unset;
+  flex-direction: column;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupHiddenInfo .hiddenPasswordCont ul li {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupHiddenInfo .hiddenPasswordCont ul li label {
+  padding: 10px 0px 0px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupHiddenInfo .hiddenPasswordCont ul li h5 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  padding-bottom: 14px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupHiddenInfo .hiddenPasswordCont ul li input[type=password] {
+  background-color: #373639;
+  border: 1px solid #686868;
+  border-radius: 8px;
+  color: #8E8E8E;
+  height: 36px;
+  width: 350px;
+  padding: 0px 15px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupHiddenInfo .hiddenPasswordCont ul button {
+  width: 137px;
+  height: 43px;
+  border-radius: 8px;
+  background-image: linear-gradient(to left, #0F98E6 0%, #085580 100%);
+  -webkit-background-image: linear-gradient(to left, #0F98E6 0%, #085580 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02:nth-child(1) {
+  padding-top: 25px;
+  padding-bottom: 35px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs01 {
+  padding: 20px;
+  width: calc(100% - 40px);
+  height: 62px;
+  margin: 0 auto;
+  background-color: #373639;
+  border-radius: 8px;
+  border: 1px solid #686868;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs01 h3 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  display: flex;
+  padding-bottom: 13px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs01 h3 span {
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  padding-left: 5px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs01 .userGroupSliders {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs01 .userGroupSliders ul {
+  max-width: 698px;
+  height: 35px;
+  overflow: hidden;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs01 .userGroupSliders ul li {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs01 .userGroupSliders ul li p {
+  padding: 8px 14px;
+  border: 1px solid #686868;
+  border-radius: 65px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs01 .userGroupSliders ul li p span {
+  color: #fff;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs01 .userGroupSliders ul li p button {
+  width: 17px;
+  height: 17px;
+  background-image: url(/src/assets/media/popUp/deleted.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/deleted.svg);
+  background-size: 17px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs01 .userGroupSliders .userGroupSlidersBtns {
+  width: calc(100% - 700px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+  top: -10px;
+  z-index: 999;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs01 .userGroupSliders .userGroupSlidersBtns button {
+  width: 20px;
+  height: 20px;
+  background-image: url(/src/assets/media/popUp/slideBtn.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/slideBtn.svg);
+  background-size: 18px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: block;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs01 .userGroupSliders .userGroupSlidersBtns button:first-child {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  margin-bottom: 6px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListControlBtnBoxs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListControlBtnBoxs button {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #4B4B4C;
+  border-radius: 8px;
+  background-color: rgba(157, 157, 157, 0.1019607843);
+  background-size: 16px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListControlBtnBoxs button:nth-child(1) {
+  background-image: url(/src/assets/media/popUp/plus.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/plus.svg);
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListControlBtnBoxs button:nth-child(2) {
+  background-image: url(/src/assets/media/popUp/minus.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/minus.svg);
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont {
+  width: 380px;
+  height: 520px;
+  border-radius: 10px;
+  border: 1px solid #686868;
+  overflow: hidden;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListTitles {
+  width: calc(100% - 24px);
+  padding: 0px 12px;
+  height: 31px;
+  background-color: rgba(15, 152, 230, 0.3);
+  display: flex;
+  align-items: center;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListTitles h3 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+  display: flex;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListTitles h3 span {
+  width: 15px;
+  height: 15px;
+  background-size: 15px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(/src/assets/media/popUp/group.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/group.svg);
+  margin-right: 6px;
+  display: inline-block;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListTitles h3 em {
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  font-style: normal;
+  margin-left: 5px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 11px;
+  overflow-y: scroll;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas::-webkit-scrollbar {
+  width: 2px;
+  background-color: transparent !important;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas::-webkit-scrollbar-thumb {
+  height: 10px !important;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas::-webkit-scrollbar-button:vertical:start:decrement {
+  display: block;
+  height: 15px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas::-webkit-scrollbar-button:vertical:start:increment {
+  display: block;
+  height: 15px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas::-webkit-scrollbar-button:vertical:end:decrement {
+  display: block;
+  height: 15px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .userGroupNames {
+  width: 100%;
+  height: 100%;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .userGroupNames li {
+  padding: 0px 20px;
+  width: calc(100% - 40px);
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .userGroupNames li p {
+  color: #fff;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .userGroupNames li button {
+  width: 20px;
+  height: 20px;
+  background-size: 17px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(/src/assets/media/popUp/deleted.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/deleted.svg);
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .userGroupNames li:hover {
+  background-color: #363538;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas {
+  width: calc(100% - 24px);
+  padding: 0px 12px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas.openSelectDatas {
+  padding-top: 17px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs {
+  width: 100%;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectBoxTitles {
+  width: 100%;
+  height: 40px;
+  background-color: #373639;
+  border-radius: 8px;
+  border: 1px solid #686868;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectBoxTitles button {
+  width: calc(100% - 16px);
+  padding: 0px 0px 0px 16px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-size: 18px;
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-image: url(/src/assets/media/popUp/slideBtn.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/slideBtn.svg);
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectBoxTitles button h3 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectBoxTitles button span {
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  width: 20px;
+  height: 20px;
+  padding: 0px 30px 0px 18px;
+  background-size: 13.22px 11px;
+  background-position: left bottom 6px;
+  background-repeat: no-repeat;
+  background-image: url(/src/assets/media/popUp/groupWhite.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/groupWhite.svg);
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents {
+  display: none;
+  height: 100%;
+  background-size: contain;
+  background-position: 31px top;
+  background-repeat: no-repeat;
+  background-image: url(/src/assets/media/popUp/dashBack.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/dashBack.svg);
+  /* 셀렉박스 */
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents.active {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: right;
+  padding-top: 20px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects {
+  width: 100%;
+  max-width: 313px;
+  height: 40px;
+  background-color: transparent;
+  margin-left: 40px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects.active {
+  height: 191px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectsTitleBtn {
+  width: 100%;
+  padding: 0px 13px;
+  height: 40px;
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #373639;
+  font-size: 13px;
+  text-align: left;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  border-radius: 8px;
+  border: 1px solid #686868;
+  color: #8E8E8E;
+  cursor: pointer;
+  background-image: url(/src/assets/media/popUp/slideBtn.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/slideBtn.svg);
+  background-size: 18px;
+  background-position: 98% center;
+  background-repeat: no-repeat;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectsTitleBtn.active {
+  color: #fff;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectsTitleBtn.active span {
+  color: #fff;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectsTitleBtn span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8E8E8E;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.2px;
+  margin-left: 6px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList {
+  position: absolute;
+  z-index: 9999;
+  top: 47px;
+  left: 0;
+  width: 100%;
+  height: 0px;
+  border: none;
+  border-radius: 3px;
+  background-color: transparent;
+  opacity: 1;
+  transition: 300ms;
+  overflow: hidden;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList.active {
+  opacity: 1;
+  height: 144px;
+  z-index: 9999;
+  transition: height 500ms;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList .groupListSelectListMember {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: calc(100% - 2px);
+  height: 100%;
+  margin: 0 auto;
+  border-radius: 3px;
+  background-color: transparent;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 9999;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList .groupListSelectListMember::-webkit-scrollbar {
+  width: 2px;
+  background-color: transparent !important;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList .groupListSelectListMember::-webkit-scrollbar-thumb {
+  height: 10px !important;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList .groupListSelectListMember::-webkit-scrollbar-button:vertical:start:decrement {
+  display: block;
+  height: 15px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList .groupListSelectListMember::-webkit-scrollbar-button:vertical:start:increment {
+  display: block;
+  height: 15px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList .groupListSelectListMember::-webkit-scrollbar-button:vertical:end:decrement {
+  display: block;
+  height: 15px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList .groupListSelectListMember .optionGroupBtn {
+  width: 100%;
+  background-color: #373639;
+  height: 26px;
+  padding: 0px 14px;
+  background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
+  -webkit-background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
+  background-size: 18px;
+  background-position: 98% center;
+  background-repeat: no-repeat;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+  text-align: left;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList .groupListSelectListMember .optionListBoxs {
+  background-color: rgb(17, 17, 18);
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList .groupListSelectListMember li {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList .groupListSelectListMember li:hover {
+  background-image: linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%, rgba(57, 57, 57, 0.2) 100%);
+  -webkit-background-image: linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%, rgba(57, 57, 57, 0.2) 100%);
+  opacity: 100%;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList .groupListSelectListMember li p {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  width: calc(100% - 32px);
+  padding: 0px 16px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .inputBoxs {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #171718;
+  border-radius: 5px;
+  border: 1px solid #393939;
+  overflow: hidden;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .inputBoxs input[type=search] {
+  background-color: transparent;
+  border: none;
+  width: calc(100% - 30px);
+  height: 44px;
+  padding: 0px 15px;
+  display: inline-block;
+  color: #fff;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .inputBoxs .searchBtn {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  right: 8px;
+  background-size: 15.78px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(/src/assets/media/popUp/searchBtn.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/searchBtn.svg);
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .useGroupListBtnWrap02 {
+  width: 100%;
+  padding: 20px 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0px;
+  background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .useGroupListBtnWrap02 button {
+  width: 126px;
+  height: 36px;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  background-image: linear-gradient(to left, #0F98E6 0%, #085580 100%);
+  -webkit-background-image: linear-gradient(to left, #0F98E6 0%, #085580 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=style.css.map */

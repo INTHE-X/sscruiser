@@ -1,0 +1,7 @@
+/* 로그인후의 상태는 display:none처리 되어있음 */
+
+header.html _ afterLoginBoxs(15번) display:none처리
+
+/* 헤더의 알림팝업의 경우,display:none처리되어있음 */
+
+header.html _ alaramWrappers(31번)display:none처리

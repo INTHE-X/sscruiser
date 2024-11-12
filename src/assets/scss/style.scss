@@ -11,7 +11,6 @@ html, body {
     background-color: #111111; 
     font-family: Pretendard;
   
- 
     &::-webkit-scrollbar{ display: none;}
 
 }
@@ -22,12 +21,16 @@ html, body {
 @import 'header';
 @import 'navigation';
 @import 'main';
+@import 'bottomMenu';
 @import './components/login';
 @import './components/popUp/popup';
-@import './components/circleLoading';
+@import './components/loading';
 @import './components/dashboard/switchDetails';
 @import './components/popUp/switchPop';
 @import './components/dashboard/issuesState';
 @import './components/dashboard/tools';
 @import './components/dashboard/copyState';
 @import './components/manage/userManage';
+@import './components/setup/edit';
+@import './components/setup/customizing';
+@import './components/popUp/userGroupPop';

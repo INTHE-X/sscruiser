@@ -49,7 +49,12 @@ const issuesBoxDatasEvet = () => {
                 </ul>
              </div>
              <div class="issuesStateDataWrap">
-                <div class="ssuesStateDataBoxs"></div>
+                <div class="issuesStateDataBoxs">
+                  <div class="issuesStateDataLoading">
+                     <div class="loadingSpinner"></div>
+                     <p>데이터 로딩중...</p>
+                  </div>
+                </div>
              </div>
           </div>`;
         
