@@ -23,6 +23,7 @@ $letterSpace-2 : 0.2px;
 
 //백그라운드
 $backgroundColor-2325 : #232325;
+$backgroundColor-1111 : #111;
 $dottedBackGradient : linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
 
 //보더 그라데이션
@@ -61,8 +62,19 @@ $list-data-deepGreen : linear-gradient(#1D4D57 0%, #062B34 100%);
 
 
 
+//반응형
 
-
+@mixin breakpoint($size) {
+   @if $size == small {
+     @media (max-width: 768px) { @content; }
+   } @else if $size ==  medium{
+     @media (max-width: 1024px) { @content; }
+   } @else if $size ==  large{
+      @media (max-width: 1390px) { @content; }
+    }@else if $size ==  x-large{
+      @media (max-width: 1600px) { @content; }
+    }
+ }
 
 
 

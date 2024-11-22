@@ -47,9 +47,9 @@
            .issuesStateCont{
 
             flex:1;
-            min-width:448px;
+            min-width:calc(100% / 4 - 9px);
+            max-width:calc(100% / 5 - 9px);
             width:448px;
-            max-width:448px;
             height:238px;
             border:1px solid #686868;
             border-radius: 10px;
@@ -192,6 +192,35 @@
           
        }
    }
+   @include breakpoint(large) {
+      .issuesStateContentWrap{
+         .issuesStateContBoxs {
+            .issuesStateCont {
+               .titles {
+                  ul{
+                     h5{ font-size: 1vw;}
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   @include breakpoint(medium) {
+      .issuesStateContentWrap{
+         .issuesStateContBoxs {
+            .issuesStateCont {
+               .titles {
+                  ul{
+
+                     padding:0px 10px;
+                     h5{ font-size: 0.9vw;}
+                  }
+               }
+            }
+         }
+      }
+   }
 
 }
 
@@ -298,5 +327,6 @@
       }
 
    }
+
    
 }

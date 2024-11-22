@@ -75,40 +75,31 @@ editSelectBoxEvet();
 
 const editSreenSelectBoxEvet = () => {
 
-      let editScreenSelect01 = document.getElementById("editScreenSelect01");//셀렉박스
-      let editScreenSelect02 = document.getElementById("editScreenSelect02");//셀렉박스
-   
+      let editScreenSelectBox = document.querySelectorAll(".editScreenBoxs select"); //모든 셀렉박스
       let editSreenBtn = document.querySelectorAll(".editSreenBtn");
       let editSreenList = document.querySelectorAll(".editSreenList");
       let editSreenMember = document.querySelectorAll(".editSreenMember");
    
         //최초의 셀렉박스값 설정 및 보여지는 셀렉박스 버튼의 최초 text값 담기
          const initialValues = () => {
-   
-            let list01 = '';
-            let list02 = '';
-         
-            if(editScreenSelect01.children){
-            for(let i = 0; i <= editScreenSelect01.children.length - 1; i++){
-    
-               list01 += `<li><p>${ editScreenSelect01.children[i].value}</p></li>`;
-               editSreenBtn[0].textContent = editScreenSelect01.children[0].value;
+            
+            if(editScreenSelectBox.length > 0){
+                
+               editScreenSelectBox.forEach((select) => {
+                   
+                   if(select.children){
+
+                      let thisBtns = select.parentElement.nextElementSibling.children[0]; //btn
+                      let thisMember = select.parentElement.nextElementSibling.children[1].children[0]; //selectMember
+
+                      for (let i = 0; i <= select.children.length - 1; i++){
+                        thisMember.innerHTML += `<li><p>${select.children[i].value}</p></li>`;
+                        thisBtns.textContent = select.children[0].value;
+                      }
+
+                   }
+               })
             }
-            editSreenMember[0].innerHTML = list01;
-    
-           }
-   
-           if(editScreenSelect02.children){
-            for(let i = 0; i <= editScreenSelect02.children.length - 1; i++){
-    
-               list02 += `<li><p>${ editScreenSelect02.children[i].value}</p></li>`;
-               editSreenBtn[1].textContent = editScreenSelect02.children[0].value;
-            }
-            editSreenMember[1].innerHTML = list02;
-    
-           }
-   
-   
     
           }
     
@@ -166,66 +157,6 @@ const editSreenSelectBoxEvet = () => {
 }
 
 editSreenSelectBoxEvet();
-
-
-/* 오른쪽 >> 버튼 클릭시 메뉴오픈 */
-
-const editHiddenMenuEvet = () => {
-
-    const editHiddenBtn = document.querySelector(".editHiddenBtn");
-    const editHiddenTitles = document.querySelector(".editHiddenMenuBtnBox span");
-    const editHiddenMenu = document.querySelector(".editHiddenMenu");
-    const editHiddenMenuList = document.querySelector(".editHiddenMenuList");
-
-    if(editHiddenBtn){
-
-      editHiddenBtn.addEventListener("click", () => {
-
-         if( editHiddenBtn.classList.contains("active")){
-            return  editHiddenBtn.classList.remove("active"),
-            editHiddenMenu.classList.remove("active"),
-            editHiddenMenuList.classList.remove("active"),
-            editHiddenTitles.classList.remove("active");
-         }
-         console.log('zz');
-
-         editHiddenBtn.classList.add("active");
-         editHiddenMenu.classList.add("active");
-         editHiddenMenuList.classList.add("active");
-         setTimeout(() => {
-            editHiddenTitles.classList.add("active");
-         },200)
-
-
-      })
-    }
-}
-
-editHiddenMenuEvet();
-
-/* 숨겨진 메뉴(editHiddenMenuList)내 리스트 버튼 클릭시  */
-
-const editHiddenListBtnEvet = () => {
-
-    const editHiddenListBtns = document.querySelectorAll(".editHiddenMenuList ul li button");
-
-    if(editHiddenListBtns){
-
-      editHiddenListBtns.forEach((btns) => {
-
-          btns.addEventListener("click" , () => {
-
-            if( btns.classList.contains("active")){
-               return btns.classList.remove("active")
-            }
-             btns.classList.add("active");
-
-          })
-      })
-    }
-}
-
-editHiddenListBtnEvet();
 
 
 /* 레이아웃 저장버튼 클릭시 팝업 오픈 */

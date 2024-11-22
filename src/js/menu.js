@@ -19,10 +19,7 @@ function navBtnEvet(){
 
                  if(btns.classList.contains("active") && subMenusWrapper[index].classList.contains("active")){
 
-                     return btns.classList.remove("active"),
-                     btnsparents.classList.remove("active"),
-                     btnsparents.classList.remove("active"),
-                     subMenusWrapper[index].classList.remove("active");
+                     return subMenusWrapper[index].classList.remove("active");
                  }
     
                  navBtns.forEach((otherBtns) => otherBtns.classList.remove("active"));
@@ -37,7 +34,6 @@ function navBtnEvet(){
 }
 
 navBtnEvet();
-
 
 
 /* 아래 >> 표시를 누르면 나타나는 메뉴 */
@@ -139,6 +135,8 @@ function locationNavEvet(){
      const subMenuBoxsList = document.querySelectorAll(".subMenuBoxs") //기존 네비 메뉴
      const subAddMenuBoxsList = document.querySelectorAll(".subAddMenuBoxs")// >> 버튼 클릭시 나타나는 네비 메뉴
      const navFixedColor = document.querySelector(".navFixed");
+     let header = document.querySelector("header");
+
 
      const pathNamesArray = {
 
@@ -150,6 +148,7 @@ function locationNavEvet(){
                  "/src/components/setup/edit.html",
                  "/src/components/setup/customizing.html",
                  "/src/components/manage/userManage.html",
+                 "/src/components/login/login.html"
 
                ],
                  
@@ -165,8 +164,10 @@ function locationNavEvet(){
         navButtonParents.forEach((list) => list.classList.remove("active"));
         navButton[0].classList.add("active");
         navButtonParents[0].classList.add("active");
-        navFixedColor.classList.add("color");
-
+        navFixedColor.classList.add("color-111");
+        header.classList.add("color-111");
+        
+     //스위치 상세정보
      }else if(path === pathNamesArray.href[1]){
 
         const navSubBoxsList = subMenuBoxsList[0].children[1].children[0]; //기존네비메뉴의 a링크
@@ -178,9 +179,12 @@ function locationNavEvet(){
         navButtonParents[0].classList.add("active");
         navSubBoxsList.classList.add("active");
         navSubAddBoxsList.classList.add("active");
+        navFixedColor.classList.add("color-2325");
+        header.classList.add("color-2325");
         locationBoxs.classList.add("display");
         locationBoxs.innerHTML = `<p>${pathNamesArray.titles[1]}</p><span>${pathNamesArray.subTitles[1]}</span>`
      }
+     //장애현황
      else if(path === pathNamesArray.href[2]){
 
         const navSubBoxsList = subMenuBoxsList[0].children[1].children[1];
@@ -192,9 +196,12 @@ function locationNavEvet(){
         navButtonParents[0].classList.add("active");
         navSubBoxsList.classList.add("active");
         navSubAddBoxsList.classList.add("active");
+        navFixedColor.classList.add("color-2325");
+        header.classList.add("color-2325");
         locationBoxs.classList.add("display");
         locationBoxs.innerHTML = `<p>${pathNamesArray.titles[1]}</p><span>${pathNamesArray.subTitles[2]}</span>`
 
+     //장비구성도
      }else if(path === pathNamesArray.href[3]){
 
         const navSubBoxsList = subMenuBoxsList[0].children[1].children[2];
@@ -206,9 +213,12 @@ function locationNavEvet(){
         navButtonParents[0].classList.add("active");
         navSubBoxsList.classList.add("active");
         navSubAddBoxsList.classList.add("active");
+        navFixedColor.classList.add("color-2325");
+        header.classList.add("color-2325");
         locationBoxs.classList.add("display");
         locationBoxs.innerHTML = `<p>${pathNamesArray.titles[1]}</p><span>${pathNamesArray.subTitles[3]}</span>`
      }
+     //복제구성도
      else if(path === pathNamesArray.href[4]){
 
       const navSubBoxsList = subMenuBoxsList[0].children[1].children[3];
@@ -221,6 +231,8 @@ function locationNavEvet(){
       navButtonParents[0].classList.add("active");
       navSubBoxsList.classList.add("active");
       navSubAddBoxsList.classList.add("active");
+      navFixedColor.classList.add("color-2325");
+      header.classList.add("color-2325");
       locationBoxs.classList.add("display");
       locationBoxs.innerHTML = `<p>${pathNamesArray.titles[1]}</p><span>${pathNamesArray.subTitles[4]}</span>`
    }
@@ -236,9 +248,12 @@ function locationNavEvet(){
       navButtonParents[1].classList.add("active");
       navSubBoxsList.classList.add("active");
       navSubAddBoxsList.classList.add("active");
+      navFixedColor.classList.add("color-2325");
+      header.classList.add("color-2325");
       locationBoxs.classList.add("display");
       locationBoxs.innerHTML = `<p>${pathNamesArray.titles[2]}</p><span>${pathNamesArray.subTitles[5]}</span>`
    }
+   //커스텀설정
    else if(path === pathNamesArray.href[6]){
 
       const navSubBoxsList = subMenuBoxsList[1].children[1].children[1];
@@ -250,6 +265,8 @@ function locationNavEvet(){
       navButtonParents[1].classList.add("active");
       navSubBoxsList.classList.add("active");
       navSubAddBoxsList.classList.add("active");
+      navFixedColor.classList.add("color-2325");
+      header.classList.add("color-2325");
       locationBoxs.classList.add("display");
       locationBoxs.innerHTML = `<p>${pathNamesArray.titles[2]}</p><span>${pathNamesArray.subTitles[6]}</span>`
    }
@@ -265,9 +282,22 @@ function locationNavEvet(){
       navButtonParents[2].classList.add("active");
       navSubBoxsList.classList.add("active");
       navSubAddBoxsList.classList.add("active");
+      navFixedColor.classList.add("color-2325");
+      header.classList.add("color-2325");
       locationBoxs.classList.add("display");
       locationBoxs.innerHTML = `<p>${pathNamesArray.titles[3]}</p><span>${pathNamesArray.subTitles[7]}</span>`
    }
+   //로그인페이지
+   else if(path === pathNamesArray.href[8]){
+      navFixedColor.classList.add("color-2325");
+      header.classList.add("color-2325");
+   }
+  else{
+   navFixedColor.classList.remove("color-2325");
+   header.classList.remove("color-2325");
+   navFixedColor.classList.remove("color-111");
+   header.classList.remove("color-111");
+  }
 
 }
 

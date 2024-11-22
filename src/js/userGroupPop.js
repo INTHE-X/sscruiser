@@ -132,9 +132,7 @@ groupSelectBoxOpenEvet();
 const groupListSelectBoxEvet = () => {
 
    let groupListSelectsTitleBtn = document.querySelectorAll(".groupListSelectsTitleBtn");
-   let groupListSelectList = document.querySelectorAll(".groupListSelectList");
    let groupListSelectListMember = document.querySelectorAll(".groupListSelectListMember");
-   let groupListSelects = document.querySelectorAll(".groupListSelects");
 
     //셀렉박스 버튼 클릭 이벤트
     groupListSelectsTitleBtn.forEach((btns , indx) => {
@@ -149,10 +147,6 @@ const groupListSelectBoxEvet = () => {
            btns.classList.remove("active"),
            currentGroupListSelects.classList.remove("active");
         }
-        
-      //   groupListSelectList.forEach((otherList) => otherList.classList.remove("active"));
-      //   groupListSelectsTitleBtn.forEach((otherbtns) => otherbtns.classList.remove("active"));
-      //   groupListSelects.forEach((otherselect) => otherselect.classList.remove("active"));
         
         currentGroupListSelects.classList.add("active");
         btns.classList.add("active");
@@ -169,6 +163,7 @@ const groupListSelectBoxEvet = () => {
      lists.addEventListener("click", (e) =>{ 
 
           const thisTarget = e.target; //현재 클릭한 요소
+          const thisBtn = thisTarget.parentElement.parentElement.parentElement.parentElement.parentElement.previousElementSibling;
           const targetSelectList = thisTarget.parentElement.parentElement.parentElement.parentElement.parentElement;
           const targetSelects = thisTarget.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
 
@@ -176,9 +171,7 @@ const groupListSelectBoxEvet = () => {
 
              targetSelectList.classList.remove("active");
              targetSelects.classList.remove("active");
-            //  groupListSelectList.forEach((allList) => allList.classList.remove("active"));
-            //  groupListSelectsTitleBtn.forEach((allBtns) => allBtns.classList.remove("active"));
-            //  groupListSelects.forEach((Allselect) => Allselect.classList.remove("active"));
+             thisBtn.classList.remove("active");
           }
 
        

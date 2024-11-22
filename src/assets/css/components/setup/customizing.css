@@ -1,41 +1,17 @@
-#customWrappers {
-  width: 100vw;
-  height: 100vh;
-  margin: 0 auto;
-  background-color: #111;
-  overflow-y: auto;
-}
-#customWrappers::-webkit-scrollbar {
-  display: none;
-}
-#customWrappers .customWrap {
-  padding: 58px 0px 0px 70px;
-  height: calc(100% - 58px);
-}
-#customWrappers .customWrap .customTitlesBox {
-  width: 100%;
-  padding: 35px 0px 0px;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #6A6A6A;
-}
-#customWrappers .customWrap .customTitlesBox a {
-  padding: 0px 49px 19px;
-  position: relative;
-}
-#customWrappers .customWrap .customTitlesBox a::before {
-  position: absolute;
-  content: "";
-  width: 0px;
-  height: 1px;
-  bottom: 0px;
-  left: 0px;
-  background-color: #fff;
-  transition: 800ms;
-}
-#customWrappers .customWrap .customTitlesBox a.active::before {
-  width: 100%;
-  transition: 800ms;
-}
+/* Error: Undefined variable.
+ *   ,
+ * 6 |    background-color: $backgroundColor-2325;
+ *   |                      ^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   src/assets/scss/components/setup/customizing.scss 6:22  root stylesheet */
 
-/*# sourceMappingURL=customizing.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a   \2577 \a 6 \2502     background-color: $backgroundColor-2325;\a   \2502                       ^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   src/assets/scss/components/setup/customizing.scss 6:22  root stylesheet";
+}

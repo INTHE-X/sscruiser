@@ -1,17 +1,26 @@
 .loginPopWrappers{
 
     width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height:100%;
     margin:0 auto;
     background-image: url(/src/assets/media/login/loginBackground.svg);
     -webkit-background-image: url(/src/assets/media/login/loginBackground.svg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    overflow: auto;
+
+    &::-webkit-scrollbar{ display: none;}
     
+    
+   .loginResizeWrap{
+      
+       padding: 50px 0px 0px 70px;
+       padding-top:12%;
+       margin: 0 auto;
+       display: flex;
+       align-items: center;
+       justify-content: center;
 
    .loginPopWrap{
 
@@ -20,6 +29,7 @@
       padding:57px 65px 58px;
       border:1px solid #686868;
       border-radius: 14px;
+      margin:0 auto;
       background-color: rgba(225,225,225,0.1);
       backdrop-filter: blur(30px);
       -webkit-backdrop-filter: blur(30px);
@@ -28,13 +38,13 @@
         &::after{
 
          content: "";
-         width:calc(100% / 2.5);
+         width:calc(100% / 2);
          height:0.5px;
          position: absolute;
-         top:0px;
-         left:30%;
-         background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
-         -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
+         top:-0.5px;
+         left:calc(100% / 4);
+         background-image: linear-gradient(0deg, #686868 0%, #B7B7B7 52%, #686868 100%);
+         -webkit-background-image: linear-gradient(0deg, #686868 0%, #B7B7B7 52%, #686868 100%);
 
         }
       .loginPopSpace{
@@ -202,4 +212,54 @@
       }
    }
 
+ }
+
+
+ @include breakpoint(large) {
+   
+   .loginResizeWrap{
+
+      padding-top:8%;
+
+      .loginPopWrap{
+
+          width:auto;
+          height:auto;
+         
+         .loginPopSpace{
+
+            ul{
+
+            .logo{ height:8vh;}
+            h3{ font-size:4vh; }
+            p{ font-size: 2vh;}
+
+            &.loginFormBoxs{ padding-top:10px;
+                form{
+                  li{
+                     padding-bottom:15px;
+                     input{ height:6vh; font-size: 1.5vh; background-size: 1.5vh;}
+                     label{ font-size: 2vh;}
+                  }
+                }
+
+                .findPassword { font-size: 1.5vh;
+               
+                   &::before{ left: 0px; background-size: 1vh; top:calc(100% / 4);}
+                }
+                .colorBtn{ height:6vh;margin-top: 10px; font-size: 1.5vh;}
+            }
+           }
+         }
+      }
+   }
+   
+ }
+
+ @include breakpoint(medium) {
+   .loginResizeWrap{ padding-top: 10%;}
+ }
+
+
 }
+

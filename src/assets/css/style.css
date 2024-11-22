@@ -49,6 +49,12 @@ header {
   justify-content: space-between;
   border-bottom: 1px solid rgba(106, 106, 106, 0.3019607843);
 }
+header.color-111 {
+  background-color: #111;
+}
+header.color-2325 {
+  background-color: #232325;
+}
 header .locationBoxs {
   height: 100%;
   padding-left: 98px;
@@ -415,12 +421,9 @@ header .userInfo ul li button {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 42px;
-  background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
-  -webkit-background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.6980392157);
+  height: 52px;
+  background-color: #232325;
+  border-top: 1px solid #6A6A6A;
 }
 #alaramWrappers .alaramPopBoxs .moreDatasBtn span {
   width: 18px;
@@ -453,8 +456,14 @@ header .userInfo ul li button {
   width: 250px;
   transition: width 800ms;
 }
-.navFixed.color {
+.navFixed.active nav .menuWrappers .logoBoxs {
+  background-position: left 11% center;
+}
+.navFixed.color-111 {
   background-color: #111111;
+}
+.navFixed.color-2325 {
+  background-color: #232325;
 }
 .navFixed nav {
   height: 100%;
@@ -471,9 +480,9 @@ header .userInfo ul li button {
   height: 50px;
   background-image: url(/src/assets/media/nav/logo.svg);
   -webkit-background-image: url(/src/assets/media/nav/logo.svg);
-  background-size: 26px 30px;
+  background-size: 1.3vw;
   background-repeat: no-repeat;
-  background-position: 22px center;
+  background-position: left 50% center;
   border-bottom: 1px solid rgba(106, 106, 106, 0.2);
 }
 .navFixed nav .menuWrappers .logoBoxs a {
@@ -523,11 +532,11 @@ header .userInfo ul li button {
 }
 .navFixed nav .menuWrappers .menuBoxs ul li.navBtnBoxs:hover::before, .navFixed nav .menuWrappers .menuBoxs ul li.navBtnBoxs.active::before {
   content: "";
-  width: 20px;
+  width: 33.3333333333%;
   height: 0.5px;
   position: absolute;
   top: 0px;
-  left: 30%;
+  left: 16.6666666667%;
   background-image: linear-gradient(90deg, #4B5352 0%, #9B9B9B 52%, #4B5352 100%);
   -webkit-background-image: linear-gradient(90deg, #4B5352 0%, #9B9B9B 52%, #4B5352 100%);
 }
@@ -555,7 +564,7 @@ header .userInfo ul li button {
   height: 100%;
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: 48px 48px;
+  background-size: 2.7vw;
 }
 .navFixed nav .menuWrappers .menuBoxs ul li.navBtnBoxs button.navBtn01::before {
   background-image: url(/src/assets/media/nav/navIcon01.svg);
@@ -586,9 +595,9 @@ header .userInfo ul li button {
   -webkit-filter: brightness(100);
 }
 .navFixed nav .menuWrappers .menuBoxs ul li.navBtnBoxs .subMenusWrapper {
-  position: absolute;
+  position: fixed;
+  z-index: 999;
   left: 60px;
-  top: 0px;
   border: 1px solid #686868;
   border-radius: 10px;
   backdrop-filter: blur(15px);
@@ -616,7 +625,7 @@ header .userInfo ul li button {
 .navFixed nav .menuWrappers .menuBoxs ul li.navBtnBoxs .subMenusWrapper .subMenuBoxs li .imgBoxs {
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: 40px 40px;
+  background-size: 2vw;
   width: 17px;
   height: 17px;
   float: left;
@@ -837,7 +846,7 @@ header .userInfo ul li button {
   height: 31px;
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: 31px 31px;
+  background-size: 1.5vw;
   background-image: url(/src/assets/media/nav/addMenu.svg);
   -webkit-background-image: url(/src/assets/media/nav/addMenu.svg);
 }
@@ -852,12 +861,58 @@ header .userInfo ul li button {
   background-image: url(/src/assets/media/nav/closeMenu.svg);
   -webkit-background-image: url(/src/assets/media/nav/closeMenu.svg);
   background-position: right center;
-  background-size: auto;
 }
 .navFixed nav .hiddenMenusBoxs button.active p {
   text-align: left;
   opacity: 1;
   transition: opacity 3s;
+}
+@media (max-width: 1390px) {
+  .navFixed nav .menuWrappers {
+    overflow-y: scroll;
+  }
+  .navFixed nav .menuWrappers::-webkit-scrollbar {
+    display: none;
+  }
+  .navFixed nav .menuWrappers .menuBoxs ul li.navBtnBoxs {
+    width: 38px;
+    height: 38px;
+  }
+}
+@media (max-width: 1024px) {
+  .navFixed nav .menuWrappers .menuBoxs ul li.navBtnBoxs {
+    width: 30px;
+    height: 30px;
+  }
+  .navFixed nav .menuWrappers .menuBoxs ul li.navBtnBoxs button::before {
+    background-size: 3vw;
+  }
+  .navFixed nav .menuWrappers .menuBoxs ul li.navBtnBoxs .subMenusWrapper .subMenuBoxs li h3 {
+    font-size: 1.4vw;
+  }
+  .navFixed nav .menuWrappers .menuBoxs ul li.navBtnBoxs .subMenusWrapper .subMenuBoxs li .imgBoxs {
+    background-size: 3vw;
+  }
+  .navFixed nav .menuWrappers .menuBoxs ul li.navBtnBoxs .subMenusWrapper .subMenuBoxs li a {
+    font-size: 1.2vw;
+  }
+  .navFixed nav .menuWrappers .addmenuBoxs ul .navAddBtnBoxs button {
+    display: flex;
+    align-items: center;
+    font-size: 1.3vw;
+  }
+  .navFixed nav .menuWrappers .addmenuBoxs ul .navAddBtnBoxs button span.iconBoxs {
+    background-size: 3vw;
+  }
+  .navFixed nav .menuWrappers .addmenuBoxs ul .navAddBtnBoxs .subAddMenusWrapper ul li a {
+    font-size: 1.2vw;
+  }
+  .navFixed nav .menuWrappers .logoBoxs a span {
+    font-size: 1.5vw;
+  }
+  .navFixed nav .hiddenMenusBoxs button p {
+    font-size: 1.3vw;
+  }
 }
 
 #cruiserMainWrappers {
@@ -871,14 +926,13 @@ header .userInfo ul li button {
   background-size: 100% 100%;
   overflow-y: auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 #cruiserMainWrappers::-webkit-scrollbar {
   display: none;
 }
 #cruiserMainWrappers .mainContentBoxs {
   padding-left: 70px;
+  padding-top: 5%;
   margin: 0 auto;
   background-color: transparent;
   background-image: url(/src/assets/media/main/back.svg);
@@ -901,11 +955,11 @@ header .userInfo ul li button {
   background-position: center top;
   background-size: contain;
   background-repeat: no-repeat;
-  width: 44px;
-  height: 44px;
+  width: 3vw;
+  height: 4vh;
 }
 #cruiserMainWrappers .mainContentBoxs .mainTitles h3 {
-  font-size: 40px;
+  font-size: 2.1vw;
   font-weight: 600;
   letter-spacing: 0.2px;
   background-image: linear-gradient(#fff 0, #C5D3F1 100%);
@@ -927,7 +981,9 @@ header .userInfo ul li button {
 #cruiserMainWrappers .mainContentBoxs .mainContents article {
   width: calc(30.303030303% - 2px);
   max-width: 360px;
-  height: 360px;
+  height: 83.3333333333%;
+  max-height: 360px;
+  min-height: 360px;
   border-radius: 10px;
   position: relative;
   border: 1px solid transparent;
@@ -1025,6 +1081,22 @@ header .userInfo ul li button {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 20px 20px;
+}
+@media (max-width: 1390px) {
+  #cruiserMainWrappers .mainContentBoxs {
+    padding-top: 8%;
+  }
+}
+@media (max-width: 1024px) {
+  #cruiserMainWrappers .mainContentBoxs .mainContents article .mainCont ul li h5 {
+    font-size: 2.3vw;
+  }
+  #cruiserMainWrappers .mainContentBoxs .mainContents article .mainCont ul li p {
+    font-size: 1.1vw;
+  }
+  #cruiserMainWrappers .mainContentBoxs .mainContents article .mainCont ul.linkContents li a span {
+    font-size: 1.5vw;
+  }
 }
 
 .bottomMenuWrap {
@@ -1147,54 +1219,64 @@ header .userInfo ul li button {
 
 .loginPopWrappers {
   width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
   margin: 0 auto;
   background-image: url(/src/assets/media/login/loginBackground.svg);
   -webkit-background-image: url(/src/assets/media/login/loginBackground.svg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  overflow: auto;
 }
-.loginPopWrappers .loginPopWrap {
+.loginPopWrappers::-webkit-scrollbar {
+  display: none;
+}
+.loginPopWrappers .loginResizeWrap {
+  padding: 50px 0px 0px 70px;
+  padding-top: 12%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loginPopWrappers .loginResizeWrap .loginPopWrap {
   width: 378px;
   height: 512px;
   padding: 57px 65px 58px;
   border: 1px solid #686868;
   border-radius: 14px;
+  margin: 0 auto;
   background-color: rgba(225, 225, 225, 0.1);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
   position: relative;
 }
-.loginPopWrappers .loginPopWrap::after {
+.loginPopWrappers .loginResizeWrap .loginPopWrap::after {
   content: "";
-  width: 40%;
+  width: 50%;
   height: 0.5px;
   position: absolute;
-  top: 0px;
-  left: 30%;
-  background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
-  -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
+  top: -0.5px;
+  left: 25%;
+  background-image: linear-gradient(0deg, #686868 0%, #B7B7B7 52%, #686868 100%);
+  -webkit-background-image: linear-gradient(0deg, #686868 0%, #B7B7B7 52%, #686868 100%);
 }
-.loginPopWrappers .loginPopWrap .loginPopSpace {
+.loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace {
   margin: 0 auto;
 }
-.loginPopWrappers .loginPopWrap .loginPopSpace.forgotPasswordBoxs {
+.loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace.forgotPasswordBoxs {
   display: none;
 }
-.loginPopWrappers .loginPopWrap .loginPopSpace.forgotPasswordBoxs.active {
+.loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace.forgotPasswordBoxs.active {
   display: block;
 }
-.loginPopWrappers .loginPopWrap .loginPopSpace.loginContBoxs.active {
+.loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace.loginContBoxs.active {
   display: none;
 }
-.loginPopWrappers .loginPopWrap .loginPopSpace ul {
+.loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul {
   width: 100%;
 }
-.loginPopWrappers .loginPopWrap .loginPopSpace ul .logo {
+.loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul .logo {
   width: 85px;
   height: 99px;
   background-image: url(/src/assets/media/commonLogo.svg);
@@ -1205,7 +1287,7 @@ header .userInfo ul li button {
   display: block;
   margin: 0 auto;
 }
-.loginPopWrappers .loginPopWrap .loginPopSpace ul h3 {
+.loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul h3 {
   color: #fff;
   font-size: 40px;
   font-weight: 500;
@@ -1215,7 +1297,7 @@ header .userInfo ul li button {
   align-items: center;
   justify-content: center;
 }
-.loginPopWrappers .loginPopWrap .loginPopSpace ul p {
+.loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul p {
   color: #fff;
   font-size: 14px;
   font-weight: 400;
@@ -1224,21 +1306,21 @@ header .userInfo ul li button {
   align-items: center;
   justify-content: center;
 }
-.loginPopWrappers .loginPopWrap .loginPopSpace ul.loginFormBoxs {
+.loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul.loginFormBoxs {
   padding-top: 39px;
   margin: 0 auto;
 }
-.loginPopWrappers .loginPopWrap .loginPopSpace ul.loginFormBoxs form {
+.loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul.loginFormBoxs form {
   width: 100%;
   margin: 0 auto;
 }
-.loginPopWrappers .loginPopWrap .loginPopSpace ul.loginFormBoxs form li {
+.loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul.loginFormBoxs form li {
   padding-bottom: 25px;
 }
-.loginPopWrappers .loginPopWrap .loginPopSpace ul.loginFormBoxs form li:last-child {
+.loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul.loginFormBoxs form li:last-child {
   padding-bottom: 10px;
 }
-.loginPopWrappers .loginPopWrap .loginPopSpace ul.loginFormBoxs form li label {
+.loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul.loginFormBoxs form li label {
   display: block;
   font-size: 14px;
   font-weight: 400;
@@ -1246,7 +1328,7 @@ header .userInfo ul li button {
   padding-bottom: 9px;
   color: #fff;
 }
-.loginPopWrappers .loginPopWrap .loginPopSpace ul.loginFormBoxs form li input {
+.loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul.loginFormBoxs form li input {
   width: calc(100% - 70px);
   height: 46px;
   padding: 0px 35px;
@@ -1260,23 +1342,23 @@ header .userInfo ul li button {
   background-size: 12px 12px;
   background-repeat: no-repeat;
 }
-.loginPopWrappers .loginPopWrap .loginPopSpace ul.loginFormBoxs form li input:focus {
+.loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul.loginFormBoxs form li input:focus {
   border-color: #0BA7FE;
   outline: none;
 }
-.loginPopWrappers .loginPopWrap .loginPopSpace ul.loginFormBoxs form li input[type=text] {
+.loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul.loginFormBoxs form li input[type=text] {
   background-image: url(/src/assets/media/login/id.svg);
   -webkit-background-image: url(/src/assets/media/login/id.svg);
 }
-.loginPopWrappers .loginPopWrap .loginPopSpace ul.loginFormBoxs form li input[type=password] {
+.loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul.loginFormBoxs form li input[type=password] {
   background-image: url(/src/assets/media/login/password.svg);
   -webkit-background-image: url(/src/assets/media/login/password.svg);
 }
-.loginPopWrappers .loginPopWrap .loginPopSpace ul.loginFormBoxs form li input[type=email] {
+.loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul.loginFormBoxs form li input[type=email] {
   background-image: url(/src/assets/media/login/email.svg);
   -webkit-background-image: url(/src/assets/media/login/email.svg);
 }
-.loginPopWrappers .loginPopWrap .loginPopSpace ul.loginFormBoxs .findPassword {
+.loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul.loginFormBoxs .findPassword {
   color: #fff;
   font-size: 11px;
   font-weight: 300;
@@ -1286,7 +1368,7 @@ header .userInfo ul li button {
   width: 100%;
   position: relative;
 }
-.loginPopWrappers .loginPopWrap .loginPopSpace ul.loginFormBoxs .findPassword::before {
+.loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul.loginFormBoxs .findPassword::before {
   content: "";
   background-image: url(/src/assets/media/login/findPassword.svg);
   -webkit-background-image: url(/src/assets/media/login/findPassword.svg);
@@ -1299,7 +1381,7 @@ header .userInfo ul li button {
   left: calc(100% - 140px);
   top: 1px;
 }
-.loginPopWrappers .loginPopWrap .loginPopSpace ul.loginFormBoxs .colorBtn {
+.loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul.loginFormBoxs .colorBtn {
   width: 100%;
   height: 50px;
   display: block;
@@ -1312,6 +1394,56 @@ header .userInfo ul li button {
   letter-spacing: 0.2px;
   color: #fff;
   margin-top: 40px;
+}
+@media (max-width: 1390px) {
+  .loginPopWrappers .loginResizeWrap {
+    padding-top: 8%;
+  }
+  .loginPopWrappers .loginResizeWrap .loginPopWrap {
+    width: auto;
+    height: auto;
+  }
+  .loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul .logo {
+    height: 8vh;
+  }
+  .loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul h3 {
+    font-size: 4vh;
+  }
+  .loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul p {
+    font-size: 2vh;
+  }
+  .loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul.loginFormBoxs {
+    padding-top: 10px;
+  }
+  .loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul.loginFormBoxs form li {
+    padding-bottom: 15px;
+  }
+  .loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul.loginFormBoxs form li input {
+    height: 6vh;
+    font-size: 1.5vh;
+    background-size: 1.5vh;
+  }
+  .loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul.loginFormBoxs form li label {
+    font-size: 2vh;
+  }
+  .loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul.loginFormBoxs .findPassword {
+    font-size: 1.5vh;
+  }
+  .loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul.loginFormBoxs .findPassword::before {
+    left: 0px;
+    background-size: 1vh;
+    top: 25%;
+  }
+  .loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul.loginFormBoxs .colorBtn {
+    height: 6vh;
+    margin-top: 10px;
+    font-size: 1.5vh;
+  }
+}
+@media (max-width: 1024px) {
+  .loginPopWrappers .loginResizeWrap {
+    padding-top: 10%;
+  }
 }
 
 .popCommonWrap {
@@ -1562,13 +1694,16 @@ header .userInfo ul li button {
   bottom: 0;
   z-index: 999999;
   display: block;
+  overflow: auto;
+}
+.switchPopWrap::-webkit-scrollbar {
+  display: none;
 }
 .switchPopWrap.active {
   display: none;
 }
 .switchPopWrap .switchPopContent {
-  width: 100%;
-  height: 100%;
+  padding: 100px 0px 0px 70px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -1590,7 +1725,7 @@ header .userInfo ul li button {
 .switchPopWrap .switchPopContent .switchPopBoxs::after {
   content: "";
   width: 33.3333333333%;
-  height: 0.8px;
+  height: 0.5px;
   position: absolute;
   top: 0px;
   left: 33.3333333333%;
@@ -1885,9 +2020,9 @@ header .userInfo ul li button {
 }
 #issuesStateWrappers .issuesStateContentWrap .issuesStateContBoxs .issuesStateCont {
   flex: 1;
-  min-width: 448px;
+  min-width: calc(25% - 9px);
+  max-width: calc(20% - 9px);
   width: 448px;
-  max-width: 448px;
   height: 238px;
   border: 1px solid #686868;
   border-radius: 10px;
@@ -1989,6 +2124,19 @@ header .userInfo ul li button {
   letter-spacing: 0.2px;
   padding-top: 12px;
   text-align: center;
+}
+@media (max-width: 1390px) {
+  #issuesStateWrappers .issuesStateContentWrap .issuesStateContBoxs .issuesStateCont .titles ul h5 {
+    font-size: 1vw;
+  }
+}
+@media (max-width: 1024px) {
+  #issuesStateWrappers .issuesStateContentWrap .issuesStateContBoxs .issuesStateCont .titles ul {
+    padding: 0px 10px;
+  }
+  #issuesStateWrappers .issuesStateContentWrap .issuesStateContBoxs .issuesStateCont .titles ul h5 {
+    font-size: 0.9vw;
+  }
 }
 
 .alarmPageWrapper {
@@ -2347,6 +2495,27 @@ header .userInfo ul li button {
   height: 100%;
   max-width: 272px;
   border-right: 1px solid rgba(106, 106, 106, 0.3019607843);
+  overflow: auto;
+}
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection::-webkit-scrollbar {
+  width: 2px;
+}
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection::-webkit-scrollbar-thumb {
+  height: 10px !important;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+}
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection::-webkit-scrollbar-button:vertical:start:decrement {
+  display: block;
+  height: 5px;
+}
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection::-webkit-scrollbar-button:vertical:start:increment {
+  display: block;
+  height: 5px;
+}
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection::-webkit-scrollbar-button:vertical:end:decrement {
+  display: block;
+  height: 5px;
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .toggleBoxies {
   padding: 12px 11px 11px;
@@ -2454,7 +2623,6 @@ header .userInfo ul li button {
   max-width: 250px;
   height: 37px;
   border-radius: 8px;
-  border: 1px solid #686868;
   background-color: rgba(22, 22, 22, 0.4);
   position: relative;
 }
@@ -2462,6 +2630,7 @@ header .userInfo ul li button {
   width: 100%;
   padding: 0px 13px;
   height: 100%;
+  border: 1px solid #686868;
   position: absolute;
   left: 0;
   display: block;
@@ -2470,9 +2639,13 @@ header .userInfo ul li button {
   text-align: left;
   font-weight: 400;
   letter-spacing: 0.2px;
-  border-radius: 6px;
+  border-radius: 8px;
   color: #8E8E8E;
   cursor: pointer;
+}
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace .listTitlesBoxs .toolselectBoxsWrappers .toolListSelectWrap .toolListSelectBoxs .toolListSelects .toolListSelectsTitleBtn.active {
+  border: 1px solid #0BA7FE;
+  color: #fff;
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace .listTitlesBoxs .toolselectBoxsWrappers .toolListSelectWrap .toolListSelectBoxs .toolListSelects .toolListSelectsTitleBtn.toolGroups, #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace .listTitlesBoxs .toolselectBoxsWrappers .toolListSelectWrap .toolListSelectBoxs .toolListSelects .toolListSelectsTitleBtn.typefaceSelectsTitleBtn {
   background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
@@ -2532,7 +2705,7 @@ header .userInfo ul li button {
   position: absolute;
   top: 0px;
   left: 0;
-  width: calc(100% - 2px);
+  width: 100%;
   height: 100%;
   margin: 0 auto;
   background-color: transparent;
@@ -2604,7 +2777,6 @@ header .userInfo ul li button {
   width: 100%;
   height: 37px;
   border-radius: 8px;
-  border: 1px solid #686868;
   background-color: rgba(22, 22, 22, 0.8);
   position: relative;
 }
@@ -2682,6 +2854,9 @@ header .userInfo ul li button {
   background-repeat: no-repeat;
   background-size: 17px 17px;
 }
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace .listSetup ul li button.active {
+  border: 1px solid #0BA7FE;
+}
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace .listSetup ul li button::after {
   content: "";
   width: 33.3333333333%;
@@ -2725,7 +2900,7 @@ header .userInfo ul li button {
   font-size: 12px;
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .positionBoxs ul li input[type=text] {
-  width: 82px;
+  max-width: 82px;
   padding: 0px 7px;
   height: 27px;
   border-radius: 8px;
@@ -2841,7 +3016,7 @@ header .userInfo ul li button {
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .number-input, #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .colors {
   border: 1px solid #686868;
   border-radius: 8px;
-  width: 91px;
+  width: 50%;
   height: 37px;
   background-color: rgba(22, 22, 22, 0.8);
   position: relative;
@@ -3065,6 +3240,35 @@ header .userInfo ul li button {
   background-image: url(/src/assets/media/toolsImg/minus.svg);
   -webkit-background-image: url(/src/assets/media/toolsImg/minus.svg);
 }
+@media (max-width: 1390px) {
+  #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace .listTitlesBoxs .toolselectBoxsWrappers .toolListSelectWrap .toolListSelectBoxs.typefaceSelectBoxs01 {
+    max-width: 146px;
+    width: 100%;
+  }
+  #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .positionBoxs ul li input[type=text] {
+    max-width: 52px;
+  }
+  #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .positionBoxs ul li span {
+    font-size: 1vw;
+  }
+  #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .iconArrayBoxs ul {
+    gap: 18px 10px;
+  }
+  #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .iconArrayBoxs ul li button {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+  }
+  #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .iconArrayBoxs ul li em {
+    font-size: 0.8vw;
+  }
+  #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li {
+    gap: 5px;
+  }
+  #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li span {
+    font-size: 0.8vw;
+  }
+}
 
 body #copyStateWrappers {
   width: calc(100% - 10px);
@@ -3142,6 +3346,7 @@ body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs .stor
   margin: 0 auto;
   text-align: center;
   overflow-y: scroll;
+  overflow-x: scroll;
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs .storageBoxWrappers::-webkit-scrollbar {
   display: none;
@@ -3291,7 +3496,7 @@ body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyStateInfoB
   width: 304px;
   height: 154px;
   border-radius: 9px;
-  background-image: linear-gradient(rgba(56, 51, 57, 0.3215686275) 0%, rgba(18, 18, 19, 0.4) 100%);
+  background-image: linear-gradient(#383339 0%, #121213 40% 100%);
   -webkit-background-image: linear-gradient(rgba(56, 51, 57, 0.3215686275) 0%, rgba(18, 18, 19, 0.4) 100%);
   border: 1px solid #686868;
   overflow: hidden;
@@ -3441,15 +3646,15 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus {
   top: 0px;
   width: 0px;
   overflow: hidden;
-  transition: width 800ms;
+  transition: width 900ms;
 }
 body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus.active {
-  width: auto;
+  width: 391px;
   overflow-y: scroll;
-  transition: 800ms;
+  transition: width 800ms;
 }
 body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus.active .copyHiddenMenusWrap {
-  transform: translateX(0);
+  transform: translateX(0px);
   transition: transform 800ms;
 }
 body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .copyHiddenMenusWrap {
@@ -3631,14 +3836,14 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   gap: 15px;
 }
 #userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageSectionCont .userManageSectionContDevide .sectionMenuListBoxs {
-  width: 13.8%;
+  width: 14.6%;
   /* 셀렉박스 */
 }
 #userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageSectionCont .userManageSectionContDevide .sectionMenuListBoxs.inputControlBoxs01 {
-  width: 22.2%;
+  width: 22.18%;
 }
 #userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageSectionCont .userManageSectionContDevide .sectionMenuListBoxs.inputControlBoxs02 {
-  width: 20.77%;
+  width: 20.78%;
 }
 #userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageSectionCont .userManageSectionContDevide .sectionMenuListBoxs .selectTitle {
   padding: 10px 0px;
@@ -3649,7 +3854,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
 }
 #userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageSectionCont .userManageSectionContDevide .sectionMenuListBoxs .userManageSelects {
   width: 100%;
-  max-width: 250px;
+  min-width: 50px;
   height: 43px;
   border-radius: 8px;
   border: 1px solid #686868;
@@ -3699,7 +3904,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   height: 0px;
   border-radius: 10px;
   border: none;
-  background-color: rgba(22, 22, 22, 0.4);
+  background-color: rgba(22, 22, 22, 0.9);
   opacity: 1;
   transition: 300ms;
   overflow: hidden;
@@ -3717,7 +3922,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   position: absolute;
   top: 0px;
   left: 0;
-  width: calc(100% - 2px);
+  width: 100%;
   height: 100%;
   margin: 0 auto;
   background-color: transparent;
@@ -3735,16 +3940,11 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   align-items: center;
   justify-content: center;
 }
-#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageSectionCont .userManageSectionContDevide .sectionMenuListBoxs .userManageSelects .userManageSelectList .userManageSelectListMember li:hover {
-  background-image: linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%, rgba(57, 57, 57, 0.2) 100%);
-  -webkit-background-image: linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%, rgba(57, 57, 57, 0.2) 100%);
-  opacity: 100%;
-}
 #userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageSectionCont .userManageSectionContDevide .sectionMenuListBoxs .userManageSelects .userManageSelectList .userManageSelectListMember li p {
   color: #fff;
   font-size: 13px;
   font-weight: 400;
-  width: calc(100% - 32px);
+  width: 100%;
   padding: 0px 16px;
   height: 100%;
   display: flex;
@@ -3752,9 +3952,14 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   justify-content: flex-start;
   cursor: pointer;
 }
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageSectionCont .userManageSectionContDevide .sectionMenuListBoxs .userManageSelects .userManageSelectList .userManageSelectListMember li:hover {
+  background-image: linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%, rgba(57, 57, 57, 0.2) 100%);
+  -webkit-background-image: linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%, rgba(57, 57, 57, 0.2) 100%);
+  opacity: 100%;
+}
 #userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageSectionCont .userManageSectionContDevide .inputControlList input[type=text] {
   width: calc(100% - 30px);
-  max-width: 350px;
+  min-width: 100px;
   height: 44px;
   padding: 0px 15px;
   border-radius: 10px;
@@ -3768,7 +3973,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
 }
 #userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageSectionCont .userManageSectionContDevide .dateListBox button {
   width: 100%;
-  max-width: 356px;
+  min-width: 100px;
   height: 44px;
   padding: 0px 43px;
   display: block;
@@ -4094,13 +4299,6 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   background-size: 14px;
   background-position: center center;
 }
-#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap table tr td.imgBoxs {
-  background-image: url(/src/assets/media/userManage/dataImg.svg);
-  -webkit-background-image: url(/src/assets/media/userManage/dataImg.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
-}
 #userManageWrappers .userManageWrap .userManageBoxs .pageNationWrappers {
   position: relative;
   width: 100%;
@@ -4284,7 +4482,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   height: 0px;
   border-radius: 10px;
   border: none;
-  background-color: rgba(22, 22, 22, 0.4);
+  background-color: rgba(22, 22, 22, 0.9);
   opacity: 1;
   transition: 300ms;
   overflow: hidden;
@@ -4302,7 +4500,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   position: absolute;
   top: 0px;
   left: 0;
-  width: calc(100% - 2px);
+  width: 100%;
   height: 100%;
   margin: 0 auto;
   background-color: transparent;
@@ -4366,6 +4564,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
   -webkit-background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
   position: relative;
+  overflow-y: hidden;
 }
 #editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen::before {
   content: "";
@@ -4385,11 +4584,32 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   padding: 20px;
   width: calc(100% - 40px);
   height: calc(100% - 40px);
+  overflow-y: scroll;
+  position: relative;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs::-webkit-scrollbar {
+  width: 2px;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs::-webkit-scrollbar-thumb {
+  height: 10px !important;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs::-webkit-scrollbar-button:vertical:start:decrement {
+  display: block;
+  height: 5px;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs::-webkit-scrollbar-button:vertical:start:increment {
+  display: block;
+  height: 5px;
+}
+#editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs::-webkit-scrollbar-button:vertical:end:decrement {
+  display: block;
+  height: 5px;
 }
 #editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs {
   height: 224px;
   min-width: 418px;
-  max-width: 418px;
   float: left;
   margin-right: 20px;
   margin-bottom: 20px;
@@ -4488,7 +4708,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   height: 0px;
   border-radius: 5px;
   border: none;
-  background-color: rgba(22, 22, 22, 0.4);
+  background-color: rgba(22, 22, 22, 0.9);
   opacity: 1;
   transition: 300ms;
   overflow: hidden;
@@ -4506,7 +4726,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   position: absolute;
   top: 0px;
   left: 0;
-  width: calc(100% - 2px);
+  width: 100%;
   height: 100%;
   margin: 0 auto;
   background-color: transparent;
@@ -4588,12 +4808,8 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
 }
 #editWrappers .editWrap .editContBoxs .editHiddenMenu {
   height: 100%;
-  width: 57px;
-  overflow: hidden;
-}
-#editWrappers .editWrap .editContBoxs .editHiddenMenu.active {
   width: 20%;
-  transition: width 800ms;
+  overflow: hidden;
 }
 #editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuBtnBox {
   display: flex;
@@ -4609,19 +4825,13 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   font-weight: 400;
   letter-spacing: 0.2px;
   border-right: 1px solid #474748;
-  width: 0px;
+  width: calc(100% - 27px);
+  padding: 0px 7px 0px 20px;
   overflow: hidden;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  opacity: 0;
-}
-#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuBtnBox span.active {
-  width: calc(100% - 27px);
-  padding: 0px 7px 0px 20px;
-  opacity: 1;
-  transition: opacity 3.5s;
 }
 #editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuBtnBox button {
   width: 57px;
@@ -4632,22 +4842,12 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   background-repeat: no-repeat;
   background-size: 31px 31px;
 }
-#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuBtnBox button.active {
-  background-image: url(/src/assets/media/edit/hiddenClose.svg);
-  -webkit-background-image: url(/src/assets/media/edit/hiddenClose.svg);
-}
 #editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList {
-  width: 0px;
-  height: calc(100% - 0px - 94px);
-  overflow: hidden;
-  opacity: 0;
-  overflow-y: scroll;
-}
-#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList.active {
   width: calc(100% - 40px);
   padding: 19px 20px;
-  opacity: 1;
-  transition: opacity 3s;
+  height: calc(100% - 0px - 94px);
+  overflow: hidden;
+  overflow-y: scroll;
 }
 #editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList::-webkit-scrollbar {
   width: 2px;
@@ -4669,36 +4869,57 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   overflow: hidden;
   border-radius: 10px;
 }
-#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList ul li button {
-  width: 100%;
-  height: 100%;
-  color: #fff;
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 0.2px;
+#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList ul li input[type=radio] {
+  display: none;
+}
+#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList ul li input[type=radio]:checked + label {
+  border: 1px solid #0BA7FE;
+}
+#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList ul li label {
+  width: auto;
+  height: calc(100% - 2px);
   background-image: url(/src/assets/media/edit/info.svg);
   -webkit-background-image: url(/src/assets/media/edit/info.svg);
   background-position: 12px center;
   background-repeat: no-repeat;
   background-size: 16px 16px;
-  text-align: left;
   padding: 0px 0px 0px 42px;
   border-radius: 10px;
   border: 1px solid #686868;
   position: relative;
+  display: flex;
+  align-items: center;
 }
-#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList ul li button::after {
+#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList ul li label span {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList ul li label::after {
   content: "";
-  width: 35.7142857143%;
+  width: 33.3333333333%;
   height: 0.5px;
   position: absolute;
-  top: 0px;
+  top: -0.5px;
   left: 33.3333333333%;
   background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
   -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
 }
-#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList ul li button.active {
-  border: 1px solid #0BA7FE;
+@media (max-width: 1024px) {
+  #editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuBtnBox span {
+    font-size: 1.1vw;
+  }
+  #editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuBtnBox button {
+    background-size: 2vw;
+  }
+  #editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList ul li label {
+    padding: 0px 0px 0px 30px;
+    background-size: 1vw;
+  }
+  #editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList ul li label span {
+    font-size: 1.1vw;
+  }
 }
 
 #customWrappers {
@@ -5108,8 +5329,11 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   height: 100%;
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont {
-  width: 868px;
-  height: 780px;
+  width: 40.6504065041%;
+  height: 80%;
+  min-width: 500px;
+  max-width: 868px;
+  max-height: 780px;
   border-radius: 10px;
   border: 1px solid #686868;
   background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
@@ -5139,7 +5363,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContTitles h3 span {
   width: 12px;
   height: 20px;
-  background-size: 12px;
+  background-size: 0.8vw;
   background-position: center center;
   background-repeat: no-repeat;
   background-image: url(/src/assets/media/popUp/add.svg);
@@ -5150,7 +5374,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContTitles button {
   width: 22px;
   height: 22px;
-  background-size: 22px;
+  background-size: 1.4vw;
   background-position: center center;
   background-repeat: no-repeat;
   background-image: url(/src/assets/media/popUp/close.svg);
@@ -5276,7 +5500,6 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   max-width: 402px;
   height: 36px;
   border-radius: 8px;
-  border: 1px solid #686868;
   background-color: #373639;
   position: relative;
 }
@@ -5287,19 +5510,24 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   position: absolute;
   left: 0;
   display: block;
+  border: 1px solid #686868;
   background-color: transparent;
   font-size: 13px;
   text-align: left;
   font-weight: 400;
   letter-spacing: 0.2px;
-  border-radius: 6px;
+  border-radius: 8px;
   color: #8E8E8E;
   cursor: pointer;
   background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
   -webkit-background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
-  background-size: 18px;
-  background-position: 98% center;
+  background-size: 0.9vw;
+  background-position: 97% center;
   background-repeat: no-repeat;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupPopInfo ul li .userGroupSelects .userGroupSelectsTitleBtn.active {
+  color: #fff;
+  border: 1px solid #0BA7FE;
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupPopInfo ul li .userGroupSelects .userGroupSelectList {
   position: absolute;
@@ -5310,7 +5538,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   height: 0px;
   border-radius: 10px;
   border: none;
-  background-color: rgba(55, 54, 57, 0.8);
+  background-color: rgba(55, 54, 57, 0.9);
   opacity: 1;
   transition: 300ms;
   overflow: hidden;
@@ -5328,7 +5556,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   position: absolute;
   top: 0px;
   left: 0;
-  width: calc(100% - 2px);
+  width: 100%;
   height: 100%;
   margin: 0 auto;
   background-color: transparent;
@@ -5385,7 +5613,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   height: 18px;
   background-image: url(/src/assets/media/popUp/arrowDown.svg);
   -webkit-background-image: url(/src/assets/media/popUp/arrowDown.svg);
-  background-size: 18px;
+  background-size: 0.8vw;
   background-position: center center;
   background-repeat: no-repeat;
 }
@@ -5399,7 +5627,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   display: inline-block;
   background-image: url(/src/assets/media/popUp/hidden.svg);
   -webkit-background-image: url(/src/assets/media/popUp/hidden.svg);
-  background-size: 15px;
+  background-size: 0.8vw;
   background-position: center center;
   background-repeat: no-repeat;
   margin-right: 6px;
@@ -5450,7 +5678,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   border-radius: 8px;
   color: #8E8E8E;
   height: 36px;
-  width: 350px;
+  width: 71.4285714286%;
   padding: 0px 15px;
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupHiddenInfo .hiddenPasswordCont ul button {
@@ -5532,7 +5760,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   height: 17px;
   background-image: url(/src/assets/media/popUp/deleted.svg);
   -webkit-background-image: url(/src/assets/media/popUp/deleted.svg);
-  background-size: 17px;
+  background-size: 1vw;
   background-position: center center;
   background-repeat: no-repeat;
 }
@@ -5550,7 +5778,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   height: 20px;
   background-image: url(/src/assets/media/popUp/slideBtn.svg);
   -webkit-background-image: url(/src/assets/media/popUp/slideBtn.svg);
-  background-size: 18px;
+  background-size: 1vw;
   background-position: center center;
   background-repeat: no-repeat;
   display: block;
@@ -5572,6 +5800,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   align-items: center;
   justify-content: center;
   gap: 9px;
+  padding: 0px 18px;
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListControlBtnBoxs button {
   width: 34px;
@@ -5579,7 +5808,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   border: 1px solid #4B4B4C;
   border-radius: 8px;
   background-color: rgba(157, 157, 157, 0.1019607843);
-  background-size: 16px;
+  background-size: 0.8vw;
   background-position: center center;
   background-repeat: no-repeat;
 }
@@ -5616,7 +5845,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListTitles h3 span {
   width: 15px;
   height: 15px;
-  background-size: 15px;
+  background-size: 0.8vw;
   background-position: center center;
   background-repeat: no-repeat;
   background-image: url(/src/assets/media/popUp/group.svg);
@@ -5681,7 +5910,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .userGroupNames li button {
   width: 20px;
   height: 20px;
-  background-size: 17px;
+  background-size: 1.5vh;
   background-position: center center;
   background-repeat: no-repeat;
   background-image: url(/src/assets/media/popUp/deleted.svg);
@@ -5709,20 +5938,31 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   height: 40px;
   background-color: #373639;
   border-radius: 8px;
-  border: 1px solid #686868;
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectBoxTitles button {
-  width: calc(100% - 16px);
+  width: 100%;
   padding: 0px 0px 0px 16px;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-size: 18px;
-  background-position: right center;
+  border-radius: 8px;
+  border: 1px solid #686868;
+  background-size: 0.8vw;
+  background-position: right 10px center;
   background-repeat: no-repeat;
-  background-image: url(/src/assets/media/popUp/slideBtn.svg);
-  -webkit-background-image: url(/src/assets/media/popUp/slideBtn.svg);
+  background-image: url(/src/assets/media/popUp/slideBtnDown.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/slideBtnDown.svg);
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectBoxTitles button.groupSelectBoxBtn.active {
+  border: 1px solid #0BA7FE;
+  background-image: url(/src/assets/media/popUp/slideBtnUp.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/slideBtnUp.svg);
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectBoxTitles button.groupSelectBoxBtn.active span {
+  color: #fff;
+  background-image: url(/src/assets/media/popUp/groupWhite.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/groupWhite.svg);
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectBoxTitles button h3 {
   color: #fff;
@@ -5731,24 +5971,24 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   letter-spacing: 0.2px;
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectBoxTitles button span {
-  color: #fff;
+  color: #7F7F7F;
   font-weight: 400;
   font-size: 14px;
   letter-spacing: 0.2px;
   width: 20px;
   height: 20px;
-  padding: 0px 30px 0px 18px;
-  background-size: 13.22px 11px;
+  padding: 0px 40px 0px 18px;
+  background-size: 0.7vw;
   background-position: left bottom 6px;
   background-repeat: no-repeat;
-  background-image: url(/src/assets/media/popUp/groupWhite.svg);
-  -webkit-background-image: url(/src/assets/media/popUp/groupWhite.svg);
+  background-image: url(/src/assets/media/popUp/groupGray.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/groupGray.svg);
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents {
   display: none;
   height: 100%;
   background-size: contain;
-  background-position: 31px top;
+  background-position: 10% top;
   background-repeat: no-repeat;
   background-image: url(/src/assets/media/popUp/dashBack.svg);
   -webkit-background-image: url(/src/assets/media/popUp/dashBack.svg);
@@ -5759,15 +5999,13 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: right;
   padding-top: 20px;
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects {
-  width: 100%;
-  max-width: 313px;
+  width: 83.3333333333%;
   height: 40px;
   background-color: transparent;
-  margin-left: 40px;
+  margin-left: 15%;
   margin-bottom: 10px;
   position: relative;
 }
@@ -5792,14 +6030,17 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   border: 1px solid #686868;
   color: #8E8E8E;
   cursor: pointer;
-  background-image: url(/src/assets/media/popUp/slideBtn.svg);
-  -webkit-background-image: url(/src/assets/media/popUp/slideBtn.svg);
-  background-size: 18px;
-  background-position: 98% center;
+  background-image: url(/src/assets/media/popUp/slideBtnDown.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/slideBtnDown.svg);
+  background-size: 0.8vw;
+  background-position: 95% center;
   background-repeat: no-repeat;
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectsTitleBtn.active {
   color: #fff;
+  border: 1px solid #0BA7FE;
+  background-image: url(/src/assets/media/popUp/slideBtnUp.svg);
+  -webkit-background-image: url(/src/assets/media/popUp/slideBtnUp.svg);
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectsTitleBtn.active span {
   color: #fff;
@@ -5825,7 +6066,6 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   border-radius: 3px;
   background-color: transparent;
   opacity: 1;
-  transition: 300ms;
   overflow: hidden;
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList.active {
@@ -5875,8 +6115,8 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   padding: 0px 14px;
   background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
   -webkit-background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
-  background-size: 18px;
-  background-position: 98% center;
+  background-size: 0.8vw;
+  background-position: 95% center;
   background-repeat: no-repeat;
   border-radius: 3px;
   color: #fff;
@@ -5886,7 +6126,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   text-align: left;
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList .groupListSelectListMember .optionListBoxs {
-  background-color: rgb(17, 17, 18);
+  background-color: #212124;
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList .groupListSelectListMember li {
   width: 100%;
@@ -5925,9 +6165,8 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .inputBoxs input[type=search] {
   background-color: transparent;
   border: none;
-  width: calc(100% - 30px);
+  width: calc(100% - 40px);
   height: 44px;
-  padding: 0px 15px;
   display: inline-block;
   color: #fff;
   font-weight: 400;
@@ -5939,7 +6178,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   height: 20px;
   position: relative;
   right: 8px;
-  background-size: 15.78px;
+  background-size: 0.8vw;
   background-position: center center;
   background-repeat: no-repeat;
   background-image: url(/src/assets/media/popUp/searchBtn.svg);
@@ -5953,9 +6192,9 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   justify-content: center;
   position: absolute;
   bottom: 0px;
-  background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
+  z-index: 99999;
+  background-color: #1d1d1f;
+  border-top: 1px solid #686868;
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .useGroupListBtnWrap02 button {
   width: 126px;
@@ -5970,6 +6209,101 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 1600px) {
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupPopInfo ul li .userGroupSelects .userGroupSelectsTitleBtn {
+    font-size: 1vw;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article .userGroupPopInfo ul li .userGroupSelects .userGroupSelectList .userGroupSelectListMember li p {
+    font-size: 1vw;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs01 .userGroupSliders ul li p {
+    padding: 8px;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs01 .userGroupSliders ul li p span {
+    font-size: 0.65vw;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .userGroupNames li p {
+    font-size: 0.7vw;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .inputBoxs input[type=search] {
+    font-size: 0.65vw;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectBoxTitles button h3 {
+    font-size: 0.8vw;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectBoxTitles button span {
+    font-size: 0.8vw;
+    padding: 0px 20px 0px 18px;
+    display: flex;
+    align-items: center;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectsTitleBtn {
+    font-size: 0.7vw;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectsTitleBtn span {
+    font-size: 0.7vw;
+    margin-left: 3px;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList .groupListSelectListMember .optionGroupBtn {
+    font-size: 0.7vw;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList .groupListSelectListMember li p {
+    font-size: 0.7vw;
+  }
+}
+@media (max-width: 1390px) {
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article label {
+    padding: 10px 0px 0px 0px;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs01 {
+    padding: 20px 10px;
+    width: calc(100% - 20px);
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs01 .userGroupSliders ul {
+    height: 25px;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs01 .userGroupSliders ul li p {
+    padding: 5px;
+    gap: 0px;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs01 .userGroupSliders ul li p span {
+    font-size: 0.65vw;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .userGroupNames li p {
+    font-size: 0.7vw;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .inputBoxs input[type=search] {
+    font-size: 0.8vw;
+    height: 30px;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectBoxTitles {
+    height: 30px;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectBoxTitles button span {
+    background-position: left 10% bottom 50%;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects {
+    height: 30px;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectsTitleBtn {
+    font-size: 0.7vw;
+    height: 30px;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList {
+    top: 37px;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList .groupListSelectListMember .optionGroupBtn {
+    font-size: 0.7vw;
+  }
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList .groupListSelectListMember li p {
+    font-size: 0.7vw;
+  }
+}
+@media (max-width: 1024px) {
+  .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs01 .userGroupSliders ul li {
+    gap: 5px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

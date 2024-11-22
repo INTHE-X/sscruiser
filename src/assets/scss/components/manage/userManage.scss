@@ -53,12 +53,10 @@
       gap:15px;
 
 
-   .sectionMenuListBoxs {
+   .sectionMenuListBoxs {width: 14.6%;
 
-       width: 13.8%;
-
-       &.inputControlBoxs01{ width:22.2% }
-       &.inputControlBoxs02{  width:20.77%; }
+       &.inputControlBoxs01{ width:22.18%;}
+       &.inputControlBoxs02{ width:20.78%;}
 
       .selectTitle {
          padding: 10px 0px;
@@ -74,7 +72,7 @@
       .userManageSelects{
          
          width:100%;
-         max-width:250px;
+         min-width:50px;
          height: 43px;
          border-radius: 8px;
          border: 1px solid #686868;
@@ -129,7 +127,7 @@
          height:0px;
          border-radius: 10px;
          border:none;
-         background-color:rgba(22, 22, 22,0.4);
+         background-color:rgba(22, 22, 22,0.9);
          opacity: 1;
          transition: 300ms;
          overflow: hidden;
@@ -151,7 +149,7 @@
             position: absolute;
             top: 0px;
             left: 0;
-            width: calc(100% - 2px);
+            width: calc(100%);
             height: 100%;
             margin: 0 auto;
             background-color:transparent;
@@ -169,17 +167,12 @@
             align-items: center;
             justify-content: center;
 
-            &:hover{
-               background-image: $backgroundGradient;
-               -webkit-background-image: $backgroundGradient;
-               opacity: 100%;
-            }
             p{
 
                color: $fontColor-f;
                font-size: $fontSize-13;
                font-weight: $fontWeight-400;
-               width: calc(100% - 32px);
+               width: calc(100%);
                padding:0px 16px;
                height: 100%;
                display: flex;
@@ -187,6 +180,12 @@
                justify-content: flex-start;
                cursor: pointer;
             }
+            &:hover{
+               background-image: $backgroundGradient;
+               -webkit-background-image: $backgroundGradient;
+               opacity: 100%;
+            }
+
             }
          }
          }
@@ -198,7 +197,7 @@
       .inputControlList{
          input[type="text"] {
             width: calc(100% - 30px);
-            max-width:350px;
+            min-width:100px;
             height: 44px;
             padding: 0px 15px;
             border-radius: 10px;
@@ -216,7 +215,7 @@
          button{
 
             width:calc(100%);
-            max-width:356px;
+            min-width:100px;
             height: 44px;
             padding:0px 43px;
             display: block;
@@ -629,15 +628,6 @@
                            }
                           }
                          
-                        &.imgBoxs{
-
-                           background-image: url(/src/assets/media/userManage/dataImg.svg);
-                           -webkit-background-image: url(/src/assets/media/userManage/dataImg.svg);
-                           background-repeat: no-repeat;
-                           background-size: contain;
-                           background-position: center center;
-                       
-                        }
                        }
 
                    }

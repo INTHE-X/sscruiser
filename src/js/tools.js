@@ -106,7 +106,6 @@ toolsBoxOpenEvet();
 
 const toolsSelectBoxEvet = () => {
 
-    
      
    let toolListHiddenSelectBox01 = document.getElementById("toolListHiddenSelectBox01");
    let toolListHiddenSelectBox02 = document.getElementById("toolListHiddenSelectBox02");
@@ -219,6 +218,31 @@ const toolsSelectBoxEvet = () => {
 }
 
 toolsSelectBoxEvet();
+
+
+
+/* 자원목록 버튼 클릭시 효과 이벤트 */
+
+const toolsSwitchBtnEvet = () => {
+
+    const listSetupBtns = document.querySelectorAll(".listSetup ul li button");
+
+    if(listSetupBtns){
+
+      listSetupBtns.forEach((btn) => {
+         btn.addEventListener("click" , () => {
+
+            if( btn.classList.contains("active")){
+               return btn.classList.remove("active");
+            }
+             btn.classList.add("active");
+         })
+      })
+    }
+}
+
+toolsSwitchBtnEvet();
+
 
 /* 넘버 버튼 클릭시 숫자 증가하기  */
 

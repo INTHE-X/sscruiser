@@ -91,6 +91,7 @@ body{
              margin:0 auto;
              text-align: center;
              overflow-y: scroll;
+             overflow-x: scroll;
 
              &::-webkit-scrollbar{ display: none};
 
@@ -256,7 +257,7 @@ body{
             width:304px;
             height:154px;
             border-radius: 9px;
-            background-image: linear-gradient(#38333952 0%, #12121366 100%);
+            background-image: linear-gradient(#383339 0%, #121213 40% 100%);
             -webkit-background-image: linear-gradient(#38333952 0%, #12121366 100%);
             border: 1px solid #686868;
             overflow: hidden;
@@ -444,19 +445,20 @@ body{
              top:0px;
              width: 0px;
              overflow: hidden;
-             transition: width 800ms;
+             transition: width 900ms;
 
              &.active{
 
-               width: auto;
+               width: calc(391px);
                overflow-y: scroll;
-               transition: 800ms;
+               transition: width 800ms;
 
              .copyHiddenMenusWrap{
 
-                 transform: translateX(0);
+                 transform: translateX(0px);
                  transition: transform 800ms;
              }
+             
              }
 
              .copyHiddenMenusWrap{

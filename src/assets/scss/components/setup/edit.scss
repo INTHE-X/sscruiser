@@ -146,7 +146,7 @@
             height:0px;
             border-radius: 10px;
             border:none;
-            background-color:rgba(22, 22, 22,0.4);
+            background-color:rgba(22, 22, 22, 0.9);
             opacity: 1;
             transition: 300ms;
             overflow: hidden;
@@ -168,7 +168,7 @@
                position: absolute;
                top: 0px;
                left: 0;
-               width: calc(100% - 2px);
+               width: calc(100%);
                height: 100%;
                margin: 0 auto;
                background-color:transparent;
@@ -247,6 +247,7 @@
          background-image: $dottedBackGradient;
          -webkit-background-image: $dottedBackGradient;
          position: relative;
+         overflow-y: hidden;
 
          &::before{
             content: "";
@@ -268,13 +269,37 @@
              padding:20px;
              width:calc(100% - 40px);
              height:calc(100% - 40px);
+             overflow-y: scroll;
+             position: relative;
+
+
+             &::-webkit-scrollbar{ width:2px; }
+             &::-webkit-scrollbar-thumb{
+     
+              height: 10px!important;
+              border-radius: 10px;
+              background-color: #D9D9D9;
+            }
+            &::-webkit-scrollbar-button:vertical:start:decrement{
+               display: block;
+               height: 5px;
+            }
+            &::-webkit-scrollbar-button:vertical:start:increment{
+                  display: block;
+                  height: 5px;
+            }
+            &::-webkit-scrollbar-button:vertical:end:decrement {
+               display: block;
+               height: 5px;
+           }
+
+
              
 
              .editBoxs{
 
                height:224px;
                min-width:418px;
-               max-width:418px;
                float:left;
                margin-right:20px;
                margin-bottom:20px;
@@ -387,7 +412,7 @@
             height:0px;
             border-radius: 5px;
             border:none;
-            background-color: rgba(22, 22, 22, 0.4);
+            background-color: rgba(22, 22, 22, 0.9);
             opacity: 1;
             transition: 300ms;
             overflow: hidden;
@@ -409,7 +434,7 @@
                position: absolute;
                top: 0px;
                left: 0;
-               width: calc(100% - 2px);
+               width: calc(100%);
                height: 100%;
                margin: 0 auto;
                background-color: transparent;
@@ -519,14 +544,8 @@
    .editHiddenMenu{
 
       height:100%;
-      width: 57px;
+      width: 20%;
       overflow: hidden;
-
-      &.active{
-
-          width:20%;
-          transition: width 800ms;
-      }
 
       .editHiddenMenuBtnBox{
 
@@ -544,21 +563,14 @@
             font-weight: $fontWeight-400;
             letter-spacing: $letterSpace-2;
             border-right:1px solid #474748;
-            width:0px;
+            width:calc(100% - 27px);
+            padding:0px 7px 0px 20px;
             overflow: hidden;
             height: 100%;
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            opacity: 0;
 
-            &.active{
-
-              width:calc(100% - 27px);
-              padding:0px 7px 0px 20px;
-              opacity: 1;
-              transition: opacity 3.5s;
-            }
 
          }
          button{
@@ -571,29 +583,17 @@
              background-repeat: no-repeat;
              background-size: 31px 31px;
 
-             &.active{
-               background-image: url(/src/assets/media/edit/hiddenClose.svg);
-               -webkit-background-image: url(/src/assets/media/edit/hiddenClose.svg);
-             }
          }
       }
 
       .editHiddenMenuList{
 
-        width: 0px;
+        width:calc(100% - 40px);
+        padding:19px 20px;
         height:calc(100% - 0px - 94px);
         overflow: hidden;
-        opacity: 0;
         overflow-y: scroll;
 
-        &.active{
-
-          width:calc(100% - 40px);
-          padding:19px 20px;
-          opacity: 1;
-          transition: opacity 3s;
-          
-        }
 
         &::-webkit-scrollbar{ width:2px; }
         &::-webkit-scrollbar-thumb{
@@ -617,44 +617,46 @@
              overflow: hidden;
              border-radius: 10px;
 
-             button{
+             input[type="radio"]{ display:none};
+             input[type="radio"]:checked + label{
+               border: 1px solid #0BA7FE;
+             }
 
-                width: 100%;
-                height: 100%;
-                color: $fontColor-f;
-                font-size: $fontSize-13;
-                font-weight: $fontWeight-400;
-                letter-spacing: $letterSpace-2;
+             label{
+
+                width: auto;
+                height: calc(100% - 2px);
                 background-image: url(/src/assets/media/edit/info.svg);
                 -webkit-background-image: url(/src/assets/media/edit/info.svg);
                 background-position: 12px center;
                 background-repeat: no-repeat;
                 background-size: 16px 16px;
-                text-align: left;
                 padding:0px 0px 0px 42px;
                 border-radius: 10px;
                 border: 1px solid #686868;
                 position: relative;
+                display: flex;
+                align-items: center;
+
+                span{
+                  color: $fontColor-f;
+                  font-size: $fontSize-13;
+                  font-weight: $fontWeight-400;
+                  letter-spacing: $letterSpace-2;
+                  
+                }
 
                 &::after{
 
                   content: "";
-                  width:calc(100% / 2.8);
+                  width:calc(100% / 3);
                   height:0.5px;
                   position: absolute;
-                  top:0px;
+                  top:-0.5px;
                   left:calc(100% / 3);
                   background-image: $border-linear;
                   -webkit-background-image: $border-linear;
                 }
-
-
-                &.active{
-
-                  border: 1px solid #0BA7FE;
-
-                }
-                
              }
 
          }
@@ -662,6 +664,30 @@
         }
       }
    }
+   }
+ }
+
+ @include breakpoint(medium) {
+   .editWrap {
+      .editContBoxs{
+         .editHiddenMenu{
+            .editHiddenMenuBtnBox{
+               span{ font-size: 1.1vw;}
+               button{ background-size: 2vw;}
+            }
+
+            .editHiddenMenuList {
+               ul{
+                  li{
+                     label{ 
+                        padding:0px 0px 0px 30px;
+                        background-size: 1vw;
+                        span{ font-size: 1.1vw;}}
+                  }
+               }
+            }
+         }
+      }
    }
  }
 }

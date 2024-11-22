@@ -1,9 +1,9 @@
 /* Error: Undefined variable.
  *    ,
- * 61 |             font-size: $fontSize-14;
- *    |                        ^^^^^^^^^^^^
+ * 57 |             background-image: $border-linear;
+ *    |                               ^^^^^^^^^^^^^^
  *    '
- *   src/assets/scss/components/popUp/popup.scss 61:24  root stylesheet */
+ *   src/assets/scss/components/popUp/popup.scss 57:31  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -13,5 +13,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a    \2577 \a 61 \2502              font-size: $fontSize-14;\a    \2502                         ^^^^^^^^^^^^\a    \2575 \a   src/assets/scss/components/popUp/popup.scss 61:24  root stylesheet";
+  content: "Error: Undefined variable.\a    \2577 \a 57 \2502              background-image: $border-linear;\a    \2502                                ^^^^^^^^^^^^^^\a    \2575 \a   src/assets/scss/components/popUp/popup.scss 57:31  root stylesheet";
 }

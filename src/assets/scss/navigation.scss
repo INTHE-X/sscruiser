@@ -15,11 +15,15 @@
       width:250px;
       transition: width 800ms;
 
+      nav{ 
+         .menuWrappers{
+            .logoBoxs{ background-position: left 11% center;}
+         }}
+
      }
 
-     &.color{
-      background-color:#111111;
-     }
+     &.color-111{ background-color:#111111;}
+     &.color-2325{ background-color: $backgroundColor-2325;}
 
      nav{
 
@@ -39,9 +43,9 @@
                 height:50px;
                 background-image: url(/src/assets/media/nav/logo.svg);
                 -webkit-background-image: url(/src/assets/media/nav/logo.svg);
-                background-size: 26px 30px;
+                background-size: 1.3vw;
                 background-repeat: no-repeat;
-                background-position: 22px center;
+                background-position: left 50% center;
                 border-bottom:1px solid #6A6A6A33;
 
                 a{
@@ -103,11 +107,11 @@
 
                     &:hover::before, &.active::before{
                      content: "";
-                     width:20px;
+                     width:calc(100% / 3);
                      height:0.5px;
                      position: absolute;
                      top:0px;
-                     left:30%;
+                     left:calc(100% / 6);
                      background-image: linear-gradient(90deg, #4B5352 0%, #9B9B9B 52%, #4B5352 100%);
                      -webkit-background-image: linear-gradient(90deg, #4B5352 0%, #9B9B9B 52%, #4B5352 100%);
 
@@ -140,7 +144,7 @@
                         height: 100%;
                         background-position: center center;
                         background-repeat: no-repeat;
-                        background-size: 48px 48px;
+                        background-size: 2.7vw;
                       }
                       
                       &.navBtn01::before{
@@ -176,9 +180,9 @@
                     }
                     .subMenusWrapper{
 
-                         position: absolute;
+                         position: fixed;
+                         z-index:999;
                          left:60px;
-                         top:0px;
                          border: 1px solid #686868;
                          border-radius: 10px;
                          backdrop-filter: blur(15px);
@@ -207,7 +211,7 @@
                               .imgBoxs{
                                  background-position: center center;
                                  background-repeat: no-repeat;
-                                 background-size: 40px 40px;
+                                 background-size: 2vw;
                                  width:17px;
                                  height:17px;
                                  float:left;
@@ -496,7 +500,7 @@
                 height: 31px;
                 background-position: center center;
                 background-repeat: no-repeat;
-                background-size: 31px 31px;
+                background-size: 1.5vw;
                 background-image: url(/src/assets/media/nav/addMenu.svg);
                 -webkit-background-image: url(/src/assets/media/nav/addMenu.svg);
 
@@ -512,7 +516,6 @@
                    background-image: url(/src/assets/media/nav/closeMenu.svg);
                    -webkit-background-image: url(/src/assets/media/nav/closeMenu.svg);
                    background-position: right center;
-                   background-size: auto;
 
 
                    p{
@@ -526,5 +529,91 @@
 
             }
          }
+     }
+
+     @include breakpoint(large) {
+
+      nav{
+         .menuWrappers{
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar{ display: none;}
+
+            .menuBoxs{
+               ul{
+                  li.navBtnBoxs{
+                        width:38px;
+                        height:38px;
+                     }
+                  
+               }
+            }
+         }
+      }
+     }
+     @include breakpoint(medium) {
+
+      nav{
+         .menuWrappers{
+            .menuBoxs{
+               ul{
+                  li.navBtnBoxs{
+                        width:30px;
+                        height:30px;
+
+                        button{
+                           &::before{ background-size:3vw;}
+                        }
+
+                        .subMenusWrapper{
+                           .subMenuBoxs{
+                              li{
+                                 h3{ font-size: 1.4vw;}
+                                 .imgBoxs{ background-size: 3vw;}
+                                 a{font-size: 1.2vw;}
+                              }
+                           }
+                        }
+                     }
+                  
+               }
+            }
+            .addmenuBoxs {
+               ul{
+                 .navAddBtnBoxs{
+                    button{
+                       display: flex; align-items: center;
+                       font-size: 1.3vw;
+                       span{
+                          &.iconBoxs{
+                             background-size: 3vw;
+                          }
+                         } 
+                    }
+
+                    .subAddMenusWrapper{
+                      ul{
+                         li{
+                           a{ font-size: 1.2vw;}
+                         }
+                      }
+                    }
+                 }
+               }
+            }
+            .logoBoxs{
+               a{
+                  span{ font-size: 1.5vw;}
+               }
+            }
+
+         }
+
+         .hiddenMenusBoxs{
+            button{
+               p{font-size: 1.3vw;}
+            }
+         }
+      }
      }
 }
