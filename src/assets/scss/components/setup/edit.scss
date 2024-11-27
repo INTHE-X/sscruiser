@@ -309,17 +309,16 @@
                -webkit-background-image: $dottedBackGradient;
                backdrop-filter: blur(30px);
                -webkit-backdrop-filter: blur(30px);
-               overflow: hidden;
                position: relative;
 
                &::after{
 
                   content: "";
-                  width:calc(100% / 2.8);
-                  height:0.5px;
+                  width:calc(100% / 2.32);
+                  height:1px;
                   position: absolute;
-                  top:0px;
-                  left:calc(100% / 3);
+                  top:-1.2px;
+                  left:calc(100% / 3.3);
                   background-image: $border-linear;
                   -webkit-background-image: $border-linear;
                 }
@@ -333,6 +332,8 @@
                 align-items: center;
                 justify-content: space-between;
                 background-color: #323133;
+                border-top-right-radius: 10px;
+                border-top-left-radius: 10px;
 
 
                 .editBoxsTitleSpace{
@@ -620,6 +621,8 @@
              input[type="radio"]{ display:none};
              input[type="radio"]:checked + label{
                border: 1px solid #0BA7FE;
+               &::after{   background-image: $border-linear-blue;
+                           -webkit-background-image: $border-linear-blue;}
              }
 
              label{
@@ -637,6 +640,8 @@
                 position: relative;
                 display: flex;
                 align-items: center;
+                backdrop-filter: blur(30px);
+                -webkit-backdrop-filter: blur(30px);
 
                 span{
                   color: $fontColor-f;
@@ -649,11 +654,11 @@
                 &::after{
 
                   content: "";
-                  width:calc(100% / 3);
-                  height:0.5px;
+                  width:calc(100% / 3.53);
+                  height:1px;
                   position: absolute;
-                  top:-0.5px;
-                  left:calc(100% / 3);
+                  top:-1.2px;
+                  left:calc(100% / 2.9);
                   background-image: $border-linear;
                   -webkit-background-image: $border-linear;
                 }

@@ -36,7 +36,6 @@
          -webkit-background-image: $dottedBackGradient;
          backdrop-filter: blur(30px);
          -webkit-backdrop-filter: blur(30px);
-         overflow: hidden;
          position: relative;
 
 
@@ -50,6 +49,22 @@
           align-items: center;
           justify-content: space-between;
           border-bottom: 1px solid #686868;
+          position: relative;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+
+          &::after{
+ 
+            content: "";
+            width:calc(100% / 3.54);
+            height:1px;
+            position: absolute;
+            top:-1px;
+            left:calc(100% / 2.8);
+            background-image: $border-linear;
+            -webkit-background-image: $border-linear;
+            
+         }
 
           h3{
 
@@ -583,7 +598,7 @@
                           height: 20px;
                           background-image: url(/src/assets/media/popUp/slideBtn.svg);
                           -webkit-background-image: url(/src/assets/media/popUp/slideBtn.svg);
-                          background-size: 1vw;
+                          background-size: 1rem;
                           background-position: center center;
                           background-repeat: no-repeat;
                           display: block;
@@ -626,7 +641,30 @@
                         background-size: 0.8vw;
                         background-position: center center;
                         background-repeat: no-repeat;
+                        position: relative;
+                        overflow: hidden;
 
+                        &:hover{
+                           &::after{
+                              content: "";
+                              width: 100%;
+                              height: 100%;
+                              position: absolute;
+                              left:0;
+                              top:0;
+                              background-image: linear-gradient(150deg,#7C737366 0%, #39393966 100%);
+                              -webkit-background-image: linear-gradient(#7C737366 0%, #39393966 100%);
+                           }
+                        }
+
+                        &.active{
+                           border: 1px solid #0BA7FE;
+                           &::after{
+                              background-image: none;
+                              -webkit-background-image:none;
+                           }
+                        }
+                     
                         &:nth-child(1){
 
                            background-image: url(/src/assets/media/popUp/plus.svg);
@@ -638,7 +676,10 @@
                            -webkit-background-image: url(/src/assets/media/popUp/minus.svg);
                         }
 
+
                       }
+
+
                    }
 
                    .userGroupListCont{
@@ -992,7 +1033,7 @@
                      .optionGroupBtn{ 
 
                         width: 100%;
-                        background-color:#373639;
+                        background-color:#D9D9D917;
                         height:26px;
                         padding:0px 14px;
                         background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
@@ -1025,9 +1066,11 @@
                      justify-content: center;
 
                      &:hover{
-                        background-image: $backgroundGradient;
-                        -webkit-background-image: $backgroundGradient;
+                        background-color: #363538;
                         opacity: 100%;
+                     }
+                     &.active{
+                        background-color: #363538;
                      }
                      p{
 
@@ -1041,7 +1084,9 @@
                         align-items: center;
                         justify-content: flex-start;
                         cursor: pointer;
+
                      }
+
                      }
                   }
                   }
@@ -1114,6 +1159,8 @@
          z-index:99999;
          background-color: #1d1d1f;
          border-top:1px solid #686868;
+         border-bottom-left-radius: 10px;
+         border-bottom-right-radius: 10px;
 
          button{
 

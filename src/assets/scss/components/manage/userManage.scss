@@ -34,11 +34,11 @@
       &::after{
  
          content: "";
-         width:calc(100% / 2.8);
-         height:0.5px;
+         width:calc(100% / 3.54);
+         height:1px;
          position: absolute;
-         top:0px;
-         left:calc(100% / 3);
+         top:-1.2px;
+         left:calc(100% / 2.8);
          background-image: $border-linear;
          -webkit-background-image: $border-linear;
          
@@ -433,7 +433,7 @@
                 position: absolute;
                 right:-3px;
                 top:44px;
-                z-index:999;
+                z-index:99999;
                 padding:13px 16px;
                 width:calc(209px - 32px);
                 margin:0 auto;
@@ -523,15 +523,43 @@
                -webkit-background-image: $dottedBackGradient;
                overflow: hidden;
 
+               .scrollWrappers{
+                  width: 100%;
+                  max-height: 637px;
+                  overflow-x: auto;
+                  overflow-y: auto;
+
+                  &::-webkit-scrollbar{ width: 2px;}
+                  &::-webkit-scrollbar-thumb{
+                      height: 10px!important;
+                      border-radius: 10px;
+                      background-color: #D9D9D9;
+                  }
+                  &::-webkit-scrollbar-button:vertical:start:decrement{
+                      display: block;
+                      height: 20px;
+                  }
+                  &::-webkit-scrollbar-button:vertical:start:increment{
+                      display: block;
+                      height: 20px;
+                  }
+                  &::-webkit-scrollbar-button:vertical:end:decrement {
+                      display: block;
+                      height: 5px;
+                  }
+
                 table{
 
                    width: 100%;
                    border-collapse:collapse;
-                   
+
                   thead{
 
                      background-color: #323233;
                      border-bottom: 1px solid #686868;
+                     position: sticky;
+                     top:0;
+                     z-index:999;
 
                       tr{
 
@@ -577,7 +605,7 @@
                  
                        td{
 
-                         padding:0px 20px;
+                         padding:10px 20px;
                          border-right: 1px solid #4A4A4C;
                          border-bottom: 1px solid #383839;
                          color:$fontColor-f;
@@ -632,6 +660,8 @@
 
                    }
                 }
+
+               }
 
             }
            }

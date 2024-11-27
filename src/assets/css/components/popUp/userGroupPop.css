@@ -1,9 +1,9 @@
 /* Error: Undefined variable.
  *    ,
- * 32 |          background-image: $dottedBackGradient;
+ * 35 |          background-image: $dottedBackGradient;
  *    |                            ^^^^^^^^^^^^^^^^^^^
  *    '
- *   src/assets/scss/components/popUp/userGroupPop.scss 32:28  root stylesheet */
+ *   src/assets/scss/components/popUp/userGroupPop.scss 35:28  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -13,5 +13,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a    \2577 \a 32 \2502           background-image: $dottedBackGradient;\a    \2502                             ^^^^^^^^^^^^^^^^^^^\a    \2575 \a   src/assets/scss/components/popUp/userGroupPop.scss 32:28  root stylesheet";
+  content: "Error: Undefined variable.\a    \2577 \a 35 \2502           background-image: $dottedBackGradient;\a    \2502                             ^^^^^^^^^^^^^^^^^^^\a    \2575 \a   src/assets/scss/components/popUp/userGroupPop.scss 35:28  root stylesheet";
 }

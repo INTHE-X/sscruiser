@@ -102,7 +102,7 @@ header{
         /* 로그인후 박스*/
         .afterLoginBoxs{
 
-            display:none;
+            // display:none;
 
             .afterLoginWrap{
 
@@ -226,7 +226,7 @@ header{
 
     position: fixed;
     top:57px;
-    right:215px;
+    right:calc(100% / 8.8);
     z-index:99999999;
     display:none;
 
@@ -234,7 +234,8 @@ header{
 
     .alaramPopBoxs{
 
-        width:599px;
+        width:calc(599px - 2px);
+        max-width:calc(599px - 2px);
         height:412px;
         border:1px solid #686868;
         border-radius: 10px;
@@ -248,7 +249,7 @@ header{
 
         &.active{
 
-           height:calc(412px * 2);
+           height:calc(412px * 1.6);
            transition: height 800ms;
            
         }
@@ -511,4 +512,54 @@ header{
             }
         }
     }
+
+@include breakpoint(x-large){
+    .alaramPopBoxs{
+        &.active{ height:calc(412px * 1.5);}
+    }
+}
+
+@include breakpoint(large){
+    .alaramPopBoxs{
+        height:312px;
+        &.active{ height:calc(312px * 1.5);}
+      .alaramPopContents {
+        
+        .alaramPopDataBoxs {
+            ul{
+                padding: 10px 15px 10.5px;
+                h3{ font-size: 1vw;}
+                li {
+                    padding:6px 0px;
+                    label {
+                        font-size: 0.8vw;
+                        span{ width: 1vw; height: 1vw;
+                        &::before{
+                             width: 1vw;
+                             height: 1vw;
+                             background-size: 1vw 0.5vw;
+                        }}
+                    }
+                    button{
+                        width: 1vw;
+                        height: 1vw;
+                        background-size: 1vw 1vw;
+                    }
+                }
+            }
+        }
+      }
+      .moreDatasBtn { height:42px; font-size: 1vw;
+    span { background-size: 1vw;}}
+      
+    }
+}
+
+@include breakpoint(medium){
+    .alaramPopBoxs{
+        height:280px;
+        &.active{ height:calc(280px * 1.5);}
+    }
+}
+
 }

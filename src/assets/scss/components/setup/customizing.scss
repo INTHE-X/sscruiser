@@ -110,6 +110,7 @@
 
                input[type="radio"]:checked + .labelBoxs{
                   border:1px solid #0BA7FE;
+                  &::after{  background-image: $border-linear-blue;  -webkit-background-image: $border-linear-blue; }
 
                   .boxsTop{
                      p{
@@ -127,6 +128,18 @@
                   height: calc(358px - 40px);
                   border:1px solid #686868;
                   border-radius: 10px;
+                  position: relative;
+
+                  &::after{
+                     content: "";
+                     width:calc(100% / 5);
+                     height:1px;
+                     position: absolute;
+                     top:-1.2px;
+                     left:calc(100% / 2.5);
+                     background-image: $border-linear;
+                     -webkit-background-image: $border-linear;
+                  }
 
                   .boxsTop{
                       width: 100%;
@@ -218,8 +231,9 @@
                   height: 430px;
                   border:1px solid #686868;
                   border-radius: 8px;
-                  overflow: hidden;
                   position: relative;
+                  backdrop-filter: blur(15px);
+                  -webkit-backdrop-filter: blur(15px);
 
                   &.active{
 
@@ -230,11 +244,11 @@
                   &::after{
 
                      content: "";
-                     width:calc(100% / 4);
-                     height:0.5px;
+                     width:calc(100% / 5);
+                     height:1px;
                      position: absolute;
-                     top:0px;
-                     left:calc(100% / 2.7);
+                     top:-1.2px;
+                     left:calc(100% / 2.5);
                      background-image: $border-linear;
                      -webkit-background-image: $border-linear;
                   }
@@ -248,6 +262,8 @@
                      padding:10px;
                      height:calc(30px - 20px);
                      background-color: #373639;
+                     border-top-left-radius: 8px;
+                     border-top-right-radius: 8px;
 
                      h5{
                         color:$fontColor-f;

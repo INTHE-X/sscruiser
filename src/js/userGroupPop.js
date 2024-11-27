@@ -1,9 +1,27 @@
+/* +,- 버튼 클릭시 보더처리 이벤트  */
+
+const listAddBtnEvet = () => {
+
+    const listAddMinusBtn = document.querySelectorAll(".userGroupListControlBtnBoxs button");
+
+    if(listAddMinusBtn){
+      listAddMinusBtn.forEach((btns) => {
+         btns.addEventListener("click", () => {
+             
+             btns.classList.add("active");
+             setTimeout(() => {  btns.classList.remove("active"); },100);
+         })
+      })
+    }
+   }
+
+listAddBtnEvet();
+
 /* 셀렉박스 이벤트  */
 
 const userGroupSelectBoxEvet = () => {
 
     
-     
    let userGroupSelectBox01 = document.getElementById("userGroupSelectBox01");
 
    let userGroupSelectsTitleBtn = document.querySelector(".userGroupSelectsTitleBtn");
@@ -163,15 +181,21 @@ const groupListSelectBoxEvet = () => {
      lists.addEventListener("click", (e) =>{ 
 
           const thisTarget = e.target; //현재 클릭한 요소
-          const thisBtn = thisTarget.parentElement.parentElement.parentElement.parentElement.parentElement.previousElementSibling;
-          const targetSelectList = thisTarget.parentElement.parentElement.parentElement.parentElement.parentElement;
-          const targetSelects = thisTarget.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
+         //  const thisBtn = thisTarget.parentElement.parentElement.parentElement.parentElement.parentElement.previousElementSibling;
+         //  const targetSelectList = thisTarget.parentElement.parentElement.parentElement.parentElement.parentElement;
+         //  const targetSelects = thisTarget.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
+          const thisTargetParents = thisTarget.parentElement;
 
           if(thisTarget.nodeName === "P"){
 
-             targetSelectList.classList.remove("active");
-             targetSelects.classList.remove("active");
-             thisBtn.classList.remove("active");
+            //  targetSelectList.classList.remove("active");
+            //  targetSelects.classList.remove("active");
+            //  thisBtn.classList.remove("active");
+            if(thisTargetParents.classList.contains("active")){
+               return thisTargetParents.classList.remove("active");
+            }
+            thisTargetParents.classList.add("active");
+
           }
 
        

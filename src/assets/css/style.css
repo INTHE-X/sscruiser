@@ -124,9 +124,6 @@ header .userInfo .beforeLoginBoxs ul li a {
   height: 49px;
   cursor: pointer;
 }
-header .userInfo .afterLoginBoxs {
-  display: none;
-}
 header .userInfo .afterLoginBoxs .afterLoginWrap {
   display: flex;
   align-items: center;
@@ -212,7 +209,7 @@ header .userInfo ul li button {
 #alaramWrappers {
   position: fixed;
   top: 57px;
-  right: 215px;
+  right: 11.3636363636%;
   z-index: 99999999;
   display: none;
 }
@@ -220,7 +217,8 @@ header .userInfo ul li button {
   display: block;
 }
 #alaramWrappers .alaramPopBoxs {
-  width: 599px;
+  width: 597px;
+  max-width: 597px;
   height: 412px;
   border: 1px solid #686868;
   border-radius: 10px;
@@ -233,7 +231,7 @@ header .userInfo ul li button {
   transition: height 800ms;
 }
 #alaramWrappers .alaramPopBoxs.active {
-  height: 824px;
+  height: 659.2px;
   transition: height 800ms;
 }
 #alaramWrappers .alaramPopBoxs .alaramPopTitles {
@@ -440,6 +438,60 @@ header .userInfo ul li button {
   transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
 }
+@media (max-width: 1600px) {
+  #alaramWrappers .alaramPopBoxs.active {
+    height: 618px;
+  }
+}
+@media (max-width: 1390px) {
+  #alaramWrappers .alaramPopBoxs {
+    height: 312px;
+  }
+  #alaramWrappers .alaramPopBoxs.active {
+    height: 468px;
+  }
+  #alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs ul {
+    padding: 10px 15px 10.5px;
+  }
+  #alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs ul h3 {
+    font-size: 1vw;
+  }
+  #alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs ul li {
+    padding: 6px 0px;
+  }
+  #alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs ul li label {
+    font-size: 0.8vw;
+  }
+  #alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs ul li label span {
+    width: 1vw;
+    height: 1vw;
+  }
+  #alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs ul li label span::before {
+    width: 1vw;
+    height: 1vw;
+    background-size: 1vw 0.5vw;
+  }
+  #alaramWrappers .alaramPopBoxs .alaramPopContents .alaramPopDataBoxs ul li button {
+    width: 1vw;
+    height: 1vw;
+    background-size: 1vw 1vw;
+  }
+  #alaramWrappers .alaramPopBoxs .moreDatasBtn {
+    height: 42px;
+    font-size: 1vw;
+  }
+  #alaramWrappers .alaramPopBoxs .moreDatasBtn span {
+    background-size: 1vw;
+  }
+}
+@media (max-width: 1024px) {
+  #alaramWrappers .alaramPopBoxs {
+    height: 280px;
+  }
+  #alaramWrappers .alaramPopBoxs.active {
+    height: 420px;
+  }
+}
 
 .navFixed {
   position: absolute;
@@ -597,7 +649,7 @@ header .userInfo ul li button {
 .navFixed nav .menuWrappers .menuBoxs ul li.navBtnBoxs .subMenusWrapper {
   position: fixed;
   z-index: 999;
-  left: 60px;
+  left: 70px;
   border: 1px solid #686868;
   border-radius: 10px;
   backdrop-filter: blur(15px);
@@ -996,13 +1048,13 @@ header .userInfo ul li button {
 }
 #cruiserMainWrappers .mainContentBoxs .mainContents article::after {
   content: "";
-  width: 35.7142857143%;
-  height: 0.5px;
+  width: 41.1522633745%;
+  height: 1px;
   position: absolute;
-  top: 0px;
-  left: 30%;
-  background-image: linear-gradient(90deg, #4B5352 0%, #9B9B9B 52%, #4B5352 100%);
-  -webkit-background-image: linear-gradient(90deg, #4B5352 0%, #9B9B9B 52%, #4B5352 100%);
+  top: -1px;
+  left: 30.303030303%;
+  background-image: linear-gradient(90deg, #454545 0%, #b7b7b7 52%, #454545 100%);
+  -webkit-background-image: linear-gradient(90deg, #454545 0%, #b7b7b7 52%, #454545 100%);
 }
 #cruiserMainWrappers .mainContentBoxs .mainContents article .mainCont {
   width: calc(100% - 20px);
@@ -1227,6 +1279,21 @@ header .userInfo ul li button {
   background-position: center center;
   background-size: cover;
   overflow: auto;
+  position: relative;
+}
+.loginPopWrappers::after {
+  content: "";
+  background-image: url(/src/assets/media/dottedBack.svg);
+  -webkit-background-image: url(/src/assets/media/dottedBack.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 20%;
 }
 .loginPopWrappers::-webkit-scrollbar {
   display: none;
@@ -1238,6 +1305,8 @@ header .userInfo ul li button {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 9999;
 }
 .loginPopWrappers .loginResizeWrap .loginPopWrap {
   width: 378px;
@@ -1246,20 +1315,21 @@ header .userInfo ul li button {
   border: 1px solid #686868;
   border-radius: 14px;
   margin: 0 auto;
-  background-color: rgba(225, 225, 225, 0.1);
+  background-image: linear-gradient(rgba(90, 90, 95, 0.3215686275) 0%, rgba(32, 34, 36, 0.4) 100%);
+  -webkit-background-image: linear-gradient(rgba(90, 90, 95, 0.3215686275) 0%, rgba(32, 34, 36, 0.4) 100%);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
   position: relative;
 }
 .loginPopWrappers .loginResizeWrap .loginPopWrap::after {
   content: "";
-  width: 50%;
-  height: 0.5px;
+  width: 58.1395348837%;
+  height: 1px;
   position: absolute;
-  top: -0.5px;
-  left: 25%;
-  background-image: linear-gradient(0deg, #686868 0%, #B7B7B7 52%, #686868 100%);
-  -webkit-background-image: linear-gradient(0deg, #686868 0%, #B7B7B7 52%, #686868 100%);
+  top: -1.1px;
+  left: 20.8333333333%;
+  background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
+  -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
 }
 .loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace {
   margin: 0 auto;
@@ -1403,6 +1473,9 @@ header .userInfo ul li button {
     width: auto;
     height: auto;
   }
+  .loginPopWrappers .loginResizeWrap .loginPopWrap::after {
+    top: -1px;
+  }
   .loginPopWrappers .loginResizeWrap .loginPopWrap .loginPopSpace ul .logo {
     height: 8vh;
   }
@@ -1473,7 +1546,7 @@ header .userInfo ul li button {
   margin: 0 auto;
   border-radius: 10px;
   background-color: rgba(104, 104, 104, 0.2196078431);
-  border: 1px #424242;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
 }
@@ -1482,17 +1555,18 @@ header .userInfo ul li button {
   height: 162px;
   padding: 34px 16px 20px;
   border: 1px solid #686868;
-  background-image: linear-gradient(#383339 0%, #121213 100%);
+  background-image: linear-gradient(rgba(56, 51, 57, 0.3215686275) 0%, rgba(18, 18, 19, 0.4) 100%);
   -webkit-background-image: linear-gradient(rgba(56, 51, 57, 0.3215686275) 0%, rgba(18, 18, 19, 0.4) 100%);
   position: relative;
+  background-color: unset;
 }
 .popCommonWrap .popCommonFlexBox .popCommonBoxs.saveCommonBoxs::after {
   content: "";
-  width: 33.3333333333%;
-  height: 0.5px;
+  width: 41.1522633745%;
+  height: 1px;
   position: absolute;
-  top: 0px;
-  left: 33.3333333333%;
+  top: -1.2px;
+  left: 30.303030303%;
   background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
   -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
 }
@@ -1713,7 +1787,6 @@ header .userInfo ul li button {
   width: 820px;
   height: 873px;
   border-radius: 10px;
-  overflow: hidden;
   border: 1px solid #686868;
   background-image: linear-gradient(#383339 0%, #121213 32% 100%);
   -webkit-background-image: linear-gradient(#383339 0%, #121213 32% 100%);
@@ -1724,11 +1797,11 @@ header .userInfo ul li button {
 }
 .switchPopWrap .switchPopContent .switchPopBoxs::after {
   content: "";
-  width: 33.3333333333%;
-  height: 0.5px;
+  width: 38.4615384615%;
+  height: 1px;
   position: absolute;
-  top: 0px;
-  left: 33.3333333333%;
+  top: -1px;
+  left: 30.303030303%;
   background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
   -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
 }
@@ -1740,6 +1813,8 @@ header .userInfo ul li button {
   align-items: center;
   justify-content: space-between;
   background-color: rgba(15, 152, 230, 0.3);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .switchPopWrap .switchPopContent .switchPopBoxs .titlesBoxs h3 {
   color: #fff;
@@ -2030,16 +2105,15 @@ header .userInfo ul li button {
   -webkit-background-image: linear-gradient(#383339 0%, #121213 40% 100%);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
-  overflow: hidden;
   position: relative;
 }
 #issuesStateWrappers .issuesStateContentWrap .issuesStateContBoxs .issuesStateCont::after {
   content: "";
-  width: 33.3333333333%;
-  height: 0.7px;
+  width: 24.3902439024%;
+  height: 1px;
   position: absolute;
-  top: 0px;
-  left: 33.3333333333%;
+  top: -1px;
+  left: 38.4615384615%;
   background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
   -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
 }
@@ -2051,6 +2125,8 @@ header .userInfo ul li button {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px #686868;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 #issuesStateWrappers .issuesStateContentWrap .issuesStateContBoxs .issuesStateCont .titles ul {
   padding: 0px 10px 0px 16px;
@@ -2164,11 +2240,11 @@ header .userInfo ul li button {
 }
 .alarmPageWrapper .alarmPageBoxs::after {
   content: "";
-  width: 35.7142857143%;
-  height: 0.7px;
+  width: 25%;
+  height: 1px;
   position: absolute;
-  top: 0px;
-  left: 33.3333333333%;
+  top: -1px;
+  left: 38.4615384615%;
   background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
   -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
 }
@@ -2857,13 +2933,18 @@ header .userInfo ul li button {
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace .listSetup ul li button.active {
   border: 1px solid #0BA7FE;
 }
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace .listSetup ul li button.active::after {
+  top: -1px;
+  background-image: linear-gradient(90deg, #0BA7FE 0%, #70C8FB 52%, #0BA7FE 100%);
+  -webkit-background-image: linear-gradient(90deg, #0BA7FE 0%, #70C8FB 52%, #0BA7FE 100%);
+}
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace .listSetup ul li button::after {
   content: "";
-  width: 33.3333333333%;
-  height: 0.5px;
+  width: 27.7777777778%;
+  height: 1px;
   position: absolute;
-  top: 0px;
-  left: 33.3333333333%;
+  top: -0.5px;
+  left: 36.3636363636%;
   background-image: linear-gradient(90deg, #3F3F40 0%, #B7B7B7 52%, #3F3F40 100%);
   -webkit-background-image: linear-gradient(90deg, #3F3F40 0%, #B7B7B7 52%, #3F3F40 100%);
 }
@@ -3194,12 +3275,13 @@ header .userInfo ul li button {
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsScreenSection .toolScreenBoxs::after {
   content: "";
-  width: 33.3333333333%;
-  height: 0.5px;
+  width: 38.61003861%;
+  height: 1px;
   position: absolute;
-  top: 0px;
-  left: 33.3333333333%;
-  background-image: linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%, rgba(57, 57, 57, 0.2) 100%);
+  top: -1px;
+  left: 31.25%;
+  background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
+  -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsScreenSection .toolScreenBoxs .plusBtnBoxs {
   position: fixed;
@@ -3210,6 +3292,7 @@ header .userInfo ul li button {
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  z-index: 999;
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsScreenSection .toolScreenBoxs .plusBtnBoxs button {
   width: 34px;
@@ -3310,11 +3393,11 @@ body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs::before {
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs::after {
   content: "";
-  width: 28.5714285714%;
-  height: 0.5px;
+  width: 19.2307692308%;
+  height: 1px;
   position: absolute;
-  top: 0px;
-  left: 33.3333333333%;
+  top: -1.2px;
+  left: 41.6666666667%;
   background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
   -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
 }
@@ -3324,6 +3407,15 @@ body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs {
   border-right: 1px solid #424242;
   position: relative;
   overflow: hidden;
+}
+body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs:nth-child(1) .copyBoxsTitles {
+  border-top-left-radius: 10px;
+}
+body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs:nth-child(3) {
+  border-right: none;
+}
+body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs:nth-child(3) .copyBoxsTitles {
+  border-top-right-radius: 10px;
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyBoxs .copyBoxsTitles {
   width: calc(100% - 40px);
@@ -3499,7 +3591,16 @@ body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyStateInfoB
   background-image: linear-gradient(#383339 0%, #121213 40% 100%);
   -webkit-background-image: linear-gradient(rgba(56, 51, 57, 0.3215686275) 0%, rgba(18, 18, 19, 0.4) 100%);
   border: 1px solid #686868;
-  overflow: hidden;
+}
+body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyStateInfoBoxs::after {
+  content: "";
+  width: 28.2485875706%;
+  height: 1px;
+  position: absolute;
+  top: -1px;
+  left: 36.3636363636%;
+  background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
+  -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyStateInfoBoxs .copyStateInfoBoxsTitleBoxs {
   width: calc(100% - 24px);
@@ -3510,6 +3611,8 @@ body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyStateInfoB
   -webkit-backdrop-filter: blur(30px);
   display: flex;
   align-items: center;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
 }
 body #copyStateWrappers .copyStateContentWrap .copyStateContBoxs .copyStateInfoBoxs .copyStateInfoBoxsTitleBoxs h3 {
   color: #D1D1D1;
@@ -3648,10 +3751,25 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus {
   overflow: hidden;
   transition: width 900ms;
 }
+body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus::after {
+  content: "";
+  width: 66.2251655629%;
+  height: 1px;
+  position: absolute;
+  top: 0px;
+  left: 18.1818181818%;
+  background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
+  -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
+  opacity: 0;
+}
 body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus.active {
   width: 391px;
-  overflow-y: scroll;
   transition: width 800ms;
+  overflow: unset;
+}
+body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus.active::after {
+  opacity: 1;
+  transition: opacity 2.5s;
 }
 body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus.active .copyHiddenMenusWrap {
   transform: translateX(0px);
@@ -3672,17 +3790,6 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   transform: translateX(100%);
   transition: transform 800ms;
   overflow-y: scroll;
-  position: relative;
-}
-body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .copyHiddenMenusWrap::after {
-  content: "";
-  width: 50%;
-  height: 0.5px;
-  position: absolute;
-  top: 0px;
-  left: 28.5714285714%;
-  background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
-  -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
 }
 body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .copyHiddenMenusWrap::-webkit-scrollbar {
   width: 2px;
@@ -3718,6 +3825,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   align-items: center;
   width: 100%;
   gap: 10px;
+  padding-bottom: 10px;
 }
 body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .copyHiddenMenusWrap .copyRadioBoxs li {
   display: flex;
@@ -3749,11 +3857,12 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
 }
 body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .copyHiddenMenusWrap .copyRadioBoxs li label::after {
   content: "";
-  width: 28.5714285714%;
+  width: 20.8333333333%;
   height: 0.5px;
+  border-radius: 0px;
   position: absolute;
   top: 0px;
-  left: 33.3333333333%;
+  left: 40%;
   background-image: linear-gradient(90deg, #404041 0%, #B7B7B7 52%, #404041 100%);
   -webkit-background-image: linear-gradient(90deg, #404041 0%, #B7B7B7 52%, #404041 100%);
 }
@@ -3820,11 +3929,11 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
 }
 #userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageSectionCont::after {
   content: "";
-  width: 35.7142857143%;
-  height: 0.5px;
+  width: 28.2485875706%;
+  height: 1px;
   position: absolute;
-  top: 0px;
-  left: 33.3333333333%;
+  top: -1.2px;
+  left: 35.7142857143%;
   background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
   -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
 }
@@ -4147,7 +4256,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   position: absolute;
   right: -3px;
   top: 44px;
-  z-index: 999;
+  z-index: 99999;
   padding: 13px 16px;
   width: 177px;
   margin: 0 auto;
@@ -4214,18 +4323,47 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   -webkit-background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
   overflow: hidden;
 }
-#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap table {
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap .scrollWrappers {
+  width: 100%;
+  max-height: 637px;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap .scrollWrappers::-webkit-scrollbar {
+  width: 2px;
+}
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap .scrollWrappers::-webkit-scrollbar-thumb {
+  height: 10px !important;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+}
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap .scrollWrappers::-webkit-scrollbar-button:vertical:start:decrement {
+  display: block;
+  height: 20px;
+}
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap .scrollWrappers::-webkit-scrollbar-button:vertical:start:increment {
+  display: block;
+  height: 20px;
+}
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap .scrollWrappers::-webkit-scrollbar-button:vertical:end:decrement {
+  display: block;
+  height: 5px;
+}
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap .scrollWrappers table {
   width: 100%;
   border-collapse: collapse;
 }
-#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap table thead {
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap .scrollWrappers table thead {
   background-color: #323233;
   border-bottom: 1px solid #686868;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
-#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap table thead tr {
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap .scrollWrappers table thead tr {
   height: 43px;
 }
-#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap table thead tr th {
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap .scrollWrappers table thead tr th {
   width: 205px;
   padding: 0px 20px;
   border-right: 1px solid #4A4A4C;
@@ -4236,16 +4374,16 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   letter-spacing: 0.2px;
   text-align: left;
 }
-#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap table thead tr th.mediumWidth {
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap .scrollWrappers table thead tr th.mediumWidth {
   width: 283px;
 }
-#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap table thead tr th.largeWidth {
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap .scrollWrappers table thead tr th.largeWidth {
   width: 659px;
 }
-#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap table thead tr th.smallWidth {
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap .scrollWrappers table thead tr th.smallWidth {
   width: 81px;
 }
-#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap table thead tr th button {
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap .scrollWrappers table thead tr th button {
   width: 12px;
   height: 10px;
   background-image: url(/src/assets/media/userManage/groupBtn.svg);
@@ -4256,11 +4394,11 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   margin-left: 8px;
   cursor: pointer;
 }
-#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap table tr {
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap .scrollWrappers table tr {
   height: 100px;
 }
-#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap table tr td {
-  padding: 0px 20px;
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap .scrollWrappers table tr td {
+  padding: 10px 20px;
   border-right: 1px solid #4A4A4C;
   border-bottom: 1px solid #383839;
   color: #fff;
@@ -4268,10 +4406,10 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   font-size: 14px;
   letter-spacing: 0.2px;
 }
-#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap table tr td input[type=checkbox] {
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap .scrollWrappers table tr td input[type=checkbox] {
   display: none;
 }
-#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap table tr td label {
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap .scrollWrappers table tr td label {
   width: calc(100% - 0px - 32px);
   padding: 0px 0px 0px 32px;
   height: 100%;
@@ -4281,7 +4419,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   cursor: pointer;
   position: relative;
 }
-#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap table tr td label::before {
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap .scrollWrappers table tr td label::before {
   width: 18px;
   height: 18px;
   margin-right: 11px;
@@ -4291,7 +4429,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   left: 0px;
   content: "";
 }
-#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap table tr td input[type=checkbox]:checked + label::before {
+#userManageWrappers .userManageWrap .userManageBoxs .userManageSectionBoxs .userManageDataBoxs .userManageDataCont .userManageDataWrap .scrollWrappers table tr td input[type=checkbox]:checked + label::before {
   background-color: #0BA7FE;
   background-image: url(/src/assets/media/toolsImg/checkFill.svg);
   -webkit-background-image: url(/src/assets/media/toolsImg/checkFill.svg);
@@ -4619,16 +4757,15 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   -webkit-background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
-  overflow: hidden;
   position: relative;
 }
 #editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs::after {
   content: "";
-  width: 35.7142857143%;
-  height: 0.5px;
+  width: 43.1034482759%;
+  height: 1px;
   position: absolute;
-  top: 0px;
-  left: 33.3333333333%;
+  top: -1.2px;
+  left: 30.303030303%;
   background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
   -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
 }
@@ -4640,6 +4777,8 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   align-items: center;
   justify-content: space-between;
   background-color: #323133;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 #editWrappers .editWrap .editContBoxs .editContMain .editContMainScreen .editScreenBoxs .editBoxs .editBoxsTitles .editBoxsTitleSpace {
   display: flex;
@@ -4875,6 +5014,10 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
 #editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList ul li input[type=radio]:checked + label {
   border: 1px solid #0BA7FE;
 }
+#editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList ul li input[type=radio]:checked + label::after {
+  background-image: linear-gradient(90deg, #0BA7FE 0%, #70C8FB 52%, #0BA7FE 100%);
+  -webkit-background-image: linear-gradient(90deg, #0BA7FE 0%, #70C8FB 52%, #0BA7FE 100%);
+}
 #editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList ul li label {
   width: auto;
   height: calc(100% - 2px);
@@ -4889,6 +5032,8 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   position: relative;
   display: flex;
   align-items: center;
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
 }
 #editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList ul li label span {
   color: #fff;
@@ -4898,11 +5043,11 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
 }
 #editWrappers .editWrap .editContBoxs .editHiddenMenu .editHiddenMenuList ul li label::after {
   content: "";
-  width: 33.3333333333%;
-  height: 0.5px;
+  width: 28.328611898%;
+  height: 1px;
   position: absolute;
-  top: -0.5px;
-  left: 33.3333333333%;
+  top: -1.2px;
+  left: 34.4827586207%;
   background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
   -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
 }
@@ -5015,6 +5160,10 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
 #customWrappers .customWrap .customContBoxs .customSpace .customsController .divided input[type=radio]:checked + .labelBoxs {
   border: 1px solid #0BA7FE;
 }
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided input[type=radio]:checked + .labelBoxs::after {
+  background-image: linear-gradient(90deg, #0BA7FE 0%, #70C8FB 52%, #0BA7FE 100%);
+  -webkit-background-image: linear-gradient(90deg, #0BA7FE 0%, #70C8FB 52%, #0BA7FE 100%);
+}
 #customWrappers .customWrap .customContBoxs .customSpace .customsController .divided input[type=radio]:checked + .labelBoxs .boxsTop p {
   border: 1px solid #0BA7FE;
 }
@@ -5028,6 +5177,17 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   height: 318px;
   border: 1px solid #686868;
   border-radius: 10px;
+  position: relative;
+}
+#customWrappers .customWrap .customContBoxs .customSpace .customsController .divided .labelBoxs::after {
+  content: "";
+  width: 20%;
+  height: 1px;
+  position: absolute;
+  top: -1.2px;
+  left: 40%;
+  background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
+  -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
 }
 #customWrappers .customWrap .customContBoxs .customSpace .customsController .divided .labelBoxs .boxsTop {
   width: 100%;
@@ -5101,19 +5261,20 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   height: 430px;
   border: 1px solid #686868;
   border-radius: 8px;
-  overflow: hidden;
   position: relative;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
 }
 #customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup.active {
   height: 30px;
 }
 #customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup::after {
   content: "";
-  width: 25%;
-  height: 0.5px;
+  width: 20%;
+  height: 1px;
   position: absolute;
-  top: 0px;
-  left: 37.037037037%;
+  top: -1.2px;
+  left: 40%;
   background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
   -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
 }
@@ -5125,6 +5286,8 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   padding: 10px;
   height: 10px;
   background-color: #373639;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 #customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmSetupTitles h5 {
   color: #fff;
@@ -5340,7 +5503,6 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   -webkit-background-image: linear-gradient(rgba(56, 50, 57, 0.3) 0%, rgba(17, 17, 18, 0.5) 100%);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
-  overflow: hidden;
   position: relative;
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContTitles {
@@ -5352,6 +5514,19 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #686868;
+  position: relative;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContTitles::after {
+  content: "";
+  width: 28.2485875706%;
+  height: 1px;
+  position: absolute;
+  top: -1px;
+  left: 35.7142857143%;
+  background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
+  -webkit-background-image: linear-gradient(90deg, #686868 0%, #B7B7B7 52%, #686868 100%);
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContTitles h3 {
   color: #fff;
@@ -5778,7 +5953,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   height: 20px;
   background-image: url(/src/assets/media/popUp/slideBtn.svg);
   -webkit-background-image: url(/src/assets/media/popUp/slideBtn.svg);
-  background-size: 1vw;
+  background-size: 1rem;
   background-position: center center;
   background-repeat: no-repeat;
   display: block;
@@ -5811,6 +5986,25 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   background-size: 0.8vw;
   background-position: center center;
   background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListControlBtnBoxs button:hover::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(150deg, rgba(124, 115, 115, 0.4) 0%, rgba(57, 57, 57, 0.4) 100%);
+  -webkit-background-image: linear-gradient(rgba(124, 115, 115, 0.4) 0%, rgba(57, 57, 57, 0.4) 100%);
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListControlBtnBoxs button.active {
+  border: 1px solid #0BA7FE;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListControlBtnBoxs button.active::after {
+  background-image: none;
+  -webkit-background-image: none;
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListControlBtnBoxs button:nth-child(1) {
   background-image: url(/src/assets/media/popUp/plus.svg);
@@ -6110,7 +6304,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList .groupListSelectListMember .optionGroupBtn {
   width: 100%;
-  background-color: #373639;
+  background-color: rgba(217, 217, 217, 0.0901960784);
   height: 26px;
   padding: 0px 14px;
   background-image: url(/src/assets/media/toolsImg/arrowDown.svg);
@@ -6136,9 +6330,11 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   justify-content: center;
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList .groupListSelectListMember li:hover {
-  background-image: linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%, rgba(57, 57, 57, 0.2) 100%);
-  -webkit-background-image: linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%, rgba(57, 57, 57, 0.2) 100%);
+  background-color: #363538;
   opacity: 100%;
+}
+.userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList .groupListSelectListMember li.active {
+  background-color: #363538;
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContents section article.userGroupArticle02 .userGroupListBoxs02 .userGroupListCont .userGroupListDatas .groupDatas .groupSelectBoxs .groupSelectContents .groupListSelects .groupListSelectList .groupListSelectListMember li p {
   color: #fff;
@@ -6195,6 +6391,8 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   z-index: 99999;
   background-color: #1d1d1f;
   border-top: 1px solid #686868;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .useGroupListBtnWrap02 button {
   width: 126px;
