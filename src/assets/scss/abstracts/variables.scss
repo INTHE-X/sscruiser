@@ -75,6 +75,8 @@ $list-data-deepGreen : linear-gradient(#1D4D57 0%, #062B34 100%);
       @media (max-width: 1390px) { @content; }
     }@else if $size ==  x-large{
       @media (max-width: 1600px) { @content; }
+    }@else if $size ==  xxxlarge{
+      @media (min-width: 1921px) { @content; }
     }
  }
 

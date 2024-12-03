@@ -14,6 +14,7 @@ $fontMainColor : #C6D3F1;
     display: flex;
 
    &::-webkit-scrollbar{ display: none;}
+   &::-moz-scrollbar{ display: none;}
 
       .mainContentBoxs{
 

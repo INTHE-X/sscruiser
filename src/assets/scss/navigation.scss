@@ -531,6 +531,36 @@
          }
      }
 
+     @include breakpoint(xxxlarge) {
+      nav{
+         .menuWrappers{
+            .logoBoxs { background-size: 1vw;}
+            .menuBoxs{
+               ul{
+                  li.navBtnBoxs{
+                        button{
+                           &::before{ background-size:2vw;}
+                        }
+                        .subMenusWrapper {
+                           .subMenuBoxs {
+                              li{
+                                 .imgBoxs{ background-size: 1.5vw;}
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+            .hiddenMenusBoxs{
+               button{
+                  background-size: 1vw;
+               }
+            }
+         }
+
+     }
+     
      @include breakpoint(large) {
 
       nav{
@@ -538,6 +568,7 @@
             overflow-y: scroll;
 
             &::-webkit-scrollbar{ display: none;}
+            &::-moz-scrollbar{ display: none;}
 
             .menuBoxs{
                ul{

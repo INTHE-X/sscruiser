@@ -56,6 +56,7 @@ const issuesBoxDatasEvet = () => {
                   </div>
                 </div>
              </div>
+             <span class="gradientLines"></span>
           </div>`;
         
     }

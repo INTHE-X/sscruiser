@@ -9,6 +9,7 @@ $backgroundGradient : linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%,
    overflow: auto;
 
    &::-webkit-scrollbar{ display: none;}
+   &::-moz-scrollbar{ display: none;}
 
   .toolsContentWrap{
 
@@ -367,6 +368,24 @@ $backgroundGradient : linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%,
           height: 5px;
       }
       &::-webkit-scrollbar-button:vertical:end:decrement {
+          display: block;
+          height: 5px;
+      }
+      &::-moz-scrollbar{ width: 2px;}
+      &::-moz-scrollbar-thumb{
+          height: 10px!important;
+          border-radius: 10px;
+          background-color: #D9D9D9;
+      }
+      &::-moz-scrollbar-button:vertical:start:decrement{
+          display: block;
+          height: 5px;
+      }
+      &::-moz-scrollbar-button:vertical:start:increment{
+          display: block;
+          height: 5px;
+      }
+      &::-moz-scrollbar-button:vertical:end:decrement {
           display: block;
           height: 5px;
       }

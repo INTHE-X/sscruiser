@@ -104,3 +104,62 @@ function customSavePopEvet(){
 }
 
 customSavePopEvet();
+
+
+/* 알람조절함수 */
+
+ const alaramHandlCont = document.querySelectorAll('.alarmHandlerCont');
+ const alaramHandles = document.querySelectorAll('.alarmHandlerCont li .datas i');
+ const displays = document.querySelectorAll('.alarmHandlerCont li .datas em');
+ let percentGauge = document.querySelectorAll(".alarmHandlerCont li span");
+
+ // 알람 설정 함수
+ function setAlaramControl(alaramHandlBoxs, alaramHandlers, display, x, perCentNow) {
+   const rect = alaramHandlBoxs.getBoundingClientRect();
+   const offsetX = x - rect.left;
+   const percentage = Math.min(Math.max(0, offsetX / rect.width), 1);
+   alaramHandlers.style.left = `${percentage * 100}%`;
+   display.style.width = `${percentage * 100}%`;
+   perCentNow.textContent = `${Math.round(percentage * 100)}%`;
+ }
+
+    // 각 alaramHandlCont 대해 마우스 이벤트 처리
+    alaramHandlCont.forEach((slider, index) => {
+      const handle = alaramHandles[index]; //alarmHandlerCont
+      const display = displays[index]; //em 색상채우기
+      const percentText = percentGauge[index]; //퍼센트텍스트
+      let isMouseDown = false;
+
+      handle.addEventListener('mousedown', (e) => {
+        isMouseDown = true;
+        setAlaramControl(slider, handle, display, e.clientX , percentText);
+      });
+
+      document.addEventListener('mousemove', (e) => {
+        if (isMouseDown) {
+         setAlaramControl(slider, handle, display, e.clientX, percentText);
+        }
+      });
+
+      document.addEventListener('mouseup', () => {
+        isMouseDown = false;
+      });
+
+      // 터치 이벤트 처리
+      handle.addEventListener('touchstart', (e) => {
+      //   e.preventDefault(); // 기본 터치 이벤트 방지
+        isMouseDown = true;
+        setAlaramControl(slider, handle, display, e.touches[0].clientX, percentText);
+      });
+
+      document.addEventListener('touchmove', (e) => {
+        if (isMouseDown) {
+         setAlaramControl(slider, handle, display, e.touches[0].clientX, percentText);
+        }
+      });
+
+      document.addEventListener('touchend', () => {
+        isMouseDown = false;
+      });
+    });
+

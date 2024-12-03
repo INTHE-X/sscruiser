@@ -10,6 +10,7 @@
     overflow: auto;
 
     &::-webkit-scrollbar{ display: none;}
+    &::-moz-scrollbar{ display: none;}
     
     &.active{ display:none;}
 

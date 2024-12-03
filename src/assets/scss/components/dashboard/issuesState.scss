@@ -18,6 +18,7 @@
    overflow: auto;
 
    &::-webkit-scrollbar{ display: none;}
+   &::-moz-scrollbar{ display: none;}
    &::before{
 
       content: "";
@@ -58,10 +59,21 @@
             backdrop-filter: blur(30px);
             -webkit-backdrop-filter: blur(30px);
             position: relative;
+            
+            // &::after{
 
-            &::after{
+            //    content: "";
+            //    width:calc(100% / 4.1);
+            //    height:1px;
+            //    position: absolute;
+            //    top:-1px;
+            //    left:calc(100% / 2.6);
+            //    background-image: $border-linear;
+            //    -webkit-background-image: $border-linear;
+            // }
 
-               content: "";
+             .gradientLines{
+
                width:calc(100% / 4.1);
                height:1px;
                position: absolute;
@@ -69,7 +81,7 @@
                left:calc(100% / 2.6);
                background-image: $border-linear;
                -webkit-background-image: $border-linear;
-            }
+             }
 
              .titles{
                
@@ -193,6 +205,17 @@
           
        }
    }
+
+   @include breakpoint(xxxlarge) {
+      .issuesStateContentWrap{
+         .issuesStateContBoxs {
+            .issuesStateCont {
+               .gradientLines{ height:1.5px; top: -1.5px;}
+            }
+         }
+      }
+   }
+
    @include breakpoint(large) {
       .issuesStateContentWrap{
          .issuesStateContBoxs {
