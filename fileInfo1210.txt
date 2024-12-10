@@ -1,0 +1,21 @@
+
+/* 1210 비엠텍 수정사항 */
+
+/* html */
+
+src > components > popUp > switchPop.html _ 22번(dataCont01_클래스명) ~ 42번추가 
+
+
+/* scss */
+
+src > assets > scss > components > popUp > switchPop.scss 
+
+228번~287번추가  .dataCont01 관련
+440번추가  @include breakpoint(xxxlarge)
+453번추가  @include breakpoint(x-large)
+467번추가  @include breakpoint(large)
+480번추가  @include breakpoint(medium)
+
+/* media */
+
+src > assets > media > switchPop 폴더추가 

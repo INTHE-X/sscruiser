@@ -224,6 +224,68 @@
 
                   width: 100%;
                   height: 100%;
+
+               .dataCont01{
+
+                  padding:31px 41px;
+                  width:calc(100% - 82px);
+                  display: flex;
+                  flex-wrap:wrap;
+                  align-items: flex-start;
+                  gap:0px 3%;
+                  
+                  ul{
+
+                     li{
+
+                        &.lineHeightFor{
+                           span{
+                              line-height: 3.6;
+                           }
+                        }
+                        
+                        span{
+                           width:30px;
+                           height:30px;
+                           margin-right:5px;
+                           background-position: center center;
+                           background-repeat: no-repeat;
+                           background-size: cover;
+                           font-size: 0.3vw;
+                           display: inline-block;
+                           text-align: center;
+                           line-height: 6.8;
+                           color:$fontColor-f;
+                           word-break: break-all;
+                        
+                        &:last-child{ margin-right: 0px;}
+                        &.black-cont01{ background-image: url(/src/assets/media/switchPop/black/bl_01-1.svg);}
+                        &.black-cont02{ background-image: url(/src/assets/media/switchPop/black/bl_02-1.svg); background-position: center bottom}
+                        &.black-cont02-2 { background-image: url(/src/assets/media/switchPop/black/bl_02-2.svg);}
+                        &.black-cont03{ background-image: url(/src/assets/media/switchPop/black/bl_03-1.svg); background-position: center 10px;}
+                        &.black-cont03-2{ background-image: url(/src/assets/media/switchPop/black/bl_03-2.svg); background-position: center -10px; }
+                        &.black-cont04{ background-image: url(/src/assets/media/switchPop/black/bl_04-1.svg);}
+                        &.black-cont04-2{ background-image: url(/src/assets/media/switchPop/black/bl_04-2.svg);}
+                        &.green-cont01{background-image: url(/src/assets/media/switchPop/green/gr_01-1.svg);}
+                        &.green-cont01-2{background-image: url(/src/assets/media/switchPop/green/gr_01-2.svg);}
+                        &.green-cont02{ background-image: url(/src/assets/media/switchPop/green/gr_02-1.svg);}
+                        &.green-cont02-2{ background-image: url(/src/assets/media/switchPop/green/gr_02-2.svg);}
+                        &.green-cont03{ background-image: url(/src/assets/media/switchPop/green/gr_03-1.svg);}
+                        &.green-cont04{ background-image: url(/src/assets/media/switchPop/green/gr_04-1.svg);}
+                        &.green-cont04-2{ background-image: url(/src/assets/media/switchPop/green/gr_04-2.svg);}
+                        &.red-cont01{ background-image: url(/src/assets/media/switchPop/red/red_01-1.svg);}
+                        &.red-cont01-2{ background-image: url(/src/assets/media/switchPop/black/bl_01-2.svg);}
+                        &.red-cont02{background-image: url(/src/assets/media/switchPop/red/red_02-1.svg); }
+                        &.red-cont03{background-image: url(/src/assets/media/switchPop/red/red_03-1.svg); }
+                        &.red-cont03-2{background-image: url(/src/assets/media/switchPop/red/red_03-2.svg); }
+                        &.red-cont01-2{background-image: url(/src/assets/media/switchPop/red/red_01-2.svg); }
+                        &.red-cont04{background-image: url(/src/assets/media/switchPop/red/red_04-1.svg); }
+                        &.red-cont04-2{background-image: url(/src/assets/media/switchPop/red/red_04-2.svg); }
+                        }
+                     }
+                  }
+               }
+
                }
 
              }
@@ -374,7 +436,64 @@
 
                }
              }
+
+   @include breakpoint(xxxlarge){
+      .dataContent {
+         .dataBoxs{
+         .dataCont01 {
+            ul{
+               li{
+                  span{ font-size: 6px;}
+               }
+            }
+         }
+         }
+         }
+   }
+   @include breakpoint(x-large){
+
+      .dataContent {
+         .dataBoxs{
+         .dataCont01 {
+            ul{
+               li{
+                  span{ font-size: 0.35vw; line-height: 7;}
+               }
+            }
+         }
+         }
+         }
+      }
+      @include breakpoint(large){
+         .dataContent {
+            .dataBoxs{
+            .dataCont01 {
+               ul{
+                  li{
+                     span{ font-size: 0.45vw;}
+                  }
+               }
+            }
+            }
+            }
+         }
+      @include breakpoint(medium){
+         .dataContent {
+            .dataBoxs{
+            .dataCont01 {
+               ul{
+                  li{
+                     span{ font-size: 0.6vw;}
+                  }
+               }
+            }
+            }
+            }
+      
+         }
           }
+
       }
     }
+
 }

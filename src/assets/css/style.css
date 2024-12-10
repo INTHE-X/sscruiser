@@ -2000,6 +2000,103 @@ header .userInfo ul li button {
   width: 100%;
   height: 100%;
 }
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 {
+  padding: 31px 41px;
+  width: calc(100% - 82px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0px 3%;
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li.lineHeightFor span {
+  line-height: 3.6;
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 0.3vw;
+  display: inline-block;
+  text-align: center;
+  line-height: 6.8;
+  color: #fff;
+  word-break: break-all;
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span:last-child {
+  margin-right: 0px;
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span.black-cont01 {
+  background-image: url(/src/assets/media/switchPop/black/bl_01-1.svg);
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span.black-cont02 {
+  background-image: url(/src/assets/media/switchPop/black/bl_02-1.svg);
+  background-position: center bottom;
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span.black-cont02-2 {
+  background-image: url(/src/assets/media/switchPop/black/bl_02-2.svg);
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span.black-cont03 {
+  background-image: url(/src/assets/media/switchPop/black/bl_03-1.svg);
+  background-position: center 10px;
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span.black-cont03-2 {
+  background-image: url(/src/assets/media/switchPop/black/bl_03-2.svg);
+  background-position: center -10px;
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span.black-cont04 {
+  background-image: url(/src/assets/media/switchPop/black/bl_04-1.svg);
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span.black-cont04-2 {
+  background-image: url(/src/assets/media/switchPop/black/bl_04-2.svg);
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span.green-cont01 {
+  background-image: url(/src/assets/media/switchPop/green/gr_01-1.svg);
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span.green-cont01-2 {
+  background-image: url(/src/assets/media/switchPop/green/gr_01-2.svg);
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span.green-cont02 {
+  background-image: url(/src/assets/media/switchPop/green/gr_02-1.svg);
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span.green-cont02-2 {
+  background-image: url(/src/assets/media/switchPop/green/gr_02-2.svg);
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span.green-cont03 {
+  background-image: url(/src/assets/media/switchPop/green/gr_03-1.svg);
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span.green-cont04 {
+  background-image: url(/src/assets/media/switchPop/green/gr_04-1.svg);
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span.green-cont04-2 {
+  background-image: url(/src/assets/media/switchPop/green/gr_04-2.svg);
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span.red-cont01 {
+  background-image: url(/src/assets/media/switchPop/red/red_01-1.svg);
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span.red-cont01-2 {
+  background-image: url(/src/assets/media/switchPop/black/bl_01-2.svg);
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span.red-cont02 {
+  background-image: url(/src/assets/media/switchPop/red/red_02-1.svg);
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span.red-cont03 {
+  background-image: url(/src/assets/media/switchPop/red/red_03-1.svg);
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span.red-cont03-2 {
+  background-image: url(/src/assets/media/switchPop/red/red_03-2.svg);
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span.red-cont01-2 {
+  background-image: url(/src/assets/media/switchPop/red/red_01-2.svg);
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span.red-cont04 {
+  background-image: url(/src/assets/media/switchPop/red/red_04-1.svg);
+}
+.switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span.red-cont04-2 {
+  background-image: url(/src/assets/media/switchPop/red/red_04-2.svg);
+}
 .switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .systemsInfoBoxs {
   padding-top: 31px;
   margin: 0 auto;
@@ -2111,6 +2208,27 @@ header .userInfo ul li button {
   left: 20px;
   top: 18px;
   border-radius: 40px;
+}
+@media (min-width: 1921px) {
+  .switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span {
+    font-size: 6px;
+  }
+}
+@media (max-width: 1600px) {
+  .switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span {
+    font-size: 0.35vw;
+    line-height: 7;
+  }
+}
+@media (max-width: 1390px) {
+  .switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span {
+    font-size: 0.45vw;
+  }
+}
+@media (max-width: 1024px) {
+  .switchPopWrap .switchPopContent .switchPopBoxs .popContentBoxs .dataContent .dataBoxs .dataCont01 ul li span {
+    font-size: 0.6vw;
+  }
 }
 
 @keyframes stateLoadingRotate {
