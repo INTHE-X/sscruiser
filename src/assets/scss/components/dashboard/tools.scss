@@ -307,6 +307,7 @@ $backgroundGradient : linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%,
       background-color: #36363A;
       display: flex;
       justify-content: flex-start;
+      align-items: center;
       transition: background-color 500ms;
 
       &.active{
@@ -326,7 +327,7 @@ $backgroundGradient : linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%,
 
          &.active{
             
-            transform: translateX(100%);
+            transform: translateX(120%);
             transition:transform 500ms;
          }
 
@@ -1011,6 +1012,59 @@ $backgroundGradient : linear-gradient(to right, rgba(115, 115, 115, 0.2) 0% 20%,
                      align-items: center;
                      justify-content: center;
                      gap:7px;
+                     position: relative;
+
+                     .hiddenStyleBoxs{
+                        position: absolute;
+                        top:110%;
+                        left:0px;
+                        width:calc(100% / 2.2);
+                        height:100px;
+                        background-color: #232325;
+                        border: 1px solid #686868;
+                        z-index:999;
+                        border-radius: 8px;
+                        display: none;
+                        overflow-y: auto;
+                        &::-webkit-scrollbar{ width: 2px;}
+                        &::-webkit-scrollbar-thumb{
+                            height: 10px!important;
+                            border-radius: 10px;
+                            background-color: #D9D9D9;
+                        }
+                        &::-webkit-scrollbar-button:vertical:start:decrement{
+                            display: block;
+                            height: 5px;
+                        }
+                        &::-webkit-scrollbar-button:vertical:start:increment{
+                            display: block;
+                            height: 5px;
+                        }
+                        &::-webkit-scrollbar-button:vertical:end:decrement {
+                            display: block;
+                            height: 5px;
+                        }
+                        &::-moz-scrollbar{ width: 2px;}
+                        &::-moz-scrollbar-thumb{
+                            height: 10px!important;
+                            border-radius: 10px;
+                            background-color: #D9D9D9;
+                        }
+                        &::-moz-scrollbar-button:vertical:start:decrement{
+                            display: block;
+                            height: 5px;
+                        }
+                        &::-moz-scrollbar-button:vertical:start:increment{
+                            display: block;
+                            height: 5px;
+                        }
+                        &::-moz-scrollbar-button:vertical:end:decrement {
+                            display: block;
+                            height: 5px;
+                        }
+                        &.active{ display: block;}
+
+                     }
 
                    .number-input, .colors{
 

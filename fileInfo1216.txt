@@ -1,0 +1,54 @@
+
+/* 비엠텍수정사항 반영 */
+
+/* html */
+
+1) 장비구성도  src > components > dashboard > tools.html
+
+242번추가 - <div class="hiddenStyleBoxs"></div>
+257번추가 - <div class="hiddenStyleBoxs"></div>
+
+
+/* scss */
+
+1) 장비구성도 src > assets > scss > components > dashboard > tools.scss
+
+301번 _ toggleBtn _  align-items: center; 추가
+328번 _ &.active  transform: translateX(120%); 변경
+1009번 _ inputColorBoxs _ position: relative; 추가
+1017번 ~ 1067번추가 - .hiddenStyleBoxs(class명)
+
+2) src > assets > scss > style.scss 
+
+2번 a요소 _ font-family: 'Pretendard' 로 변경
+4번 button _ font-family: 'Pretendard' 로 변경
+5번 div,h1,h2,h3,h4,h5,p,span _ font-family: 'Pretendard' 로 변경
+6번추가  input,textarea{	font-family: 'Pretendard';}
+
+41번 ~ 95번 주석처리
+97번 ~ 158번 추가 (폰트관련)
+
+
+3) 사용자그룹등록팝업 src > assets > scss > components > popUp > userGroupPop.scss
+
+77번 _ span width: 20px; 변경
+
+4) 커스텀설정  src > assets > scss > components > setup > customizing.scss
+
+401번 span_ padding-left:10px; 추가
+
+
+/* js */
+
+1) 장비구성도  src > js > tools.js
+
+344번 ~ 378번추가 - styleBoxsOpenEvet(함수명) 함수추가
+
+
+
+/* font폴더 */
+
+src > font > pretendard 
+
+폰트추가(9개) - Pretendard-Black.woff2, Pretendard-Bold.woff2, Pretendard-ExtraBold.woff2, Pretendard-ExtraLight.woff2,  Pretendard-Light.woff2, 
+       Pretendard-Medium.woff2,  Pretendard-Regular.woff2,  Pretendard-SemiBold.woff2,  Pretendard-Thin.woff2, 

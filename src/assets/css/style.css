@@ -16,13 +16,17 @@ ul li {
 button {
   background-color: transparent;
   border: none;
-  font-family: Pretendard;
+  font-family: "Pretendard";
   cursor: pointer;
 }
 
 div, h1, h2, h3, h4, h5, p, span {
   margin: 0;
-  font-family: Pretendard;
+  font-family: "Pretendard";
+}
+
+input, textarea {
+  font-family: "Pretendard";
 }
 
 html, body {
@@ -2728,6 +2732,7 @@ header .userInfo ul li button {
   background-color: #36363A;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   transition: background-color 500ms;
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentTopBoxs .saveBtnBoxs .toggleBtn.active {
@@ -2744,7 +2749,7 @@ header .userInfo ul li button {
   transition: transform 500ms;
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentTopBoxs .saveBtnBoxs .toggleBtn span.active {
-  transform: translateX(100%);
+  transform: translateX(120%);
   transition: transform 500ms;
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs {
@@ -3302,6 +3307,63 @@ header .userInfo ul li button {
   align-items: center;
   justify-content: center;
   gap: 7px;
+  position: relative;
+}
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .hiddenStyleBoxs {
+  position: absolute;
+  top: 110%;
+  left: 0px;
+  width: 45.4545454545%;
+  height: 100px;
+  background-color: #232325;
+  border: 1px solid #686868;
+  z-index: 999;
+  border-radius: 8px;
+  display: none;
+  overflow-y: auto;
+}
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .hiddenStyleBoxs::-webkit-scrollbar {
+  width: 2px;
+}
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .hiddenStyleBoxs::-webkit-scrollbar-thumb {
+  height: 10px !important;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+}
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .hiddenStyleBoxs::-webkit-scrollbar-button:vertical:start:decrement {
+  display: block;
+  height: 5px;
+}
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .hiddenStyleBoxs::-webkit-scrollbar-button:vertical:start:increment {
+  display: block;
+  height: 5px;
+}
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .hiddenStyleBoxs::-webkit-scrollbar-button:vertical:end:decrement {
+  display: block;
+  height: 5px;
+}
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .hiddenStyleBoxs::-moz-scrollbar {
+  width: 2px;
+}
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .hiddenStyleBoxs::-moz-scrollbar-thumb {
+  height: 10px !important;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+}
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .hiddenStyleBoxs::-moz-scrollbar-button:vertical:start:decrement {
+  display: block;
+  height: 5px;
+}
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .hiddenStyleBoxs::-moz-scrollbar-button:vertical:start:increment {
+  display: block;
+  height: 5px;
+}
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .hiddenStyleBoxs::-moz-scrollbar-button:vertical:end:decrement {
+  display: block;
+  height: 5px;
+}
+#toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .hiddenStyleBoxs.active {
+  display: block;
 }
 #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .number-input, #toolsWrappers .toolsContentWrap .toolsContentBoxs .contentMainBoxs .toolsOptionsSection .listOptionsBox .listOptionsSpace.optionSpace .styleControlBoxs .styleBoxs ul li .inputColorBoxs .colors {
   border: 1px solid #686868;
@@ -5746,6 +5808,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   font-weight: 400;
   font-size: 14px;
   letter-spacing: 0.2px;
+  padding-left: 10px;
 }
 #customWrappers .customWrap .customContBoxs .customSpace .customsController .divided.alarmSetup .alarmBoxs ul li p {
   font-weight: 400;
@@ -5893,7 +5956,7 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
   display: flex;
 }
 .userGroupPopWrapper .userGroupPopFlex .userGroupPopCont .userGroupPopContTitles h3 span {
-  width: 12px;
+  width: 20px;
   height: 20px;
   background-size: 0.8vw;
   background-position: center center;
@@ -6930,51 +6993,57 @@ body #copyStateWrappers .copyStateContentWrap .copyAddMenus .copyHiddenMenus .co
 /* 공통 컨텐츠 font */
 @font-face {
   font-family: "Pretendard";
-  font-style: normal;
-  src: url("../../font/pretendard/Pretendard-Thin.woff") format("woff");
-  font-weight: 100;
+  font-weight: 900;
+  font-display: swap;
+  src: local("Pretendard Black"), url("../../font/pretendard/Pretendard-Black.woff2") format("woff2"), url("../../font/pretendard/Pretendard-Black.woff2") format("woff");
 }
 @font-face {
   font-family: "Pretendard";
-  font-style: normal;
-  src: url("../../font/pretendard/Pretendard-ExtraLight.woff") format("woff");
-  font-weight: 200;
-}
-@font-face {
-  font-family: "Pretendard";
-  font-style: normal;
-  src: url("../../font/pretendard/Pretendard-Light.woff") format("woff");
-  font-weight: 300;
-}
-@font-face {
-  font-family: "Pretendard";
-  font-style: normal;
-  src: url("../../font/pretendard/Pretendard-Regular.woff") format("woff");
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Pretendard";
-  font-style: normal;
-  src: url("../../font/pretendard/Pretendard-Medium.woff") format("woff");
-  font-weight: 500;
-}
-@font-face {
-  font-family: "Pretendard";
-  font-style: normal;
-  src: url("../../font/pretendard/Pretendard-SemiBold.woff") format("woff");
-  font-weight: 600;
-}
-@font-face {
-  font-family: "Pretendard";
-  font-style: normal;
-  src: url("../../font/pretendard/Pretendard-Bold.woff") format("woff");
-  font-weight: 700;
-}
-@font-face {
-  font-family: "Pretendard";
-  font-style: normal;
-  src: url("../../font/pretendard/Pretendard-ExtraBold.woff") format("woff");
   font-weight: 800;
+  font-display: swap;
+  src: local("Pretendard ExtraBold"), url("../../font/pretendard/Pretendard-ExtraBold.woff2") format("woff2"), url("../../font/pretendard/Pretendard-ExtraBold.woff2") format("woff");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 700;
+  font-display: swap;
+  src: local("Pretendard Bold"), url("../../font/pretendard/Pretendard-Bold.woff2") format("woff2"), url("../../font/pretendard/Pretendard-Bold.woff2") format("woff");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-display: swap;
+  src: local("Pretendard SemiBold"), url("../../font/pretendard/Pretendard-SemiBold.woff2") format("woff2"), url("../../font/pretendard/Pretendard-SemiBold.woff2") format("woff");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-display: swap;
+  src: local("Pretendard Medium"), url("../../font/pretendard/Pretendard-Medium.woff2") format("woff2"), url("../../font/pretendard/Pretendard-Medium.woff2") format("woff");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-display: swap;
+  src: local("Pretendard Regular"), url("../../font/pretendard/Pretendard-Regular.woff2") format("woff2"), url("../../font/pretendard/Pretendard-Regular.woff2") format("woff");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 300;
+  font-display: swap;
+  src: local("Pretendard Light"), url("../../font/pretendard/Pretendard-Light.woff2") format("woff2"), url("../../font/pretendard/Pretendard-Light.woff2") format("woff");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 200;
+  font-display: swap;
+  src: local("Pretendard ExtraLight"), url("../../font/pretendard/Pretendard-ExtraLight.woff2") format("woff2"), url("../../font/pretendard/Pretendard-ExtraLight.woff2") format("woff");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 100;
+  font-display: swap;
+  src: local("Pretendard Thin"), url("../../font/pretendard/Pretendard-Thin.woff2") format("woff2"), url("../../font/pretendard/Pretendard-Thin.woff2") format("woff");
 }
 
 /*# sourceMappingURL=style.css.map */

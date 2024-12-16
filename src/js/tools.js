@@ -339,3 +339,40 @@ function toolsSavePopEvet(){
 }
 
 toolsSavePopEvet();
+
+//옵션 스타일 boxs 및 outline버튼 클릭시 박스오픈
+const styleBoxsOpenEvet = () => {
+
+    const inputColorBoxsBtn = document.querySelectorAll(".inputColorBoxs .colors");
+    const hiddenStyleBoxs = document.querySelectorAll(".hiddenStyleBoxs");
+
+    if(inputColorBoxsBtn){
+      inputColorBoxsBtn.forEach((btns, indx) => {
+          btns.addEventListener("click", () => {
+             if(indx == 0){
+               if(btns.classList.contains("addClicks")){
+                  return inputColorBoxsBtn.forEach((allBtns) => allBtns.classList.remove("addClicks")),
+                  hiddenStyleBoxs.forEach((otherHidden) => otherHidden.classList.remove("active"));
+               }
+               hiddenStyleBoxs.forEach((otherHidden) => otherHidden.classList.remove("active")),
+               hiddenStyleBoxs[indx].classList.add("active");
+               inputColorBoxsBtn.forEach((otherBtns) => otherBtns.classList.remove("addClicks"));
+               btns.classList.add("addClicks");
+
+             }else if(indx == 1){
+               if(btns.classList.contains("addClicks")){
+                  return inputColorBoxsBtn.forEach((allBtns) => allBtns.classList.remove("addClicks")),
+                  hiddenStyleBoxs.forEach((otherHidden) => otherHidden.classList.remove("active"));
+               }
+               hiddenStyleBoxs.forEach((otherHidden) => otherHidden.classList.remove("active"));
+               hiddenStyleBoxs[indx].classList.add("active");
+               inputColorBoxsBtn.forEach((otherBtns) => otherBtns.classList.remove("addClicks"));
+               btns.classList.add("addClicks");
+
+             }
+          })
+      })
+    }
+}
+
+styleBoxsOpenEvet();
